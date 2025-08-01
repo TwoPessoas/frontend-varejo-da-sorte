@@ -3,16 +3,12 @@ import { loginSchema, type LoginCredentials } from "../../../types/Auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LogIn, XCircle } from "lucide-react";
 import { InputMask } from "@react-input/mask";
+import { useAuth } from "../../../contexts/AuthContext";
+import { useState } from "react";
+import toast from "react-hot-toast";
+import moment from "moment";
 
-interface PreRegistrationFormProps {
-  onSubmit: (data: LoginCredentials) => Promise<void>; // Função chamada no submit
-  isLoading?: boolean; // Estado de carregamento para o botão de submit
-}
-
-export default function PreRegistrationForm({
-  onSubmit,
-  isLoading = false,
-}: PreRegistrationFormProps) {
+const PreRegistrationForm = () => {
   const {
     register,
     handleSubmit,
@@ -24,6 +20,27 @@ export default function PreRegistrationForm({
       cpf: "",
     },
   });
+
+  const { login } = useAuth(); // Utilize o método de login do contexto
+  const [isLoading, setIsLoading] = useState(false);
+
+  const onSubmit = async (data: LoginCredentials) => {
+    try {
+      const result = await login(data);
+      if (!result.success) {
+        toast.error(
+          "Erro ao criar cliente. Por favor, verifique os dados e tente novamente."
+        );
+      }
+    } catch (err: any) {
+      console.error("Erro ao criar cliente:", err);
+      toast.error(
+        "Erro inesperado ao criar cliente. Tente novamente mais tarde."
+      );
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <>
@@ -73,4 +90,5 @@ export default function PreRegistrationForm({
       </form>
     </>
   );
-}
+};
+export default PreRegistrationForm;
