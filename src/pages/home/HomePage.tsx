@@ -1,4 +1,4 @@
-import HeaderComponent from "./components/HeaderComponent";
+import HeroComponent from "./components/HeroComponent";
 import AboutComponent from "./components/AboutComponent";
 import BrandsComponent from "./components/BrandsComponent";
 import RulesComponent from "./components/RulesComponent";
@@ -8,7 +8,7 @@ import FooterComponent from "./components/FooterComponent";
 export default function HomePage() {
   return (
     <>
-      <HeaderComponent />
+      <HeroComponent />
       <AboutComponent />
       <BrandsComponent />
       <RulesComponent />
