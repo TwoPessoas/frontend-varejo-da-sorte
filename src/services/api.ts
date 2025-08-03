@@ -1,14 +1,15 @@
-import axios from 'axios';
+import axios from "axios";
+import { AUTH_TOKEN_NAME } from "../contexts/AuthContext";
 
 const api = axios.create({
-  baseURL: 'http://localhost:8080/api',
+  baseURL: "http://localhost:8080/api",
 });
 
 // ✨ Adicionando o Interceptor de Requisição ✨
 api.interceptors.request.use(
   (config) => {
     // Pega o token do localStorage
-    const token = localStorage.getItem('authTokenVeraoDaSorte');
+    const token = localStorage.getItem(AUTH_TOKEN_NAME);
 
     // Se o token existir, adiciona ao cabeçalho de autorização
     if (token) {

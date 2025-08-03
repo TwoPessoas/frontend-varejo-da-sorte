@@ -1,14 +1,15 @@
 import { Outlet } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import { Toaster } from "react-hot-toast";
+import { ClientProvider } from "./contexts/ClientContext";
 
 function App() {
   return (
     <>
       <AuthProvider>
-        {/* O Outlet renderizará os layouts (DefaultLayout ou GuestLayout) 
-          que, por sua vez, renderizarão as páginas. */}
-        <Outlet />
+        <ClientProvider>
+          <Outlet />
+        </ClientProvider>
       </AuthProvider>
       <Toaster />
     </>

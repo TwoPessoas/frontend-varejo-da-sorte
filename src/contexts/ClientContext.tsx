@@ -1,22 +1,21 @@
 import { createContext, useState, type ReactNode, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import api from "../services/api"; // 1. Importe nossa instância do Axios
-import type {
-  AuthContextType,
-  LoginCredentials,
-  LoginResult,
-} from "../types/Auth";
+import type { Client, ClientContextType } from "../types/Client";
+import api from "../services/api";
+import { useAuth } from "./AuthContext";
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
-export const AUTH_TOKEN_NAME = "authTokenWebVarejoDaSorte";
+const ClientContext = createContext<ClientContextType | undefined>(undefined);
 
-export const AuthProvider = ({ children }: { children: ReactNode }) => {
+export const ClientProvider = ({ children }: { children: ReactNode }) => {
+  const [client, setClient] = useState<Client | null>(null);
+  const { isAuthenticated, logout } = useAuth();
+  /*
+
   // Vamos inicializar o token a partir do localStorage para persistir o login
   const [token, setToken] = useState<string | null>(
-    localStorage.getItem(AUTH_TOKEN_NAME)
+    localStorage.getItem("authTokenWebVarejoDaSorte")
   );
   const navigate = useNavigate();
-
+  
   // 3. Reescreva completamente a função de login
   const login = async (credentials: LoginCredentials): Promise<LoginResult> => {
     try {
@@ -29,7 +28,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
       if (newToken) {
         setToken(newToken);
-        localStorage.setItem(AUTH_TOKEN_NAME, newToken);
+        localStorage.setItem("authTokenWebVarejoDaSorte", newToken);
         navigate("/area-cliente"); // Redireciona para a área do cliente após o login
         return { success: true };
       }
@@ -67,24 +66,40 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const logout = () => {
     setToken(null);
-    localStorage.removeItem(AUTH_TOKEN_NAME);
+    localStorage.removeItem("authTokenWebVarejoDaSorte");
     navigate("/");
+  };
+    */
+  const me = async () => {
+    try {
+      if (!isAuthenticated) return false;
+
+      await api.get(`/clients/me`);
+      return true;
+    } catch (err: any) {
+      //Não autorizado
+      if ((err.status = 401)) {
+        setClient(null);
+        logout();
+      }
+      return false;
+    }
   };
 
   const value = {
-    isAuthenticated: !!token,
-    token,
-    login,
-    logout,
+    client,
+    me,
   };
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <ClientContext.Provider value={value}>{children}</ClientContext.Provider>
+  );
 };
 
-export const useAuth = () => {
-  const context = useContext(AuthContext);
+export const useClient = () => {
+  const context = useContext(ClientContext);
   if (context === undefined) {
-    throw new Error("useAuth must be used within an AuthProvider");
+    throw new Error("useClient must be used within an ClientProvider");
   }
   return context;
 };

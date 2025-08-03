@@ -1,18 +1,19 @@
 import { useForm } from "react-hook-form";
 import { loginSchema, type LoginCredentials } from "../../../types/Auth";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { LogIn, XCircle } from "lucide-react";
 import { InputMask } from "@react-input/mask";
 import { useAuth } from "../../../contexts/AuthContext";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
-import moment from "moment";
+import StringUtils from "../../../utils/StringUtils";
+import { useClient } from "../../../contexts/ClientContext";
 
 const PreRegistrationForm = () => {
   const {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: { errors },
   } = useForm<LoginCredentials>({
     resolver: zodResolver(loginSchema),
@@ -21,11 +22,34 @@ const PreRegistrationForm = () => {
     },
   });
 
-  const { login } = useAuth(); // Utilize o método de login do contexto
+  const { login } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
+  const { me, client } = useClient();
+  const isInited = useRef(false);
+
+  useEffect(() => {
+    if (isInited.current) return;
+
+    isInited.current = true;
+    const getMe = async () => {
+      await me();
+    };
+
+    getMe();
+  }, []);
 
   const onSubmit = async (data: LoginCredentials) => {
     try {
+      if (!data.cpf.trim()) {
+        toast.error("Por favor, digite seu CPF");
+        return;
+      }
+
+      if (!StringUtils.validateCPF(data.cpf)) {
+        toast.error("CPF inválido. Verifique os números digitados");
+        return;
+      }
+
       const result = await login(data);
       if (!result.success) {
         toast.error(
@@ -42,53 +66,67 @@ const PreRegistrationForm = () => {
     }
   };
 
-  return (
-    <>
-      {/* Formulário de login */}
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-        {/* CPF */}
-        <div className="form-group">
-          <label htmlFor="cpf" className="form-label">
-            CPF <span className="text-red-500">*</span>
-          </label>
-          <InputMask
-            type="tel" // Alterado para text, pois tel pode ter comportamento diferente em alguns browsers
-            mask="___.___.___-__"
-            replacement={{ _: /\d/ }}
-            placeholder="999.999.999-99"
-            {...register("cpf")}
-            onChange={(e) => setValue("cpf", e.target.value)} // Atualiza o valor no React Hook Form
-            className={`form-input ${errors.cpf ? "border-red-300" : ""}`}
-          />
-          {errors.cpf && (
-            <p className="form-error flex items-center">
-              <XCircle className="w-4 h-4 mr-1" /> {errors.cpf.message}
-            </p>
-          )}
-        </div>
+  const handleReset = () => {
+    reset();
+    setIsLoading(false);
+  };
 
-        {/* Botão de submit */}
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <div>
+        <label
+          htmlFor="cpf"
+          className="block text-sm font-bold text-gray-700 mb-2"
+        >
+          CPF *
+        </label>
+        {!client ? (
+          <>
+            <InputMask
+              type="tel"
+              mask="___.___.___-__"
+              replacement={{ _: /\d/ }}
+              placeholder="999.999.999-99"
+              {...register("cpf")}
+              onChange={(e) => setValue("cpf", e.target.value)}
+              className={`input ${errors.cpf ? "input-error" : ""}`}
+              disabled={isLoading}
+            />
+            {errors.cpf && (
+              <p className="error-message">{errors.cpf.message}</p>
+            )}
+          </>
+        ) : (
+          <p>{`Você está acessando como ${client.name}`}</p>
+        )}
+      </div>
+
+      <div className="flex flex-col sm:flex-row gap-3">
         <button
           type="submit"
           disabled={isLoading}
-          className={`btn btn-primary w-full ${
-            isLoading ? "opacity-50 cursor-not-allowed" : ""
-          }`}
+          className="btn-primary flex-1 relative"
         >
           {isLoading ? (
-            <div className="flex items-center justify-center">
-              <div className="loading-spinner mr-2"></div>
-              Autenticando...
-            </div>
+            <>
+              <span className="spinner mr-2"></span>
+              Processando...
+            </>
           ) : (
-            <div className="flex items-center justify-center">
-              <LogIn className="w-4 h-4 mr-2" />
-              Entrar
-            </div>
+            "Participar do Sorteio"
           )}
         </button>
-      </form>
-    </>
+
+        <button
+          type="button"
+          onClick={handleReset}
+          disabled={isLoading}
+          className="btn-outline sm:w-auto"
+        >
+          Limpar
+        </button>
+      </div>
+    </form>
   );
 };
 export default PreRegistrationForm;
