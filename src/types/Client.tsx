@@ -9,6 +9,13 @@ export interface Client {
   emailSendedAt: string | null;
 }
 
+export interface Summary {
+  opportunitiesTotal: number;
+  opportunitiesNotUsed: number;
+  drawNumbersTotal: number;
+  invoicesTotal: number;
+}
+
 // Hook return structure
 export interface UseClient {
   isLoading: boolean;
@@ -18,6 +25,10 @@ export interface UseClient {
 }
 
 export interface ClientContextType {
-  me: () => Promise<boolean>;
+  isLoading: boolean;
   client: Client | null;
+  me: () => Promise<boolean>;
+  clear: () => void;
+  updateSummary: () => Promise<Summary | null>;
+  getSummary: () => Summary | null;
 }

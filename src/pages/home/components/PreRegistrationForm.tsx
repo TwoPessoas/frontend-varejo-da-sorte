@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import StringUtils from "../../../utils/StringUtils";
 import { useClient } from "../../../contexts/ClientContext";
+import { useNavigate } from "react-router-dom";
 
 const PreRegistrationForm = () => {
   const {
@@ -22,9 +23,10 @@ const PreRegistrationForm = () => {
     },
   });
 
+  const navigate = useNavigate();
   const { login } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
-  const { me, client } = useClient();
+  const { me, client, clear } = useClient();
   const isInited = useRef(false);
 
   useEffect(() => {
@@ -72,61 +74,122 @@ const PreRegistrationForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-      <div>
-        <label
-          htmlFor="cpf"
-          className="block text-sm font-bold text-gray-700 mb-2"
-        >
-          CPF *
-        </label>
+    <div className="max-w-md mx-auto fade-in">
+      <div className="card p-8 shadow-strong">
         {!client ? (
           <>
-            <InputMask
-              type="tel"
-              mask="___.___.___-__"
-              replacement={{ _: /\d/ }}
-              placeholder="999.999.999-99"
-              {...register("cpf")}
-              onChange={(e) => setValue("cpf", e.target.value)}
-              className={`input ${errors.cpf ? "input-error" : ""}`}
-              disabled={isLoading}
-            />
-            {errors.cpf && (
-              <p className="error-message">{errors.cpf.message}</p>
-            )}
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Faça seu Cadastro
+              </h3>
+              <p className="text-gray-600">Digite seu CPF para participar</p>
+            </div>
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <div>
+                <label
+                  htmlFor="cpf"
+                  className="block text-sm font-bold text-gray-700 mb-2"
+                >
+                  CPF *
+                </label>
+
+                <InputMask
+                  type="tel"
+                  mask="___.___.___-__"
+                  replacement={{ _: /\d/ }}
+                  placeholder="999.999.999-99"
+                  {...register("cpf")}
+                  onChange={(e) => setValue("cpf", e.target.value)}
+                  className={`input ${errors.cpf ? "input-error" : ""}`}
+                  disabled={isLoading}
+                />
+                {errors.cpf && (
+                  <p className="error-message">{errors.cpf.message}</p>
+                )}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3">
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="btn-primary flex-1 relative"
+                >
+                  {isLoading ? (
+                    <>
+                      <span className="spinner mr-2"></span>
+                      Processando...
+                    </>
+                  ) : (
+                    "Participar do Sorteio"
+                  )}
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleReset}
+                  disabled={isLoading}
+                  className="btn-outline sm:w-auto"
+                >
+                  Limpar
+                </button>
+              </div>
+            </form>
           </>
         ) : (
-          <p>{`Você está acessando como ${client.name}`}</p>
+          <>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              Identificamos seu cadastro
+            </h3>
+            <p className="text-gray-600 py-5">
+              Você está acessando como{" "}
+              <span className="font-bold">{` ${client.name}`}</span>
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 pt-5">
+              <button
+                disabled={isLoading}
+                className="btn-primary flex-1 relative"
+                onClick={() => navigate("/area-cliente")}
+              >
+                Minha área
+              </button>
+
+              <button
+                type="button"
+                onClick={() => clear()}
+                disabled={isLoading}
+                className="btn-outline sm:w-auto"
+              >
+                Não sou eu
+              </button>
+            </div>
+          </>
         )}
+        {/* Security Note */}
+        <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+          <div className="flex items-start space-x-2">
+            <svg
+              className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <div>
+              <p className="text-sm font-medium text-gray-900">
+                Seus dados estão seguros
+              </p>
+              <p className="text-xs text-gray-600 mt-1">
+                Utilizamos criptografia para proteger suas informações pessoais
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div className="flex flex-col sm:flex-row gap-3">
-        <button
-          type="submit"
-          disabled={isLoading}
-          className="btn-primary flex-1 relative"
-        >
-          {isLoading ? (
-            <>
-              <span className="spinner mr-2"></span>
-              Processando...
-            </>
-          ) : (
-            "Participar do Sorteio"
-          )}
-        </button>
-
-        <button
-          type="button"
-          onClick={handleReset}
-          disabled={isLoading}
-          className="btn-outline sm:w-auto"
-        >
-          Limpar
-        </button>
-      </div>
-    </form>
+    </div>
   );
 };
 export default PreRegistrationForm;

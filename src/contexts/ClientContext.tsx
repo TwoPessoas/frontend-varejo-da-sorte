@@ -1,94 +1,138 @@
 import { createContext, useState, type ReactNode, useContext } from "react";
-import type { Client, ClientContextType } from "../types/Client";
+import type { Client, ClientContextType, Summary } from "../types/Client";
 import api from "../services/api";
 import { useAuth } from "./AuthContext";
+import toast from "react-hot-toast";
 
 const ClientContext = createContext<ClientContextType | undefined>(undefined);
+export const CLIENT_STORAGE_NAME = "authClientWebVarejoDaSorte";
+export const SUMMARY_STORAGE_NAME = "sumaryClientWebVarejoDaSorte";
 
 export const ClientProvider = ({ children }: { children: ReactNode }) => {
   const [client, setClient] = useState<Client | null>(null);
+  const [summary, setSummary] = useState<Summary | null>(null);
   const { isAuthenticated, logout } = useAuth();
-  /*
+  const [isLoading, setIsLoading] = useState(false);
 
-  // Vamos inicializar o token a partir do localStorage para persistir o login
-  const [token, setToken] = useState<string | null>(
-    localStorage.getItem("authTokenWebVarejoDaSorte")
-  );
-  const navigate = useNavigate();
-  
-  // 3. Reescreva completamente a função de login
-  const login = async (credentials: LoginCredentials): Promise<LoginResult> => {
+  // Fetch a single client by ID
+  const getClient = async (): Promise<Client | null> => {
+    setIsLoading(true);
+
     try {
-      console.log("[LOGIN] 0");
-      // Faz a chamada POST para o endpoint de login da sua API
-      const response = await api.post("/auth/web-login", credentials);
-
-      // Se a API responder com sucesso (status 200-299)
-      const { token: newToken } = response.data;
-
-      if (newToken) {
-        setToken(newToken);
-        localStorage.setItem("authTokenWebVarejoDaSorte", newToken);
-        navigate("/area-cliente"); // Redireciona para a área do cliente após o login
-        return { success: true };
-      }
-
-      // Caso a API responda com sucesso mas sem token (pouco provável)
-      return { success: false, message: "Token não recebido." };
-    } catch (error: any) {
-      console.error("Falha no login:", error);
-
-      // Lida com erros específicos da resposta da API
-      if (error.response) {
-        // Erro de "Não autorizado" (email ou senha errados)
-        if (error.response.status === 401) {
-          return {
-            success: false,
-            message: "Credenciais inválidas. Verifique seu e-mail e senha.",
-          };
-        }
-        // Outros erros vindos do servidor
-        return {
-          success: false,
-          message:
-            error.response.data.message || "Ocorreu um erro no servidor.",
-        };
-      }
-
-      // Erro de rede ou outro problema
-      return {
-        success: false,
-        message:
-          "Não foi possível conectar ao servidor. Verifique sua conexão.",
-      };
+      const response = await api.get<Client>(`/clients/web`);
+      return response.data;
+    } catch (err: any) {
+      console.error("Failed to fetch client:", err);
+      toast.error("Failed to fetch client data. Please try again.");
+      return null;
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const logout = () => {
-    setToken(null);
-    localStorage.removeItem("authTokenWebVarejoDaSorte");
-    navigate("/");
+  const getStorageClient = async (): Promise<Client | null> => {
+    // 1. Tenta obter da memória primeiro (mais rápido)
+    if (client) {
+      return client;
+    }
+
+    try {
+      let dataToStore = null;
+
+      // 2. Tenta obter do localStorage
+      //localStorage.removeItem(CLIENT_STORAGE_NAME);
+
+      const clientStoredString = localStorage.getItem(CLIENT_STORAGE_NAME);
+
+      if (clientStoredString != null) {
+        dataToStore = JSON.parse(clientStoredString) as Client;
+      } else {
+        // 3. Se não encontrar, busca da API (mais lento)
+        dataToStore = await getClient();
+        localStorage.setItem(CLIENT_STORAGE_NAME, JSON.stringify(dataToStore));
+      }
+
+      if (!dataToStore) throw new Error("não foi possível recuperar o cliente");
+
+      // Centraliza a atualização do estado e o retorno
+      setClient(dataToStore);
+      return dataToStore;
+    } catch (error) {
+      console.error(
+        "[AuthContext][client] Falha ao obter ou processar dados do cliente:",
+        error
+      );
+      //Limpar localStorage se o dado estiver corrompido
+      clear();
+      return null; // ou throw error, dependendo de como você quer lidar com a falha
+    }
   };
-    */
+
+  const updateSummary = async () => {
+    try {
+      const response = await api.get<Summary>(`/clients/summary`);
+      const dataSummary = response.data;
+      if (!dataSummary) throw new Error("sumario não recuperado");
+
+      localStorage.setItem(SUMMARY_STORAGE_NAME, JSON.stringify(dataSummary));
+      setSummary(dataSummary);
+      return dataSummary;
+    } catch (err: any) {
+      toast.error("Não foi possível recuperar o sumário do cliente");
+      return null;
+    }
+  };
+
+  const getSummary = (): Summary | null => {
+    // 1. Tenta obter da memória primeiro (mais rápido)
+    if (summary) {
+      return summary;
+    }
+
+    try {
+      const storedString = localStorage.getItem(SUMMARY_STORAGE_NAME);
+      if (!storedString) {
+        throw new Error("não foi possível recuperar o sumario");
+      }
+
+      const dataToStore = JSON.parse(storedString) as Summary;
+      setSummary(dataToStore);
+      return dataToStore;
+    } catch (error) {
+      console.error("Falha ao obter o sumário do cliente:", error);
+      return null;
+    }
+  };
+
   const me = async () => {
     try {
       if (!isAuthenticated) return false;
-
       await api.get(`/clients/me`);
+      await getStorageClient();
       return true;
     } catch (err: any) {
       //Não autorizado
       if ((err.status = 401)) {
-        setClient(null);
-        logout();
+        clear();
       }
       return false;
     }
   };
 
+  const clear = () => {
+    setClient(null);
+    localStorage.removeItem(CLIENT_STORAGE_NAME);
+    localStorage.removeItem(SUMMARY_STORAGE_NAME);
+    logout();
+  };
+
   const value = {
     client,
     me,
+    isLoading,
+    clear,
+    updateSummary,
+    getSummary,
   };
 
   return (
