@@ -59,7 +59,7 @@ const DefaultLayout = () => {
     },
     {
       name: "Lista de Chances",
-      path: "/used-chances",
+      path: "/lista-de-chances",
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
           <path

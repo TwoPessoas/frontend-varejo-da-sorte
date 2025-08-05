@@ -5,6 +5,9 @@ import DefaultLayout from "../layouts/DefaultLayout";
 import GuestLayout from "../layouts/GuestLayout";
 import HomePage from "../pages/home/HomePage";
 import ClientAreaPage from "../pages/protected/clientArea/ClientAreaPage";
+import PlayNowPage from "../pages/protected/playNow/PlayNowPage";
+import DrawNumberPage from "../pages/protected/drawNumber/DrawNumberPage";
+import GameOpportunitiePage from "../pages/protected/gameOpportunitie/GameOpportunitiePage";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +25,18 @@ const router = createBrowserRouter([
           {
             path: "/area-cliente",
             element: <ClientAreaPage />,
+          },
+          {
+            path: "/jogar-agora",
+            element: <PlayNowPage />,
+          },
+          {
+            path: "/numeros-da-sorte",
+            element: <DrawNumberPage />,
+          },
+          {
+            path: "/lista-de-chances",
+            element: <GameOpportunitiePage />,
           },
         ],
       },

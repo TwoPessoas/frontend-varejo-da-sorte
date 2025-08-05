@@ -539,3 +539,323 @@ html {
     -webkit-text-fill-color: transparent;
   }
 }
+
+/* ==================
+    DASHBOARD COMPONENT
+   ==================*/
+@layer utilities {
+  /* Dashboard specific animations */
+  .dashboard-card-enter {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+
+  .dashboard-card-enter-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: all 0.4s ease-out;
+  }
+
+  /* Progress bar animation */
+  @keyframes progressFill {
+    from {
+      width: 0%;
+    }
+    to {
+      width: var(--progress-width);
+    }
+  }
+
+  .progress-animated {
+    animation: progressFill 1s ease-out 0.5s forwards;
+    width: 0%;
+  }
+
+  /* Stats counter animation */
+  @keyframes countUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .stat-number {
+    animation: countUp 0.6s ease-out forwards;
+  }
+
+  /* Quick link hover effects */
+  .quick-link {
+    transition: all 0.3s ease;
+  }
+
+  .quick-link:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.15);
+  }
+
+  .quick-link:hover .quick-link-icon {
+    transform: scale(1.1);
+  }
+
+  /* Activity feed animations */
+  .activity-item {
+    transition: all 0.2s ease;
+  }
+
+  .activity-item:hover {
+    transform: translateX(4px);
+    background-color: rgba(253, 122, 0, 0.05);
+  }
+
+  /* Loading shimmer effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: calc(200px + 100%) 0;
+    }
+  }
+
+  .loading-shimmer {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Time remaining badge pulse */
+  .time-badge {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  /* Card hover lift effect */
+  .card-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* ==================
+    PLAY NOW COMPONENT
+   ==================*/
+
+@layer utilities {
+  /* Confetti animation */
+  @keyframes confetti-fall {
+    0% {
+      transform: translateY(-100vh) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(720deg);
+      opacity: 0;
+    }
+  }
+
+  .confetti {
+    animation: confetti-fall 3s linear infinite;
+  }
+
+  /* Pulse animation for loading dots */
+  @keyframes pulse-dot {
+    0%,
+    100% {
+      opacity: 0.4;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
+  .pulse-dot {
+    animation: pulse-dot 1.5s ease-in-out infinite;
+  }
+
+  /* Number reveal animation */
+  @keyframes number-reveal {
+    0% {
+      opacity: 0;
+      transform: scale(0.5) rotate(-180deg);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.2) rotate(0deg);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+  }
+
+  .number-reveal {
+    animation: number-reveal 1s ease-out forwards;
+  }
+
+  /* Video container hover effect */
+  .video-container {
+    transition: all 0.3s ease;
+  }
+
+  .video-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Button press animation */
+  .btn-press {
+    transition: all 0.1s ease;
+  }
+
+  .btn-press:active {
+    transform: scale(0.95);
+  }
+
+  /* Gradient background animation */
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .gradient-animated {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  /* Bounce animation for play button */
+  @keyframes bounce-play {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .bounce-play {
+    animation: bounce-play 2s ease-in-out infinite;
+  }
+}
+
+/* ==================
+    DRAW NUMBER COMPONENT
+   ==================*/
+@layer utilities {
+  /* Table animations */
+  .table-row-enter {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  .table-row-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+  }
+
+  /* Hover effects for table rows */
+  .table-row {
+    transition: all 0.2s ease;
+  }
+
+  .table-row:hover {
+    background-color: rgba(249, 250, 251, 0.8);
+    transform: translateX(2px);
+  }
+
+  /* Number highlight animation */
+  @keyframes number-highlight {
+    0% {
+      background-color: rgba(253, 122, 0, 0.1);
+    }
+    50% {
+      background-color: rgba(253, 122, 0, 0.2);
+    }
+    100% {
+      background-color: rgba(253, 122, 0, 0.1);
+    }
+  }
+
+  .number-highlight {
+    animation: number-highlight 2s ease-in-out infinite;
+  }
+
+  /* Status badge animations */
+  .status-badge {
+    transition: all 0.2s ease;
+  }
+
+  .status-badge:hover {
+    transform: scale(1.05);
+  }
+
+  /* Pagination button effects */
+  .pagination-btn {
+    transition: all 0.2s ease;
+  }
+
+  .pagination-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Search input focus effect */
+  .search-input:focus {
+    box-shadow: 0 0 0 3px rgba(253, 122, 0, 0.1);
+    border-color: #fd7a00;
+  }
+
+  /* Export button animation */
+  .export-btn {
+    transition: all 0.3s ease;
+  }
+
+  .export-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Mobile card hover effect */
+  .mobile-card {
+    transition: all 0.2s ease;
+  }
+
+  .mobile-card:hover {
+    background-color: rgba(249, 250, 251, 0.8);
+    transform: translateX(4px);
+  }
+
+  /* Loading shimmer for table */
+  .table-shimmer {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+  }
+}

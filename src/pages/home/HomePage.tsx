@@ -5,7 +5,10 @@ import RulesComponent from "./components/RulesComponent";
 import FaqComponent from "./components/FaqComponent";
 import FooterComponent from "./components/FooterComponent";
 
+export const DATA_FINAL_CAMPANHA = '2025-09-30';
+
 export default function HomePage() {
+  
   return (
     <>
       <HeroComponent />
