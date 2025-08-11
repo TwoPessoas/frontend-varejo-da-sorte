@@ -6,8 +6,10 @@ import type {
 } from "../types/DrawNumber";
 import toast from "react-hot-toast";
 import api from "../services/api";
+import { useClient } from "../contexts/ClientContext";
 
 export default function useDrawNumber(): UseDrawNumber {
+  const { clear } = useClient();
   const [drawNumbers, setDrawNumbers] = useState<DrawNumber[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -20,6 +22,9 @@ export default function useDrawNumber(): UseDrawNumber {
       setDrawNumbers(response.data.data);
       return response.data.data;
     } catch (err: any) {
+      if (err.response.status === 401) {
+        clear();
+      }
       toast.error(
         "Falha ao buscar números da sorte. Por favor, tente novamente."
       );
@@ -32,7 +37,6 @@ export default function useDrawNumber(): UseDrawNumber {
   const clearDrawNumbers = () => {
     setDrawNumbers([]);
   };
-  
 
   return {
     getMyDrawNumbers,

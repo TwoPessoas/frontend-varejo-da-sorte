@@ -27,4 +27,18 @@ export default class StringUtils {
 
     return true;
   }
+
+  static generateSecureToken(length: number) {
+    // O comprimento do array de bytes deve ser a metade do comprimento da string final,
+    // pois cada byte é convertido em 2 caracteres hexadecimais.
+    const byteArray = new Uint8Array(length / 2);
+    window.crypto.getRandomValues(byteArray);
+
+    // Converte o array de bytes para uma string hexadecimal.
+    const hexString = Array.from(byteArray)
+      .map((byte) => byte.toString(16).padStart(2, "0"))
+      .join("");
+
+    return hexString;
+  }
 }

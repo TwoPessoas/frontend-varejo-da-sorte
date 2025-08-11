@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import App from "../App"; // 1. Importe o novo componente App
 import ProtectedRoute from "../contexts/ProtectedRoute";
 import DefaultLayout from "../layouts/DefaultLayout";
@@ -8,6 +8,7 @@ import ClientAreaPage from "../pages/protected/clientArea/ClientAreaPage";
 import PlayNowPage from "../pages/protected/playNow/PlayNowPage";
 import DrawNumberPage from "../pages/protected/drawNumber/DrawNumberPage";
 import GameOpportunitiePage from "../pages/protected/gameOpportunitie/GameOpportunitiePage";
+import SecurityChangeConsentPage from "../pages/SecurityChangeConsent/SecurityChangeConsentPage";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
             path: "/",
             element: <HomePage />,
           },
+          {
+            path: "/consentir-alteracao-seguranca",
+            element: <SecurityChangeConsentPage />
+          }
         ],
       },
     ],

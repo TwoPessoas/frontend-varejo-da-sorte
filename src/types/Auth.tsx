@@ -2,6 +2,7 @@ import z from "zod";
 
 // Defina o tipo para as credenciais do formulário
 export const loginSchema = z.object({
+  securityToken: z.string().optional(),
   cpf: z
     .string()
     .nonempty("O CPF é obrigatório")
@@ -21,8 +22,13 @@ export interface LoginResult {
 
 // 2. Atualize a interface do contexto
 export interface AuthContextType {
+  isLoading: boolean;
   isAuthenticated: boolean;
   token: string | null;
   login: (credentials: LoginCredentials) => Promise<LoginResult>; // A função agora recebe credenciais e é assíncrona
   logout: () => void;
+  updateSecurityToken: (token: string) => Promise<{
+    success: boolean;
+    message: any;
+  }>;
 }
