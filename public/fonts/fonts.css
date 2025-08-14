@@ -1,0 +1,38 @@
+
+@font-face {
+    font-family: 'museo_sans_rounded900';
+    src: url('museosansrounded-900-webfont.woff2') format('woff2'),
+         url('museosansrounded-900-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'brandon_textbold';
+    src: url('hvd_fonts_-_brandontext-bold-webfont.woff2') format('woff2'),
+         url('hvd_fonts_-_brandontext-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'brandon_textmedium';
+    src: url('hvd_fonts_-_brandontext-medium-webfont.woff2') format('woff2'),
+         url('hvd_fonts_-_brandontext-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'brandon_textregular';
+    src: url('hvd_fonts_-_brandontext-regular-webfont.woff2') format('woff2'),
+         url('hvd_fonts_-_brandontext-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

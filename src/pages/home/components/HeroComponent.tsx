@@ -4,30 +4,15 @@ const HeroComponent = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-default-bg to-secondary/5 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center  overflow-hidden"
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-pattern opacity-30"></div>
-
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
-      <div className="absolute bottom-32 right-16 w-32 h-32 bg-secondary/10 rounded-full blur-xl animate-pulse delay-1000"></div>
-      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-primary/5 rounded-full blur-lg animate-pulse delay-500"></div>
 
       <div className="container relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Heading */}
           <div className="mb-8 fade-in">
-            <h1 className="text-responsive-xl font-bold text-gray-900 mb-6 text-balance">
-              Participe do Nosso
-              <span className="text-gradient block mt-2">
-                Sorteio de Brindes
-              </span>
-            </h1>
-            <p className="text-responsive-md text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Cadastre seu CPF e concorra a prêmios incríveis! É rápido, fácil e
-              totalmente gratuito.
-            </p>
+            <h1><img src="./imgs/logo-campanha.png" alt="Aniversário Atakarejo" className=""/></h1>
+            
           </div>
 
           {/* Form Card */}
@@ -35,54 +20,22 @@ const HeroComponent = () => {
 
           {/* Call to Action */}
           <div className="mt-12 fade-in">
-            <p className="text-lg text-gray-600 mb-6">
-              Não perca esta oportunidade única!
-            </p>
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
-              <div className="flex items-center space-x-2">
-                <svg
-                  className="w-4 h-4 text-primary"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>100% Gratuito</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <svg
-                  className="w-4 h-4 text-primary"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>Cadastro Rápido</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <svg
-                  className="w-4 h-4 text-primary"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>Dados Seguros</span>
+            <img src="./imgs/texto-campanha.png" alt="Aniversário Atakarejo" className=""/>            
+          </div>
+
+          {/* Rules*/}
+          <div className="rules grid md:grid-cols-2 lg:grid-cols-4 gap-16 items-center mt-20 fade-in overflow-hidden" >
+            <div className="rule text-center flex items-center">
+              <img src="./imgs/icon-market.png" alt="" className="mx-auto mb-4" />
+              <div className="content">
+                <h3 className="text-lg font-semibold text-white"><span className="highlight">A cada <span className="text-2xl">R$200</span></span> em compras.</h3>
+                
               </div>
             </div>
+
           </div>
+
+
         </div>
       </div>
 

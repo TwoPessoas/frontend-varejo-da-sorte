@@ -2,7 +2,7 @@ import axios from "axios";
 import { AUTH_TOKEN_NAME } from "../contexts/AuthContext";
 
 const api = axios.create({
-  baseURL: "http://localhost:8080/api",
+  baseURL: "https://api.leonardopessoa.com.br/api",
 });
 
 // ✨ Adicionando o Interceptor de Requisição ✨

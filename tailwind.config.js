@@ -48,7 +48,7 @@ export default {
         }
       },
       fontFamily: {
-        'sans': ['Montserrat', 'sans-serif'],
+        'sans': ['museo_sans_rounded900', 'sans-serif'],
       },
       fontWeight: {
         'regular': '400',

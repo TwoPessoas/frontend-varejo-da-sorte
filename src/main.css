@@ -1,5 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
 
+@font-face {
+    font-family: 'museo_sans_rounded900';
+    src: url('./fonts/museosansrounded-900-webfont.woff2') format('woff2'),
+         url('./fonts/museosansrounded-900-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'brandon_textbold';
+    src: url('./fonts/hvd_fonts_-_brandontext-bold-webfont.woff2') format('woff2'),
+         url('./fonts/hvd_fonts_-_brandontext-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'brandon_textmedium';
+    src: url('./fonts/hvd_fonts_-_brandontext-medium-webfont.woff2') format('woff2'),
+         url('./fonts/hvd_fonts_-_brandontext-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'brandon_textregular';
+    src: url('./fonts/hvd_fonts_-_brandontext-regular-webfont.woff2') format('woff2'),
+         url('./fonts/hvd_fonts_-_brandontext-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -107,7 +145,7 @@
   }
 
   .card-hover {
-    @apply card transition-all duration-300 hover:shadow-medium hover:-translate-y-1;
+    @apply card transition-all duration-300 hover:shadow-medium hover:-translate-y-1;   
   }
 
   /* Container */
@@ -229,6 +267,7 @@ html {
 /* ==================
     HERO COMPONENT
    ==================*/
+
 @layer utilities {
   /* Animações personalizadas */
   @keyframes fadeInUp {
@@ -255,6 +294,13 @@ html {
   }
 }
 
+#hero {
+  background-image: url('/imgs/hero-bg.jpg');
+}
+.highlight {
+  color: #fff600;
+}
+
 /* ==================
     ABOUT COMPONENT
    ==================*/
@@ -278,6 +324,7 @@ html {
   /* Hover effects para cards */
   .feature-card {
     transition: all 0.3s ease;
+    
   }
 
   .feature-card:hover {
