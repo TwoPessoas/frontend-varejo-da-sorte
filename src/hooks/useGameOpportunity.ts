@@ -6,8 +6,10 @@ import type {
   GameOpportunityResponse,
   UseGameOpportunity,
 } from "../types/GameOpportunity";
+import { useClient } from "../contexts/ClientContext";
 
 export default function useGameOpportunity(): UseGameOpportunity {
+  const { clear } = useClient();
   const [opportunities, setOpportunities] = useState<GameOpportunity[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -21,6 +23,9 @@ export default function useGameOpportunity(): UseGameOpportunity {
       setOpportunities(response.data.data);
       return response.data.data;
     } catch (err: any) {
+      if (err.response.status === 401) {
+        clear();
+      }
       toast.error(
         "Falha ao buscar números da sorte. Por favor, tente novamente."
       );

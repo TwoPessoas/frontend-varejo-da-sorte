@@ -906,3 +906,89 @@ html {
     animation: shimmer 1.5s infinite;
   }
 }
+
+
+/* ==================
+    UPDATE SECURITY COMPONENT
+   ==================*/
+@layer utilities {
+  /* Security page specific animations */
+  .security-fade-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .security-slide-in {
+    animation: slideInFromRight 0.5s ease-out forwards;
+  }
+
+  @keyframes slideInFromRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Button press effects */
+  .consent-btn {
+    transition: all 0.2s ease;
+  }
+
+  .consent-btn:active {
+    transform: scale(0.95);
+  }
+
+  /* Warning box animation */
+  .warning-box {
+    animation: pulse-warning 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-warning {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(245, 158, 11, 0);
+    }
+  }
+
+  /* Success/Error state animations */
+  .state-enter {
+    animation: bounceIn 0.6s ease-out forwards;
+  }
+
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Loading spinner enhancement */
+  .security-spinner {
+    border-width: 3px;
+    border-color: #fd7a00 transparent #fd7a00 transparent;
+    animation: spin 1s linear infinite;
+  }
+
+  /* Gradient header animation */
+  .security-header {
+    background: linear-gradient(-45deg, #fd7a00, #315e99, #fd7a00, #315e99);
+    background-size: 400% 400%;
+    animation: gradientShift 4s ease infinite;
+  }
+}

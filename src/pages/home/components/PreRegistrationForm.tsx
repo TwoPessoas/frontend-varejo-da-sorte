@@ -42,6 +42,8 @@ const PreRegistrationForm = () => {
 
   const onSubmit = async (data: LoginCredentials) => {
     try {
+      setIsLoading(true);
+
       if (!data.cpf.trim()) {
         toast.error("Por favor, digite seu CPF");
         return;
@@ -55,7 +57,8 @@ const PreRegistrationForm = () => {
       const result = await login(data);
       if (!result.success) {
         toast.error(
-          "Erro ao criar cliente. Por favor, verifique os dados e tente novamente."
+          result.message ||
+            "Erro ao criar cliente. Por favor, verifique os dados e tente novamente."
         );
       }
     } catch (err: any) {
