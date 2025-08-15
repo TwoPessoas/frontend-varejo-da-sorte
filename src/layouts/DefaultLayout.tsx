@@ -40,7 +40,7 @@ const DefaultLayout = () => {
 
   const navigationItems = [
     {
-      name: "Atualizar Dados Pessoais",
+      name: "Dados Pessoais",
       path: "/atualizar-dados-cadastrais",
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">

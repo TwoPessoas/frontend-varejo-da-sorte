@@ -89,7 +89,6 @@ const UpdateProfilePage = () => {
   const onSubmit = async (data: ClientFormValues) => {
     try {
       await updateClient(data);
-
     } catch (error) {
       console.error("Erro ao atualizar perfil:", error);
     }
@@ -109,17 +108,33 @@ const UpdateProfilePage = () => {
     );
   }
 
+  const birthdayFormatted = (dateStr: string | null | undefined): string => {
+    if (dateStr === null || dateStr === undefined) {
+      return "";
+    }
+    const date = dateStr.split("-");
+    if (date.length !== 3) {
+      return "";
+    }
+    const day = date[2];
+    const month = date[1];
+    const year = date[0];
+    return `${day}/${month}/${year}`;    
+  }
+
   return (
     <div className="p-6 lg:p-8">
       {/* Page Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          👤 Atualizar Dados Pessoais
+          👤 {client?.isPreRegister && `Atualizar `}Dados Pessoais
         </h1>
-        <p className="text-gray-600">
-          Mantenha suas informações sempre atualizadas para garantir o
-          recebimento dos prêmios
-        </p>
+        {client?.isPreRegister && (
+          <p className="text-gray-600">
+            Mantenha suas informações sempre atualizadas para garantir o
+            recebimento dos prêmios
+          </p>
+        )}
       </div>
 
       <div className="max-w-2xl mx-auto">
@@ -133,9 +148,15 @@ const UpdateProfilePage = () => {
               </label>
               <input
                 type="text"
-                {...register("name")}
+                {...register("name", {
+                  disabled: !client?.isPreRegister || false,
+                })}
                 className={`input ${
                   errors.name ? "border-red-500 focus:ring-red-500" : ""
+                } ${
+                  !client?.isPreRegister || false
+                    ? "bg-gray-200 text-gray-90"
+                    : ""
                 }`}
                 placeholder="Digite seu nome completo"
               />
@@ -154,7 +175,7 @@ const UpdateProfilePage = () => {
               <input
                 type="tel"
                 {...register("cpf", {
-                    disabled: true,
+                  disabled: true,
                 })}
                 className={`input bg-gray-200 text-gray-90`}
               />
@@ -165,14 +186,23 @@ const UpdateProfilePage = () => {
               <label className="block text-sm font-bold text-gray-900 mb-2">
                 Data de Nascimento *
               </label>
-              <input
-                type="date"
-                {...register("birthday")}
-                className={`input ${
-                  errors.birthday ? "border-red-500 focus:ring-red-500" : ""
-                }`}
-                max={new Date().toISOString().split("T")[0]}
-              />
+              {!client?.isPreRegister ? (
+                <input
+                  type="text"
+                  disabled={true}
+                  className={`input bg-gray-200 text-gray-90`}
+                  value={birthdayFormatted(client?.birthday)}
+                />
+              ) : (
+                <input
+                  type="date"
+                  {...register("birthday")}
+                  className={`input ${
+                    errors.birthday ? "border-red-500 focus:ring-red-500" : ""
+                  }`}
+                  max={new Date().toISOString().split("T")[0]}
+                />
+              )}
               {errors.birthday && (
                 <p className="mt-1 text-sm text-red-600">
                   {errors.birthday.message}
@@ -189,13 +219,19 @@ const UpdateProfilePage = () => {
                 type="tel" // Alterado para text
                 mask="(__) _____-____"
                 replacement={{ _: /\d/ }}
-                {...register("cel")}
+                {...register("cel", {
+                  disabled: !client?.isPreRegister || false,
+                })}
                 id="cel"
                 className={`input ${
                   errors.cel ? "border-red-500 focus:ring-red-500" : ""
+                } ${
+                  !client?.isPreRegister || false
+                    ? "bg-gray-200 text-gray-90"
+                    : ""
                 }`}
                 placeholder="(99) 99999-9999"
-                onChange={(e:any) => setValue("cel", e.target.value)}
+                onChange={(e: any) => setValue("cel", e.target.value)}
               />
               {errors.cel && (
                 <p className="mt-1 text-sm text-red-600">
@@ -211,9 +247,15 @@ const UpdateProfilePage = () => {
               </label>
               <input
                 type="email"
-                {...register("email")}
+                {...register("email", {
+                  disabled: !client?.isPreRegister || false,
+                })}
                 className={`input ${
                   errors.email ? "border-red-500 focus:ring-red-500" : ""
+                } ${
+                  !client?.isPreRegister || false
+                    ? "bg-gray-200 text-gray-90"
+                    : ""
                 }`}
                 placeholder="seu@email.com"
               />
@@ -224,127 +266,131 @@ const UpdateProfilePage = () => {
               )}
             </div>
 
-            {/* Alert Box - Confirmação de Dados */}
-            <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-              <div className="flex items-start space-x-3">
-                <svg
-                  className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <div className="flex-1">
-                  <h4 className="font-bold text-amber-900 mb-2">
-                    ⚠️ Confirmação de Responsabilidade
-                  </h4>
-                  <div className="flex items-start space-x-3">
-                    <input
-                      type="checkbox"
-                      {...register("dataConfirmation", {
-                        required: "Você deve confirmar a veracidade dos dados",
-                      })}
-                      className="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
+            {client?.isPreRegister && (
+              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                <div className="flex items-start space-x-3">
+                  <svg
+                    className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                      clipRule="evenodd"
                     />
-                    <div>
-                      <p className="text-amber-800 text-sm leading-relaxed">
-                        <strong>
-                          Confirmo que todos os dados preenchidos são reais e
-                          verdadeiros, assumindo total responsabilidade pelas
-                          informações fornecidas.
-                        </strong>
-                        Estou ciente de que dados falsos podem resultar na
-                        desqualificação da participação no sorteio.
-                      </p>
-                      {errors.dataConfirmation && (
-                        <p className="mt-1 text-sm text-red-600">
-                          {errors.dataConfirmation.message}
+                  </svg>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-amber-900 mb-2">
+                      ⚠️ Confirmação de Responsabilidade
+                    </h4>
+                    <div className="flex items-start space-x-3">
+                      <input
+                        type="checkbox"
+                        {...register("dataConfirmation", {
+                          required:
+                            "Você deve confirmar a veracidade dos dados",
+                        })}
+                        className="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
+                      />
+                      <div>
+                        <p className="text-amber-800 text-sm leading-relaxed">
+                          <strong>
+                            Confirmo que todos os dados preenchidos são reais e
+                            verdadeiros, assumindo total responsabilidade pelas
+                            informações fornecidas.
+                          </strong>
+                          Estou ciente de que dados falsos podem resultar na
+                          desqualificação da participação no sorteio.
                         </p>
-                      )}
+                        {errors.dataConfirmation && (
+                          <p className="mt-1 text-sm text-red-600">
+                            {errors.dataConfirmation.message}
+                          </p>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
 
-            {/* Termos da Campanha */}
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <div className="flex items-start space-x-3">
-                <input
-                  type="checkbox"
-                  {...register("termsAcceptance", {
-                    required: "Você deve aceitar os termos da campanha",
-                  })}
-                  className="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
-                />
-                <div className="flex-1">
-                  <p className="text-blue-800 text-sm leading-relaxed">
-                    <strong>
-                      Li e aceito os{" "}
-                      <a
-                        href="#terms"
-                        className="text-primary hover:underline font-bold"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Termos e Condições da Campanha
-                      </a>{" "}
-                      e o{" "}
-                      <a
-                        href="#privacy"
-                        className="text-primary hover:underline font-bold"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Regulamento do Sorteio
-                      </a>
-                      .
-                    </strong>{" "}
-                    Estou ciente das regras de participação e premiação.
-                  </p>
-                  {errors.termsAcceptance && (
-                    <p className="mt-1 text-sm text-red-600">
-                      {errors.termsAcceptance.message}
+            {client?.isPreRegister && (
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <div className="flex items-start space-x-3">
+                  <input
+                    type="checkbox"
+                    {...register("termsAcceptance", {
+                      required: "Você deve aceitar os termos da campanha",
+                    })}
+                    className="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
+                  />
+                  <div className="flex-1">
+                    <p className="text-blue-800 text-sm leading-relaxed">
+                      <strong>
+                        Li e aceito os{" "}
+                        <a
+                          href="#terms"
+                          className="text-primary hover:underline font-bold"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Termos e Condições da Campanha
+                        </a>{" "}
+                        e o{" "}
+                        <a
+                          href="#privacy"
+                          className="text-primary hover:underline font-bold"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Regulamento do Sorteio
+                        </a>
+                        .
+                      </strong>{" "}
+                      Estou ciente das regras de participação e premiação.
                     </p>
-                  )}
+                    {errors.termsAcceptance && (
+                      <p className="mt-1 text-sm text-red-600">
+                        {errors.termsAcceptance.message}
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
 
-            {/* Submit Button */}
-            <div className="pt-4">
-              <button
-                type="submit"
-                disabled={isLoading || !dataConfirmation || !termsAcceptance}
-                className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
-              >
-                {isLoading ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    <span>Atualizando dados...</span>
-                  </>
-                ) : (
-                  <>
-                    <svg
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    <span>Atualizar Dados</span>
-                  </>
-                )}
-              </button>
-            </div>
+            {client?.isPreRegister && (
+              <div className="pt-4">
+                <button
+                  type="submit"
+                  disabled={isLoading || !dataConfirmation || !termsAcceptance}
+                  className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                >
+                  {isLoading ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      <span>Atualizando dados...</span>
+                    </>
+                  ) : (
+                    <>
+                      <svg
+                        className="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      <span>Atualizar Dados</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            )}
           </div>
         </form>
 

@@ -3,6 +3,7 @@ import type { Client, ClientContextType, Summary } from "../types/Client";
 import api from "../services/api";
 import { useAuth } from "./AuthContext";
 import toast from "react-hot-toast";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const ClientContext = createContext<ClientContextType | undefined>(undefined);
 export const CLIENT_STORAGE_NAME = "authClientWebVarejoDaSorte";
@@ -13,6 +14,14 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
   const [summary, setSummary] = useState<Summary | null>(null);
   const { isAuthenticated, logout } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const setStorageClient = async (client: Client) => {
+    setClient(client);
+    localStorage.setItem(CLIENT_STORAGE_NAME, JSON.stringify(client));
+    await updateSummary();
+  };
 
   const updateClient = async (
     clientData: Partial<Client>
@@ -21,8 +30,10 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
 
     try {
       const response = await api.put<Client>(`/clients/web`, clientData);
-      await updateSummary();
-      return response.data;
+      const clientUpdated = response.data;
+      toast.success("Cliente atualizado com sucesso!");
+      setStorageClient(clientUpdated);
+      return clientUpdated;
     } catch (err: any) {
       console.error("Failed to update client:", err);
       toast.error("Falha ao atualizar o cliente. Tente novamente mais tarde!");
@@ -38,8 +49,9 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
 
     try {
       const response = await api.get<Client>(`/clients/web`);
-      await updateSummary();
-      return response.data;
+      const clientUpdated = response.data;
+      setStorageClient(clientUpdated);
+      return clientUpdated;
     } catch (err: any) {
       console.error("Failed to fetch client:", err);
       toast.error("Failed to fetch client data. Please try again.");
@@ -68,7 +80,6 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
       } else {
         // 3. Se não encontrar, busca da API (mais lento)
         dataToStore = await getClient();
-        localStorage.setItem(CLIENT_STORAGE_NAME, JSON.stringify(dataToStore));
       }
 
       if (!dataToStore) throw new Error("não foi possível recuperar o cliente");
@@ -127,7 +138,11 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
     try {
       if (!isAuthenticated) return false;
       await api.get(`/clients/me`);
-      await getStorageClient();
+      const clientStored =  await getStorageClient();
+      if (clientStored && clientStored?.isPreRegister && location.pathname !== "/atualizar-dados-cadastrais") {
+        navigate("/atualizar-dados-cadastrais");
+      }
+
       return true;
     } catch (err: any) {
       //Não autorizado
