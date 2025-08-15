@@ -1083,7 +1083,6 @@ html {
   }
 }
 
-
 /* ==================
     UPDATE SECURITY COMPONENT
    ==================*/
@@ -1123,7 +1122,8 @@ html {
   }
 
   @keyframes pulse-warning {
-    0%, 100% {
+    0%,
+    100% {
       box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
     }
     50% {
@@ -1166,5 +1166,132 @@ html {
     background: linear-gradient(-45deg, #fd7a00, #315e99, #fd7a00, #315e99);
     background-size: 400% 400%;
     animation: gradientShift 4s ease infinite;
+  }
+}
+
+/* ==================
+    UPDATE PROFILE PAGE
+   ==================*/
+@layer utilities {
+  /* Form specific animations */
+  .form-fade-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .form-slide-in {
+    animation: slideInFromLeft 0.4s ease-out forwards;
+  }
+
+  @keyframes slideInFromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Input focus effects */
+  .input-focus-effect {
+    transition: all 0.3s ease;
+  }
+
+  .input-focus-effect:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px -2px rgba(253, 122, 0, 0.2);
+  }
+
+  /* Checkbox custom styling */
+  .custom-checkbox {
+    transition: all 0.2s ease;
+  }
+
+  .custom-checkbox:checked {
+    background-color: #fd7a00;
+    border-color: #fd7a00;
+  }
+
+  .custom-checkbox:focus {
+    ring-color: rgba(253, 122, 0, 0.3);
+  }
+
+  /* Alert box animations */
+  .alert-box {
+    animation: alertSlideIn 0.5s ease-out forwards;
+  }
+
+  @keyframes alertSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Submit button states */
+  .submit-btn {
+    transition: all 0.3s ease;
+  }
+
+  .submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px -5px rgba(253, 122, 0, 0.4);
+  }
+
+  .submit-btn:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  /* Error input styling */
+  .input-error {
+    animation: shake 0.5s ease-in-out;
+  }
+
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translateX(-2px);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translateX(2px);
+    }
+  }
+
+  /* Success message animation */
+  .success-message {
+    animation: successSlideIn 0.6s ease-out forwards;
+  }
+
+  @keyframes successSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Loading spinner for submit button */
+  .submit-spinner {
+    border-width: 2px;
+    border-color: white transparent white transparent;
+    animation: spin 1s linear infinite;
   }
 }

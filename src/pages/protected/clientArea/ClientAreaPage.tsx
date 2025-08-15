@@ -2,7 +2,7 @@ import { useClient } from "../../../contexts/ClientContext";
 import { DATA_FINAL_CAMPANHA } from "../../home/HomePage";
 
 const ClientAreaPage = () => {
-  const { isLoading, getSummary } = useClient();
+  const { isLoading, updateSummary, getSummary } = useClient();
   
   // Calcular tempo restante da campanha
   const getTimeRemaining = () => {

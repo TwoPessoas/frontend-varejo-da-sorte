@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useClient } from "../contexts/ClientContext";
 
@@ -18,14 +18,46 @@ const DefaultLayout = () => {
     isInited.current = true;
     const getMe = async () => {
       await me();
+      console.log("[inited]", {
+        client,
+        active: isActivePath("/atualizar-dados-cadastrais"),
+      });
+      if (
+        client?.isPreRegister &&
+        !isActivePath("/atualizar-dados-cadastrais")
+      ) {
+        navigate("/atualizar-dados-cadastrais");
+      }
     };
 
-    if (!getSummary()) updateSummary();
+    if (!getSummary()) {
+      console.log('[DefaultLayout]', 'updateSummary')
+      updateSummary();
+    } 
 
     getMe();
   }, []);
 
   const navigationItems = [
+    {
+      name: "Dados Pessoais",
+      path: "/atualizar-dados-cadastrais",
+      icon: (
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fillRule="evenodd"
+            d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+            clipRule="evenodd"
+          />
+          <path d="M13.5 4.5a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1h-2a1 1 0 01-1-1v-2z" />
+          <path
+            fillRule="evenodd"
+            d="M15.5 6.5l1.293-1.293a1 1 0 011.414 1.414L16.914 8.914a1 1 0 01-1.414 0L14.207 7.621a1 1 0 011.414-1.414L15.5 6.5z"
+            clipRule="evenodd"
+          />
+        </svg>
+      ),
+    },
     {
       name: "Dashboard",
       path: "/area-cliente",
