@@ -5,33 +5,30 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+        'sans': ['museo_sans_rounded900', 'sans-serif'],        
+        'body': ['Montserrat', 'serif'],
+        'heading': ['DK Appelstroop','museo_sans_rounded900', 'serif'],
+      },
+      screens: {
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',  
+      },
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#fd7a00',
-          50: '#fff7ed',
-          100: '#ffedd5',
-          200: '#fed7aa',
-          300: '#fdba74',
-          400: '#fb923c',
-          500: '#fd7a00',
-          600: '#ea580c',
-          700: '#c2410c',
-          800: '#9a3412',
-          900: '#7c2d12',
+          DEFAULT: '#0057cc',
+          800: '#062075',
+          900: '#04104c',
         },
         secondary: {
-          DEFAULT: '#315e99',
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#315e99',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
+          DEFAULT: '#ffae14',
+          700: '#fa8300',
+          800: '#c76a00',
+          
         },
         'default-bg': '#f8f8f8',
         gray: {
@@ -47,9 +44,7 @@ export default {
           900: '#111827',
         }
       },
-      fontFamily: {
-        'sans': ['museo_sans_rounded900', 'sans-serif'],
-      },
+      
       fontWeight: {
         'regular': '400',
         'bold': '700',
@@ -68,6 +63,7 @@ export default {
         'medium': '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
         'strong': '0 10px 40px -10px rgba(0, 0, 0, 0.2)',
       },
+      
     },
   },
   plugins: [],

@@ -8,35 +8,16 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'brandon_textbold';
-    src: url('./fonts/hvd_fonts_-_brandontext-bold-webfont.woff2') format('woff2'),
-         url('./fonts/hvd_fonts_-_brandontext-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 
 @font-face {
-    font-family: 'brandon_textmedium';
-    src: url('./fonts/hvd_fonts_-_brandontext-medium-webfont.woff2') format('woff2'),
-         url('./fonts/hvd_fonts_-_brandontext-medium-webfont.woff') format('woff');
+    font-family: 'DK Appelstroop';
+    src: url('./fonts/DKAppelstroop-Regular.woff2') format('woff2'),
+        url('./fonts/DKAppelstroop-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
+    font-display: swap;
 }
 
-
-
-
-@font-face {
-    font-family: 'brandon_textregular';
-    src: url('./fonts/hvd_fonts_-_brandontext-regular-webfont.woff2') format('woff2'),
-         url('./fonts/hvd_fonts_-_brandontext-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
 
 @tailwind base;
 @tailwind components;
@@ -61,6 +42,10 @@
   h5,
   h6 {
     @apply font-bold text-gray-900 leading-tight;
+  }
+  .title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-heading font-bold;
+    letter-spacing: 0.05em;
   }
 
   h1 {
@@ -89,7 +74,7 @@
 
   /* Paragraphs */
   p {
-    @apply text-gray-700 leading-relaxed;
+    @apply  leading-relaxed;
   }
 
   /* Links */
@@ -125,6 +110,9 @@
   .btn-outline {
     @apply btn border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white focus:ring-primary/50;
   }
+  .btn-outline {
+    @apply btn border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white focus:ring-primary/50;
+  }
 
   .btn-ghost {
     @apply btn text-gray-700 bg-transparent hover:bg-gray-100 focus:ring-gray-300;
@@ -141,7 +129,7 @@
 
   /* Card Styles */
   .card {
-    @apply bg-white rounded-xl shadow-soft border border-gray-100 overflow-hidden;
+    @apply bg-white rounded-xl shadow-soft border border-gray-100 overflow-hidden font-body;
   }
 
   .card-hover {
@@ -301,9 +289,29 @@ html {
   color: #fff600;
 }
 
+.rules {
+  border: 8px solid #f76902;
+  border-bottom-width:0;
+  border-radius: 16px 16px 0 0;
+  background: #ff7d00 url('/imgs/mecanica-pattern.png');
+  padding: 15px;
+  
+}
+
+.rule h3 {    
+  line-height: 1;
+}
+  
+.rule .rule-icon  {
+  width: 50px;
+  height: auto;
+}
+
+
+
 /* ==================
     ABOUT COMPONENT
-   ==================*/
+==================*/
 @layer utilities {
   /* Animação de contador */
   @keyframes countUp {
@@ -378,27 +386,145 @@ html {
     transition: all 0.3s ease;
   }
 
-  /* Hover effects para logos */
-  .brand-logo {
-    transition: all 0.3s ease;
+  #brands {
+    color: #fff;
+    background: url('/imgs/marcas-pattern.png') #1532a6;
   }
 
-  .brand-logo:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
+/* MARCAS */
+.marcas-wrapper{
+  --diamante: 3;
+  --ouro: 4;
+  --prata: 6;  
+  --bronze: 8;
+  --apoio: 8;
+}
+
+  .marcas-wrapper > div { 
+    display: flex;
+    /* grid-gap: 10px; */
+    justify-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+  .marcas-wrapper > div > div {
+    padding: 5px;
+  }
+  
+  .logo {
+    max-width: 100%;
+    height: auto;    
+    display: block;
+    margin: 0 auto;
+  
+  }
+  .brand_item, 
+  .marca-item {
+    margin-bottom: 1rem;
+    background:  rgba(255,255,255, 0.2);
+    background-size: cover;
+    border-radius: 12px;
+    border: 1px solid #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .diamante {
+    /* grid-template-columns: repeat(1fr); */
+    flex-direction: row;
+  }
+  .diamante > div {
+    flex:  0 0 calc(100% / var(--diamante));
+    max-width: calc(100% / var(--diamante));
+  }
+  
+  .ouro > div {
+    flex:  0 0 calc(100% / var(--ouro));
+    max-width: calc(100% / var(--ouro));
+    
+  }
+  .ouro .marca-item {
+    border-radius: 18px;
+  }
+  .prata > div {
+    flex:  0 0 calc(100% / var(--prata));
+    max-width: calc(100% / var(--prata));
+  }
+  .prata .marca-item {
+    border-radius: 14px;
+  }
+  
+  .bronze > div {
+    flex:  0 0 calc(100% / var(--bronze));
+    max-width: calc(100% / var(--bronze));    
+  }
+  .bronze .marca-item {
+    border-radius: 10px;
+  }
+  
+  .apoio > div {
+    flex:  0 0 calc(100% / var(--apoio));
+    max-width: calc(100% / var(--apoio));
+  }
+  .bronze .marca-item {
+    border-radius: 6px;
+  }  
+  
+  @screen md{
+    .marcas-wrapper {
+      margin: 0 auto;
+    }
+    .marcas-wrapper{
+      --diamante: 5;
+      --ouro: 6;
+      --prata: 8;  
+      --bronze: 10;
+      --apoio: 14;
+    }
+
+    .diamante {
+        flex-direction: row;
+    }
+
   }
 
-  /* Categoria ativa */
-  .category-active {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px -5px rgba(253, 122, 0, 0.3);
+  @screen xl{
+    .marcas-wrapper {
+        /* max-width: 840px; */
+        margin: 0 auto;
+
+    }
+    .marcas-wrapper{
+      --diamante: 8;
+      --ouro: 10;
+      --prata: 12;  
+      --bronze: 14;
+      --apoio: 16;
+    }
+
+    .diamante {
+        flex-direction: row;
+    }
+
   }
+
 }
 
 /* ==================
     RULES COMPONENT
    ==================*/
 @layer utilities {
+  #rules { 
+    background: url('/imgs/regulamento-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+  }
   /* Animações para tabs */
   .tab-content-enter {
     opacity: 0;
@@ -420,18 +546,8 @@ html {
     opacity: 0;
     transform: translateX(-20px);
     transition: all 0.3s ease;
-  }
-
-  /* Hover effects para rule cards */
-  .rule-card {
-    transition: all 0.3s ease;
-  }
-
-  .rule-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
-  }
-
+  } 
+  
   /* Active tab indicator */
   .tab-active::after {
     content: "";
@@ -444,6 +560,64 @@ html {
     background: linear-gradient(to right, #fd7a00, #315e99);
     border-radius: 1px;
   }
+
+  /* TETXO DE REGULAMENTO */
+  .regulamento-text {
+    @apply font-body;
+  }
+  .regulamento-text ol, .regulamento-text ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;  
+    list-style: initial;
+    list-style-type:decimal-leading-zero;
+  }
+
+/* TABELAS */
+  .table-fixed {
+    table-layout: fixed;    
+  }
+  table {
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+  table thead {
+    background-color: rgba(255, 255, 255, .2);
+  }
+  table th {
+
+    color: #fff;
+    text-align: center; 
+    font-family: var(--font-bold);
+    background-color: #e67f38 !important;
+  }
+  table th.green {
+    background-color: #71b048 !important;
+  }
+  table th {
+    padding: 10px 5px;
+    border-left: 1px solid #fff;
+  }
+  table th:first-child {
+    border-left-width: 0;
+  }
+  table td {
+    color: #000;
+    background-color:rgba(0, 0, 0, .05) ; 
+    border-color: rgba(0, 0, 0, .2);
+    border-bottom-width: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  table td {
+  text-align: center;
+  }
+  .red {
+    color: red;
+  }
+  .blue {
+    color: blue;
+  }
+  
 }
 
 /* ==================
@@ -469,11 +643,13 @@ html {
   /* Hover effects para FAQ cards */
   .faq-card {
     transition: all 0.3s ease;
+    color: #901518;
+    border: 1px solid #901518;
+    background-color: #f2e3e4;
   }
 
-  .faq-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+  .faq-card:hover {    
+    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.5);
   }
 
   /* Accordion smooth animation */

@@ -28,99 +28,62 @@ const FAQComponent = () => {
     {
       id: 0,
       category: "Participação",
-      question: "Como faço para participar do sorteio?",
-      answer:
-        "É muito simples! Basta preencher o formulário no topo da página com seu CPF válido. Após o cadastro, você automaticamente estará participando do sorteio. Não é necessário nenhum pagamento ou compra.",
-      popular: true,
+      question: "Do que eu preciso para concorrer?",
+      answer:(
+        <p> Para participar da promoção <b>“Mega Fim de Ano Atakarejo”</b>, o cliente deve informar seu CPF no início da compra, efetuarem compras a partir de R$ 100,00 (cem reais) nas lojas Atakarejo participante da promoção, contendo ao menos um produto das marcas participantes da promoção e efetuar o cadastro na promoção através do Web App <a href='https://www.fimdeanoatakarejo.com.br' target='_blank'>www.fimdeanoatakarejo.com.br</a>.</p>
+      ),      
+      popular: false,
     },
     {
       id: 1,
       category: "Participação",
-      question: "Posso participar mais de uma vez?",
-      answer:
-        "Não, cada CPF pode participar apenas uma vez. Tentativas de cadastro duplicado serão automaticamente rejeitadas pelo sistema. Isso garante que todos tenham chances iguais de ganhar.",
-      popular: true,
+      question: "Posso cadastrar uma nota de qualquer data de compra?",
+      answer:(
+        <p>
+          As compras feitas no período de 10 de novembro de 2024 até o dia 04 de janeiro de 2025. Poderá ser contemplado com um dos brindes da promoção.
+        </p>
+      ),        
+      popular: false,
     },
     {
       id: 2,
       category: "Participação",
-      question: "Preciso pagar alguma taxa para participar?",
-      answer:
-        "Não! A participação é 100% gratuita. Nunca solicitamos pagamento de taxas, frete ou qualquer outro valor. Se alguém solicitar pagamento em nosso nome, é golpe - denuncie!",
-      popular: true,
+      question: "Posso me cadastrar mais de uma vez?",
+      answer:(
+        <p>Não haverá limites de chances por participante, podendo cada participante concorrer com quantas chances tiver direito, desde que atenda as condições previstas no regulamento.
+        </p>
+      ),        
+      popular: false,
     },
     {
       id: 3,
       category: "Sorteio",
-      question: "Quando será realizado o sorteio?",
-      answer:
-        "O sorteio será realizado ao final da campanha, que tem duração de 30 dias. A data exata será divulgada com 7 dias de antecedência em nosso site e redes sociais. O sorteio será transmitido ao vivo.",
+      question: "Qual o prêmio e como eu posso utilizá-lo?",
+      answer:(
+        <p>O prêmio é de 01 (um) Vale-compras Atakarejo no valor de R$ 500,00 (quinhentos reais), sem função de saque, vinculado ao CPF do participante e 01 (um) prêmio de R$ 50 mil (cinquenta mil reais).
+        </p>
+      ),
       popular: false,
     },
     {
       id: 4,
       category: "Sorteio",
-      question: "Como posso ter certeza de que o sorteio é legítimo?",
-      answer:
-        "Nosso sorteio é auditado por empresa independente e certificada. Todo o processo é gravado e transmitido ao vivo. Utilizamos sistema de sorteio aleatório verificado e aprovado pelos órgãos competentes.",
+      question: "Pessoas de qualquer idade podem participar?",
+      answer:(
+        <p>Qualquer pessoa física com idade igual ou superior a 18 (dezoito) anos.</p>
+      ),
       popular: false,
     },
     {
       id: 5,
       category: "Prêmios",
-      question: "Quais são os prêmios disponíveis?",
-      answer:
-        "Temos mais de 50 prêmios de diversas categorias: eletrônicos, produtos para casa, moda, beleza, esporte e muito mais. Os valores variam de R$ 100 a R$ 5.000. Todos os produtos são originais e com garantia.",
+      question: "Ganhei o vale compras mais quero dar para outra pessoa, é possível?",
+      answer:(
+        <p>Ficam os participantes cientes desde já, que a participação na promoção é individualizada, e não poderá, em hipótese alguma, transferir e/ou dividir com outro participante qualquer valor residual, independentemente do grau de parentesco e/ou amizade. Da mesma forma, não será admitida, por força de legislação fiscal, “divisão de valores de notas fiscais” entre participantes no ato da compra.</p>
+      ),
       popular: true,
     },
-    {
-      id: 6,
-      category: "Prêmios",
-      question: "Como recebo meu prêmio se for sorteado?",
-      answer:
-        "Ganhadores serão contatados em até 48h após o sorteio. Você terá 30 dias para confirmar seus dados e endereço. A entrega é gratuita e feita em todo o Brasil através de transportadora com seguro.",
-      popular: true,
-    },
-    {
-      id: 7,
-      category: "Prêmios",
-      question: "Posso trocar o prêmio por dinheiro?",
-      answer:
-        "Não, os prêmios não podem ser trocados por dinheiro ou outros produtos. Cada ganhador receberá exatamente o produto sorteado para seu CPF. Esta é uma regra legal das promoções comerciais.",
-      popular: false,
-    },
-    {
-      id: 8,
-      category: "Dados",
-      question: "Meus dados pessoais estão seguros?",
-      answer:
-        "Sim! Seguimos rigorosamente a LGPD (Lei Geral de Proteção de Dados). Seus dados são usados exclusivamente para esta promoção e não são compartilhados com terceiros. Você pode solicitar exclusão a qualquer momento.",
-      popular: false,
-    },
-    {
-      id: 9,
-      category: "Dados",
-      question: "Por que preciso fornecer meu CPF?",
-      answer:
-        "O CPF é necessário para validar sua participação e evitar cadastros duplicados. É também exigência legal para promoções comerciais. Garantimos total segurança e privacidade dos seus dados.",
-      popular: false,
-    },
-    {
-      id: 10,
-      category: "Suporte",
-      question: "Como posso tirar outras dúvidas?",
-      answer:
-        "Você pode entrar em contato através do nosso canal oficial de atendimento, disponível de segunda a sexta, das 9h às 18h. Nossos contatos estão no rodapé do site. Não respondemos por outros canais.",
-      popular: false,
-    },
-    {
-      id: 11,
-      category: "Suporte",
-      question: "E se eu não conseguir me cadastrar?",
-      answer:
-        "Verifique se seu CPF está correto e válido. Se o problema persistir, limpe o cache do navegador ou tente em outro dispositivo. Se ainda assim não funcionar, entre em contato com nosso suporte.",
-      popular: false,
-    },
+  // Adicione mais FAQs conforme necessário
   ];
 
   const categories = [
@@ -167,103 +130,25 @@ const FAQComponent = () => {
     <section
       id="faq"
       ref={sectionRef}
-      className="section bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
+      className="section bg-primary relative "
     >
-      {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-72 h-72 bg-secondary/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-
       <div className="container relative z-10">
-        {/* Section Header */}
-        <div
-          className={`text-center mb-16 transition-all duration-1000 ${
+        <div className="promo-logo absolute -top-40 left-1/2 transform -translate-x-1/2 ">
+          <img src="./imgs/super-premios.png" alt="6 Super Prêmios de 30Mil Reais" className={`transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <div className="inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-bold mb-4">
-            <svg
-              className="w-4 h-4 mr-2"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fillRule="evenodd"
-                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                clipRule="evenodd"
-              />
-            </svg>
-            Perguntas Frequentes
-          </div>
-
-          <h2 className="text-responsive-lg font-bold text-gray-900 mb-6 text-balance">
-            Tire Todas as Suas
-            <span className="text-gradient block">Dúvidas Aqui</span>
-          </h2>
-
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Preparamos as respostas para as dúvidas mais comuns sobre nosso
-            sorteio. Se não encontrar o que procura, entre em contato conosco!
-          </p>
+          }`}/>
         </div>
 
-        {/* Popular Questions */}
-        <div
-          className={`mb-16 transition-all duration-1000 delay-200 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">
-              Dúvidas Mais Comuns
-            </h3>
-            <p className="text-gray-600">As perguntas que mais recebemos</p>
-          </div>
+        {/* Section Header */}        
+        <header className={`sec_header text-center mb-8 transition-all duration-1000 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}>
+        <h1 className="title text-white">
+          Perguntas Frequentes
+          </h1>
+        </header>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {popularFAQs.slice(0, 3).map((faq, index) => (
-              <div
-                key={faq.id}
-                className="card p-6 cursor-pointer group hover-lift"
-                onClick={() => {
-                  setActiveCategory(faq.category);
-                  setOpenItems(new Set([faq.id]));
-                  document
-                    .getElementById("faq-list")
-                    .scrollIntoView({ behavior: "smooth" });
-                }}
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="flex items-start space-x-3 mb-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center">
-                    <svg
-                      className="w-4 h-4"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <span className="text-xs text-primary font-medium bg-primary/10 px-2 py-1 rounded-full">
-                    {faq.category}
-                  </span>
-                </div>
-                <h4 className="font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300">
-                  {faq.question}
-                </h4>
-                <p className="text-sm text-gray-600 line-clamp-3">
-                  {faq.answer}
-                </p>
-                <div className="mt-3 text-primary text-sm font-medium">
-                  Clique para ver resposta completa →
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        
 
         {/* Search and Filters */}
         <div
@@ -296,38 +181,13 @@ const FAQComponent = () => {
               />
             </div>
 
-            {/* Category Filters */}
-            <div className="flex flex-wrap justify-center gap-2 mb-6">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                    activeCategory === category
-                      ? "bg-primary text-white shadow-lg"
-                      : "bg-white text-gray-700 border border-gray-200 hover:border-primary hover:text-primary"
-                  }`}
-                >
-                  {category}
-                  {category !== "Todas" && (
-                    <span className="ml-1 text-xs opacity-75">
-                      (
-                      {
-                        faqData.filter((faq) => faq.category === category)
-                          .length
-                      }
-                      )
-                    </span>
-                  )}
-                </button>
-              ))}
-            </div>
+            
 
             {/* Control Buttons */}
             <div className="flex justify-center space-x-4">
               <button
                 onClick={openAll}
-                className="btn-outline text-sm px-4 py-2"
+                className="btn-outline btn-secondary text-sm px-4 py-2"
               >
                 Expandir Todas
               </button>
@@ -353,16 +213,16 @@ const FAQComponent = () => {
               {filteredFAQs.map((faq, index) => (
                 <div
                   key={faq.id}
-                  className="card overflow-hidden"
+                  className="card faq-card overflow-hidden"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   <button
                     onClick={() => toggleItem(faq.id)}
-                    className="w-full px-6 py-6 text-left focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-inset"
+                    className="w-full px-6 py-6 text-left focus:outline-none "
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex-1">
-                        <div className="flex items-center space-x-3 mb-2">
+                        {/* <div className="flex items-center space-x-3 mb-2">
                           <span className="text-xs text-primary font-medium bg-primary/10 px-2 py-1 rounded-full">
                             {faq.category}
                           </span>
@@ -371,17 +231,17 @@ const FAQComponent = () => {
                               Popular
                             </span>
                           )}
-                        </div>
-                        <h3 className="text-lg font-bold text-gray-900 text-left">
+                        </div> */}
+                        <h3 className="text-lg font-bold text-left text-[#901518]">
                           {faq.question}
                         </h3>
                       </div>
                       <div className="flex-shrink-0 ml-4">
                         <svg
-                          className={`w-6 h-6 text-gray-400 transition-transform duration-300 ${
+                          className={`w-6 h-6  transition-transform duration-300 ${
                             openItems.has(faq.id) ? "transform rotate-180" : ""
                           }`}
-                          fill="currentColor"
+                          fill="#901518"
                           viewBox="0 0 20 20"
                         >
                           <path
@@ -400,10 +260,10 @@ const FAQComponent = () => {
                     }`}
                   >
                     <div className="px-6 pb-6">
-                      <div className="border-t border-gray-100 pt-4">
-                        <p className="text-gray-600 leading-relaxed">
+                      <div className="border-t border-[#901518] pt-4  leading-relaxed font-weight-light ">
+                        
                           {faq.answer}
-                        </p>
+                        
                       </div>
                     </div>
                   </div>

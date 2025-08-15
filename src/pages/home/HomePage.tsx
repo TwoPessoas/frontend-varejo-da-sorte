@@ -29,7 +29,7 @@ export default function HomePage() {
   return (
     <>
       <HeroComponent />
-      <AboutComponent />
+      {/* <AboutComponent /> */}
       <BrandsComponent />
       <RulesComponent />
       <FaqComponent />

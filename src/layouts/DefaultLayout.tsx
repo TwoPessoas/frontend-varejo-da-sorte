@@ -100,9 +100,9 @@ const DefaultLayout = () => {
   }
 
   return (
-    <div className="min-h-screen bg-default-bg">
+    <div className="min-h-screen bg-secondary">
       {/* Top Header */}
-      <header className="bg-white shadow-soft border-b border-gray-100 sticky top-0 z-40">
+      <header className="bg-primary shadow-soft border-b border-gray-100 sticky top-0 z-40">
         <div className="container">
           <div className="flex items-center justify-between h-16">
             {/* Logo e Back to Home */}
@@ -111,7 +111,8 @@ const DefaultLayout = () => {
                 onClick={handleBackToHome}
                 className="flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors duration-200"
               >
-                <svg
+                <img src="./imgs/logo.svg" alt="Atakarejo" className="w-[120px]" />
+                {/* <svg
                   className="w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -122,7 +123,7 @@ const DefaultLayout = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="font-medium">Voltar para Home</span>
+                <span className="font-medium">Voltar para Home</span> */}
               </button>
 
               <div className="hidden md:block w-px h-6 bg-gray-300"></div>
