@@ -31,4 +31,5 @@ export interface ClientContextType {
   clear: () => void;
   updateSummary: () => Promise<Summary | null>;
   getSummary: () => Summary | null;
+  updateClient: (clientData: Partial<Client>) => Promise<Client | null>;
 }

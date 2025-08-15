@@ -9,6 +9,7 @@ import PlayNowPage from "../pages/protected/playNow/PlayNowPage";
 import DrawNumberPage from "../pages/protected/drawNumber/DrawNumberPage";
 import GameOpportunitiePage from "../pages/protected/gameOpportunitie/GameOpportunitiePage";
 import SecurityChangeConsentPage from "../pages/SecurityChangeConsent/SecurityChangeConsentPage";
+import UpdateProfilePage from "../pages/protected/updateProfile/UpdateProfilePage";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
         children: [
+          {
+            path: "/atualizar-dados-cadastrais",
+            element: <UpdateProfilePage />,
+          },
           {
             path: "/area-cliente",
             element: <ClientAreaPage />,

@@ -14,12 +14,31 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
   const { isAuthenticated, logout } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
 
+  const updateClient = async (
+    clientData: Partial<Client>
+  ): Promise<Client | null> => {
+    setIsLoading(true);
+
+    try {
+      const response = await api.put<Client>(`/clients/web`, clientData);
+      await updateSummary();
+      return response.data;
+    } catch (err: any) {
+      console.error("Failed to update client:", err);
+      toast.error("Falha ao atualizar o cliente. Tente novamente mais tarde!");
+      return null;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   // Fetch a single client by ID
   const getClient = async (): Promise<Client | null> => {
     setIsLoading(true);
 
     try {
       const response = await api.get<Client>(`/clients/web`);
+      await updateSummary();
       return response.data;
     } catch (err: any) {
       console.error("Failed to fetch client:", err);
@@ -72,7 +91,7 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
     try {
       const response = await api.get<Summary>(`/clients/summary`);
       const dataSummary = response.data;
-      if (!dataSummary) throw new Error("sumario não recuperado");
+      if (!dataSummary) return null;
 
       localStorage.setItem(SUMMARY_STORAGE_NAME, JSON.stringify(dataSummary));
       setSummary(dataSummary);
@@ -92,7 +111,7 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
     try {
       const storedString = localStorage.getItem(SUMMARY_STORAGE_NAME);
       if (!storedString) {
-        throw new Error("não foi possível recuperar o sumario");
+        return null;
       }
 
       const dataToStore = JSON.parse(storedString) as Summary;
@@ -133,6 +152,7 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
     clear,
     updateSummary,
     getSummary,
+    updateClient,
   };
 
   return (
