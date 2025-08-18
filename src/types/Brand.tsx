@@ -1,10 +1,9 @@
-import type { Client } from "./Client";
-
 export interface Brand {
-  id: number;
-  name: string;
   category: string;
-  logo: string;
+  logos: string[];
+  //id: number;
+  //name: string;
+  //logo: string;
   //description: string;
   //featured: boolean;
 }
