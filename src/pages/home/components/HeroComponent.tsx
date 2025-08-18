@@ -4,27 +4,32 @@ const HeroComponent = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center  overflow-hidden"
+      className="relative  flex items-center justify-center  overflow-hidden"
     >
 
-      <div className="container relative z-10">
-        <div className="max-w-4xl mx-auto ">
+      <div className="container relative z-10 pt-16">
+        <div className=" md:max-w-4xl mx-auto ">
           {/* Main Heading */}
-          <div className="mb-8 fade-in">
+          <div className="mb-8 md:mb-12 lg:mb-18 fade-in max-w-72 md:max-w-96  lg:max-w-xl mx-auto fade-in">
             <h1><img src="./imgs/logo-campanha.png" alt="Aniversário Atakarejo" className=""/></h1>
             
           </div>
+          <div className="md:flex md:justify-center md:align-top md:gap-3">
 
-          {/* Form Card */}
-          <PreRegistrationForm />
+            {/* Form Card */}
+            <div className="fade-in">
+              <PreRegistrationForm />
+            </div>
 
-          {/* Call to Action */}
-          <div className="mt-12 fade-in">
-            <img src="./imgs/texto-campanha.png" alt="Aniversário Atakarejo" className=""/>            
+            {/* MOTE CAMPANHA */}
+            <div className="mt-12 md:mt-0 fade-in max-w-96 mx-auto md:max-w-72 lg:max-w-96 -order-1">
+              <img src="./imgs/texto-campanha.png" alt="Aniversário Atakarejo" className=""/>            
+            </div>
+
           </div>
 
           {/* Rules*/}
-          <div className="rules grid md:grid-cols-2 lg:grid-cols-4 gap-4 items-center mt-20 fade-in overflow-hidden" >
+          <div className="rules grid md:grid-cols-2 lg:grid-cols-4 gap-4 items-center mt-20  overflow-hidden fade-in" >
             <div className="rule flex items-center">
               <img src="./imgs/icon-market.png" alt=""  className="rule-icon me-2"/>
               <div className="content">
@@ -62,11 +67,12 @@ const HeroComponent = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
         </div>
-      </div>
+      </div> */}
+
     </section>
   );
 };

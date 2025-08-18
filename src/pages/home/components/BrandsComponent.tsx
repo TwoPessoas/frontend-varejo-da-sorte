@@ -28,104 +28,29 @@ const BrandsComponent = () => {
   const brands: Brand[] = [
     {
       id: 1,
-      name: "TechPro",
-      category: "tecnologia",
-      logo: "/api/placeholder/120/60",
-      description: "Eletrônicos e gadgets inovadores",
-      featured: true,
+      name: "Itaipava Premium",
+      category: "diamante",
+      logo: "./imgs/marcas/diamante/itaipava-premium.png",
+      //description: "Eletrônicos e gadgets inovadores",
+      //featured: true,
     },
-    {
-      id: 2,
-      name: "StyleWear",
-      category: "moda",
-      logo: "/api/placeholder/120/60",
-      description: "Moda e acessórios premium",
-      featured: false,
-    },
-    {
-      id: 3,
-      name: "HomeComfort",
-      category: "casa",
-      logo: "/api/placeholder/120/60",
-      description: "Produtos para casa e decoração",
-      featured: true,
-    },
-    {
-      id: 4,
-      name: "FitLife",
-      category: "esporte",
-      logo: "/api/placeholder/120/60",
-      description: "Equipamentos e suplementos fitness",
-      featured: false,
-    },
-    {
-      id: 5,
-      name: "BeautyGlow",
-      category: "beleza",
-      logo: "/api/placeholder/120/60",
-      description: "Cosméticos e cuidados pessoais",
-      featured: true,
-    },
-    {
-      id: 6,
-      name: "GamerZone",
-      category: "tecnologia",
-      logo: "/api/placeholder/120/60",
-      description: "Games e acessórios para gamers",
-      featured: false,
-    },
-    {
-      id: 7,
-      name: "BookWorld",
-      category: "educacao",
-      logo: "/api/placeholder/120/60",
-      description: "Livros e materiais educacionais",
-      featured: false,
-    },
-    {
-      id: 8,
-      name: "AutoParts",
-      category: "automotivo",
-      logo: "/api/placeholder/120/60",
-      description: "Peças e acessórios automotivos",
-      featured: true,
-    },
-    {
-      id: 9,
-      name: "KitchenMaster",
-      category: "casa",
-      logo: "/api/placeholder/120/60",
-      description: "Utensílios e eletrodomésticos",
-      featured: false,
-    },
-    {
-      id: 10,
-      name: "TravelGear",
-      category: "viagem",
-      logo: "/api/placeholder/120/60",
-      description: "Equipamentos para viagem",
-      featured: false,
-    },
+  
   ];
 
   const categories: BrandCategory[] = [
-    { id: "all", name: "Todas as Marcas", icon: "🏢" },
-    { id: "tecnologia", name: "Tecnologia", icon: "💻" },
-    { id: "moda", name: "Moda", icon: "👕" },
-    { id: "casa", name: "Casa & Decoração", icon: "🏠" },
-    { id: "esporte", name: "Esporte & Fitness", icon: "🏃‍♂️" },
-    { id: "beleza", name: "Beleza", icon: "💄" },
-    { id: "educacao", name: "Educação", icon: "📚" },
-    { id: "automotivo", name: "Automotivo", icon: "🚗" },
-    { id: "viagem", name: "Viagem", icon: "✈️" },
+    { id: "diamante",  icon: "🏢" },
+    { id: "ouro", icon: "💻" },
+    { id: "prata",  icon: "👕" },
+    { id: "bronze", icon: "🏠" },
+    { id: "apoio",  icon: "🏃‍♂️" },
   ];
-
+/* 
   const filteredBrands =
     activeCategory === "all"
       ? brands
       : brands.filter((brand) => brand.category === activeCategory);
 
-  const featuredBrands = brands.filter((brand) => brand.featured);
+  const featuredBrands = brands.filter((brand) => brand.featured); */
 
   // Componente para placeholder de logo
   const LogoPlaceholder = ({ name, featured }: LogoProps) => (
@@ -144,14 +69,24 @@ const BrandsComponent = () => {
     <section
       id="brands"
       ref={sectionRef}
-      className="section relative "
+      className="section relative z-10 pb-[340px]"
     >
       {/* Background Elements */}
-      <div className="absolute bottom-0 left-10 w-64 ">
-        <img src="./imgs/modelo-campanha.png" alt="Concorra a centenas de vale-coompras de R$750,00 " />
+      <div className="absolute bottom-0 left-0 w-full ">
+        <img src="./imgs/modelo-campanha.png" alt="Concorra a centenas de vale-coompras de R$750,00 " className="max-w-[280px] mx-auto"  />
       </div>
-      <div className="absolute bottom-20 left-10 w-80 h-80 bg-secondary/5 rounded-full blur-3xl"></div>
+      <div className={`ballon-wrapper justify-start -top-32  right-0 w-[30vw]   transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
+        <img src="./imgs/balao-azul.png" alt=" " className="ballon ballon-animated ml-[50%]" />
+      </div>
+      <div className={`ballon-wrapper justify-end bottom-32  left-0 w-[30vw]   transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
+        <img src="./imgs/balao-laranja.png" alt=" " className="ballon ballon-animated mr-[30%]" />
+      </div>
 
+      {/* SECTION CONTENT */}
       <div className="container relative z-10">
         {/* Section Header */}
         <div
@@ -165,9 +100,40 @@ const BrandsComponent = () => {
         </div>
 
         {/* BRANDS */}
+{/*                   
+                    {brands.map((brand, index) => (
+                      <div
+                        key={index}
+                        className={`g-3 ${brand.category}`}
+                        style={{ animationDelay: `${index * 100}ms` }}
+                      > 
+
+                        <div className="g-3">
+                          <div className="marca-item">
+
+                            {brand.logo ? (
+                              <img
+                                src={brand.logo}
+                                alt={brand.name}
+                                className="logo lazyload g-4"
+                              />
+                            ) : (
+                              <LogoPlaceholder
+                                name={brand.name}
+                                //featured={brand.featured}
+                              />
+                            )}
+                          </div>
+                        </div>
+                        
+                      </div>
+                    ))} 
+ */}
         <div className="marcas-wrapper brands">
                 {/* <!-- DIAMANTE --> */}
                 <div className="diamante">
+
+                    
                   <div className="g-3">
                     <div className="marca-item">
                           <img src="./imgs/marcas/diamante/itaipava-premium.png" className="logo lazyload g-4" />

@@ -78,23 +78,20 @@ const PreRegistrationForm = () => {
 
   return (
     <div className="max-w-md mx-auto fade-in">
-      <div className="card p-8 shadow-strong">
+      <div className="bg-white/90 rounded-xl border-secondary-800 p-8 shadow-strong">
         {!client ? (
           <>
-            <div className="mb-6">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                Faça seu Cadastro
-              </h3>
-              <p className="text-gray-600">Digite seu CPF para participar</p>
+            <div className="mb-2">              
+              <h3 className="text-primary text-lg text-center uppercase">Digite seu CPF para participar</h3>
             </div>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div>
-                <label
+                {/* <label
                   htmlFor="cpf"
                   className="block text-sm font-bold text-gray-700 mb-2"
                 >
                   CPF *
-                </label>
+                </label> */}
 
                 <InputMask
                   type="tel"
@@ -115,7 +112,7 @@ const PreRegistrationForm = () => {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="btn-primary flex-1 relative"
+                  className="btn-primary flex-1 relative "
                 >
                   {isLoading ? (
                     <>

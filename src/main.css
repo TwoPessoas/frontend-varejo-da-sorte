@@ -96,7 +96,7 @@
 @layer components {
   /* Button Base Styles */
   .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-bold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-bold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed uppercase;
   }
 
   .btn-primary {
@@ -120,7 +120,7 @@
 
   /* Input Styles */
   .input {
-    @apply w-full px-4 py-3 text-base border border-gray-300 rounded-lg bg-white placeholder-gray-500 transition-colors duration-200 focus:border-primary focus:ring-1 focus:ring-primary;
+    @apply w-full px-4 py-3 text-primary border border-secondary rounded-lg bg-white placeholder-gray-500 transition-colors duration-200 focus:border-primary focus:ring-1 focus:ring-primary;
   }
 
   .input-error {
@@ -221,6 +221,34 @@
   .hover-scale {
     @apply transition-transform duration-200 hover:scale-105;
   }
+
+
+    /* BALOES */
+    
+    .ballon-wrapper {
+      @apply flex overflow-hidden pointer-events-none absolute pt-2 
+    }
+    .ballon {
+      @apply flex-shrink-0 flex-grow-0;
+    }
+   /* BALAO ANIMATEd*/
+  @keyframes ballon-fly {
+    0%     {
+      transform: translateY(0);
+      filter: blur(0px);
+    }
+    50%{
+      filter: blur(.5px);
+    }
+    100% {
+      transform: translateY(-10px); 
+      filter: blur(0px);
+    }
+  }
+
+  .ballon-animated {
+    animation:ballon-fly 3s ease-in-out infinite alternate;
+  }
 }
 
 /* Smooth scrolling for anchor links */
@@ -283,7 +311,8 @@ html {
 }
 
 #hero {
-  background-image: url('/imgs/hero-bg.jpg');
+  background: url('/imgs/hero-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 .highlight {
   color: #fff600;
@@ -390,6 +419,8 @@ html {
     color: #fff;
     background: url('/imgs/marcas-pattern.png') #1532a6;
   }
+
+
 
 /* MARCAS */
 .marcas-wrapper{

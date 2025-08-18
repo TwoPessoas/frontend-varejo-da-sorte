@@ -30,7 +30,7 @@ const FAQComponent = () => {
       category: "Participação",
       question: "Do que eu preciso para concorrer?",
       answer:(
-        <p> Para participar da promoção <b>“Mega Fim de Ano Atakarejo”</b>, o cliente deve informar seu CPF no início da compra, efetuarem compras a partir de R$ 100,00 (cem reais) nas lojas Atakarejo participante da promoção, contendo ao menos um produto das marcas participantes da promoção e efetuar o cadastro na promoção através do Web App <a href='https://www.fimdeanoatakarejo.com.br' target='_blank'>www.fimdeanoatakarejo.com.br</a>.</p>
+        <p> Para participar da promoção <b>“Aniversário Atakarejo”</b>, o cliente deve informar seu CPF no início da compra, efetuarem compras a partir de R$ 200,00 (duzentos reais) nas lojas Atakarejo participante da promoção, contendo ao menos um produto das marcas participantes da promoção e efetuar o cadastro na promoção através do Web App <a href='https://www.aniversarioatakarejo.com.br' target='_blank'>www.aniversarioatakarejo.com.br</a>.</p>
       ),      
       popular: false,
     },
@@ -40,7 +40,7 @@ const FAQComponent = () => {
       question: "Posso cadastrar uma nota de qualquer data de compra?",
       answer:(
         <p>
-          As compras feitas no período de 10 de novembro de 2024 até o dia 04 de janeiro de 2025. Poderá ser contemplado com um dos brindes da promoção.
+          As compras feitas no período de 31 de agosto de 2025 até o dia 30 de setembro de 2025. Poderá ser contemplado com um dos brindes da promoção.
         </p>
       ),        
       popular: false,
@@ -60,7 +60,7 @@ const FAQComponent = () => {
       category: "Sorteio",
       question: "Qual o prêmio e como eu posso utilizá-lo?",
       answer:(
-        <p>O prêmio é de 01 (um) Vale-compras Atakarejo no valor de R$ 500,00 (quinhentos reais), sem função de saque, vinculado ao CPF do participante e 01 (um) prêmio de R$ 50 mil (cinquenta mil reais).
+        <p>O prêmio é de 01 (um) Vale-compras Atakarejo no valor de R$ 750,00 (setecentos e cinquenta reais), sem função de saque, vinculado ao CPF do participante e 01 (um) prêmio de R$ 50 mil (cinquenta mil reais).
         </p>
       ),
       popular: false,
