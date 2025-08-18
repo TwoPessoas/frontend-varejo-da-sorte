@@ -100,7 +100,7 @@
   }
 
   .btn-primary {
-    @apply btn bg-primary text-white hover:bg-primary/90 focus:ring-primary/50 shadow-md hover:shadow-lg;
+    @apply btn bg-primary text-white hover:bg-primary-600 focus:ring-primary/50 shadow-md hover:text-white hover:shadow-lg focus:text-white;
   }
 
   .btn-secondary {
@@ -110,8 +110,8 @@
   .btn-outline {
     @apply btn border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white focus:ring-primary/50;
   }
-  .btn-outline {
-    @apply btn border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white focus:ring-primary/50;
+  .btn-outline-default {
+    @apply btn border-2 border-white text-white bg-white/20 hover:bg-primary hover:text-white focus:ring-primary/50 focus:bg-white focus:text-primary;
   }
 
   .btn-ghost {
@@ -143,7 +143,7 @@
 
   /* Section Spacing */
   .section {
-    @apply py-16 lg:py-24;
+    @apply py-16 lg:py-12;
   }
 
   .section-sm {
@@ -238,7 +238,7 @@
       filter: blur(0px);
     }
     50%{
-      filter: blur(.5px);
+      filter: blur(1px);
     }
     100% {
       transform: translateY(-10px); 
@@ -311,7 +311,7 @@ html {
 }
 
 #hero {
-  background: url('/imgs/hero-bg.jpg') no-repeat center center fixed;
+  background: url('/imgs/hero-bg.jpg') no-repeat center center;
   background-size: cover;
 }
 .highlight {
@@ -507,10 +507,7 @@ html {
     border-radius: 6px;
   }  
   
-  @screen md{
-    .marcas-wrapper {
-      margin: 0 auto;
-    }
+  @screen md{    
     .marcas-wrapper{
       --diamante: 5;
       --ouro: 6;
@@ -525,12 +522,7 @@ html {
 
   }
 
-  @screen xl{
-    .marcas-wrapper {
-        /* max-width: 840px; */
-        margin: 0 auto;
-
-    }
+  @screen xl{   
     .marcas-wrapper{
       --diamante: 8;
       --ouro: 10;
@@ -547,7 +539,7 @@ html {
 
 }
 
-/* ==================
+/* ==================.section
     RULES COMPONENT
    ==================*/
 @layer utilities {

@@ -110,10 +110,21 @@ const RulesComponent = () => {
   return (
     <section
       id="rules"
-      ref={sectionRef}
-      className="section relative overflow-hidden"
+      ref={sectionRef}      
+      className={`section relative z-10 transition-all duration-1000 delay-400 ${
+            isVisible ? "opacity-100 " : "opacity-0"
+          }`}
     >
       
+      <div className="ballon-wrapper justify-start -top-32  right-0 w-[30vw] 
+                      md:w-[150px] md:-top-20" >
+          <img src="./imgs/balao-laranja.png" alt=" " className="ballon ballon-animated ml-[50%]" />
+      </div>
+      
+      <div className="ballon-wrapper justify-end bottom-32  left-0 w-[30vw]
+                      md:w-[180px] md:bottom-20 md:left-[2vw]" >
+          <img src="./imgs/balao-azul.png" alt=" " className="ballon ballon-animated mr-[30%] md:mr-0" />
+      </div>
       
 
       <div className="container relative z-10">
@@ -176,7 +187,7 @@ const RulesComponent = () => {
 
         {/* Call to Action */}
         <div
-          className={`text-center mt-16 transition-all duration-1000 delay-1000 ${
+          className={`text-center mt-6 transition-all duration-1000 delay-1000 mb-20 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >

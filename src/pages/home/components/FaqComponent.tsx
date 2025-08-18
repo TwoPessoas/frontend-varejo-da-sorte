@@ -129,10 +129,19 @@ const FAQComponent = () => {
   return (
     <section
       id="faq"
-      ref={sectionRef}
-      className="section bg-primary relative "
+      ref={sectionRef}      
+      className={`section bg-primary relative z-10 transition-all duration-1000 ${
+            isVisible ? "opacity-100 " : "opacity-0"
+          }`}
     >
-      <div className="container relative z-10">
+    <div className="w-full h-full absolute top-0 left-0 right-0 z-20 pointer-events-none">
+      <img src="./imgs/convete-top.png" alt="" />
+    </div>
+     <div className="w-full h-full absolute top-0 left-0 right-0 z-10 pointer-events-none">
+      <img src="./imgs/confetes-back.png" alt="" />
+    </div>
+
+      <div className="container relative z-30">
         <div className="promo-logo absolute -top-40 left-1/2 transform -translate-x-1/2 ">
           <img src="./imgs/super-premios.png" alt="6 Super Prêmios de 30Mil Reais" className={`transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -152,13 +161,13 @@ const FAQComponent = () => {
 
         {/* Search and Filters */}
         <div
-          className={`mb-12 transition-all duration-1000 delay-400 ${
+          className={`mb-6 transition-all duration-1000 delay-400 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
           <div className="max-w-2xl mx-auto">
             {/* Search Bar */}
-            <div className="relative mb-8">
+            {/* <div className="relative mb-8">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <svg
                   className="h-5 w-5 text-gray-400"
@@ -179,7 +188,7 @@ const FAQComponent = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="input pl-10 text-center"
               />
-            </div>
+            </div> */}
 
             
 
@@ -187,13 +196,13 @@ const FAQComponent = () => {
             <div className="flex justify-center space-x-4">
               <button
                 onClick={openAll}
-                className="btn-outline btn-secondary text-sm px-4 py-2"
+                className="btn-outline-default text-sm px-4 py-2"
               >
                 Expandir Todas
               </button>
               <button
                 onClick={closeAll}
-                className="btn-ghost text-sm px-4 py-2"
+                className="btn-outline-default text-sm px-4 py-2"
               >
                 Recolher Todas
               </button>
@@ -295,26 +304,17 @@ const FAQComponent = () => {
 
         {/* Contact Section */}
         <div
-          className={`mt-16 transition-all duration-1000 delay-800 ${
+          className={`mt-8 transition-all duration-1000 delay-800 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 border border-primary/20 text-center">
+          <div className="bg-white/20 rounded-2xl p-8  text-center text-white">
             <div className="max-w-2xl mx-auto">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/20 rounded-full mb-6">
-                <svg
-                  className="w-8 h-8 text-primary"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+             
+              <h3 className="text-2xl font-bold mb-4 text-gray-800">
                 Não Encontrou Sua Dúvida?
               </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-100 mb-6 leading-relaxed">
                 Nossa equipe de suporte está pronta para ajudar! Entre em
                 contato através dos nossos canais oficiais e receba atendimento
                 personalizado.
@@ -336,7 +336,7 @@ const FAQComponent = () => {
                 </a>
                 <a
                   href="#hero"
-                  className="btn-outline inline-flex items-center hover-lift"
+                  className="btn-outline-default inline-flex items-center hover-lift"
                 >
                   <svg
                     className="w-5 h-5 mr-2"

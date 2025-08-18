@@ -69,67 +69,76 @@ const BrandsComponent = () => {
     <section
       id="brands"
       ref={sectionRef}
-      className="section relative z-10 pb-[340px]"
+      className={`section relative z-10 pb-[340px] 
+                  md:pb-[430px] 
+                  lg:pb-10
+                  transition-all duration-1000 ${isVisible ? "opacity-100 " : "opacity-0 " }`}
     >
+
       {/* Background Elements */}
-      <div className="absolute bottom-0 left-0 w-full ">
-        <img src="./imgs/modelo-campanha.png" alt="Concorra a centenas de vale-coompras de R$750,00 " className="max-w-[280px] mx-auto"  />
+      <div className="absolute bottom-0 left-0 w-full z-20">
+          <img src="./imgs/modelo-campanha.png" alt="Concorra a centenas de vale-coompras de R$750,00 " className="max-w-[280px] mx-auto 
+                    md:max-w-[360px]
+                    lg:ml-[2vw]
+                    xl:w-[40%] xl:max-w-[480px] xl:ml-[5vw]
+                    2xl:ml-[10vw]"  />
       </div>
-      <div className={`ballon-wrapper justify-start -top-32  right-0 w-[30vw]   transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}>
-        <img src="./imgs/balao-azul.png" alt=" " className="ballon ballon-animated ml-[50%]" />
+        
+      <div className="ballon-wrapper justify-start -top-32  right-0 w-[30vw] 
+                      md:w-[150px] md:-top-20" >
+          <img src="./imgs/balao-azul.png" alt=" " className="ballon ballon-animated ml-[50%]" />
       </div>
-      <div className={`ballon-wrapper justify-end bottom-32  left-0 w-[30vw]   transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}>
-        <img src="./imgs/balao-laranja.png" alt=" " className="ballon ballon-animated mr-[30%]" />
+      
+      <div className="ballon-wrapper justify-end bottom-32  left-0 w-[30vw] z-10
+                      md:w-[180px] md:bottom-20 md:left-[2vw]
+                      lg:bottom-[initial] lg:top-2" >
+          <img src="./imgs/balao-laranja.png" alt=" " className="ballon ballon-animated mr-[30%] md:mr-0" />
       </div>
+
 
       {/* SECTION CONTENT */}
-      <div className="container relative z-10">
-        {/* Section Header */}
-        <div
-          className={`text-center mb-4 transition-all duration-1000 ${
+      <div className={`container relative z-10 transition-all duration-1000 delay-200 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
-        >
-          <header className="sec_header">
-            <h1 className="title uppercase text-white">NOssos Parceiros</h1>
-          </header>
-        </div>
+      >
+        {/* Section Header */}
+        <header className="sec_header text-center mb-12">
+          <h1 className="title uppercase text-white">Nossos Parceiros</h1>
+        </header>
 
         {/* BRANDS */}
-{/*                   
-                    {brands.map((brand, index) => (
-                      <div
-                        key={index}
-                        className={`g-3 ${brand.category}`}
-                        style={{ animationDelay: `${index * 100}ms` }}
-                      > 
+        {/*                   
+          {brands.map((brand, index) => (
+            <div
+              key={index}
+              className={`g-3 ${brand.category}`}
+              style={{ animationDelay: `${index * 100}ms` }}
+            > 
 
-                        <div className="g-3">
-                          <div className="marca-item">
+              <div className="g-3">
+                <div className="marca-item">
 
-                            {brand.logo ? (
-                              <img
-                                src={brand.logo}
-                                alt={brand.name}
-                                className="logo lazyload g-4"
-                              />
-                            ) : (
-                              <LogoPlaceholder
-                                name={brand.name}
-                                //featured={brand.featured}
-                              />
-                            )}
-                          </div>
-                        </div>
-                        
-                      </div>
-                    ))} 
- */}
-        <div className="marcas-wrapper brands">
+                  {brand.logo ? (
+                    <img
+                      src={brand.logo}
+                      alt={brand.name}
+                      className="logo lazyload g-4"
+                    />
+                  ) : (
+                    <LogoPlaceholder
+                      name={brand.name}
+                      //featured={brand.featured}
+                    />
+                  )}
+                </div>
+              </div>
+              
+            </div>
+          ))} 
+        */}
+
+        <div className="marcas-wrapper brands 
+                        lg:w-[60%] lg:ml-auto">
                 {/* <!-- DIAMANTE --> */}
                 <div className="diamante">
 
@@ -452,8 +461,9 @@ const BrandsComponent = () => {
 
                 </div>
         </div>
-       
       </div>
+
+      
     </section>
   );
 };
