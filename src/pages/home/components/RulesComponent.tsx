@@ -111,7 +111,8 @@ const RulesComponent = () => {
     <section
       id="rules"
       ref={sectionRef}      
-      className={`section relative z-10 transition-all duration-1000 delay-400 ${
+      className={`section relative z-10 transition-all duration-1000 delay-400 
+          md:pb-36 ${
             isVisible ? "opacity-100 " : "opacity-0"
           }`}
     >

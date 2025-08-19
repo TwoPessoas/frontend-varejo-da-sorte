@@ -142,14 +142,16 @@ const FAQComponent = () => {
     </div>
 
       <div className="container relative z-30">
-        <div className="promo-logo absolute -top-40 left-1/2 transform -translate-x-1/2 ">
+        <div className="promo-logo absolute -top-40 left-1/2 transform -translate-x-1/2 max-w-[320px] 
+        md:-top-56">
           <img src="./imgs/super-premios.png" alt="6 Super Prêmios de 30Mil Reais" className={`transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}/>
         </div>
 
         {/* Section Header */}        
-        <header className={`sec_header text-center mb-8 transition-all duration-1000 ${
+        <header className={`sec_header text-center mb-8 pt-18 transition-all duration-1000 delay-300 
+        md:pt-28 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}>
         <h1 className="title text-white">

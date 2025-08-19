@@ -167,9 +167,9 @@ const BrandsComponent = () => {
                         lg:w-[60%] lg:ml-auto"
         >
           {brands.map((brand, index) => (
-            <div key={index} className={`g-3 ${brand.category}`}>
+            <div key={index} className={` ${brand.category}`}>
               {brand.logos.map((logo, logoIndex) => (
-                <div className="g-3">
+                <div className="marca-card">
                   <div className="marca-item">
                     <img
                       key={logoIndex}

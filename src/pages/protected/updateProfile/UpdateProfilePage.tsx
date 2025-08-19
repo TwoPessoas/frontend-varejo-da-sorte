@@ -126,20 +126,20 @@ const UpdateProfilePage = () => {
     <div className="p-6 lg:p-8">
       {/* Page Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          👤 {client?.isPreRegister && `Atualizar `}Dados Pessoais
+        <h1 className="text-3xl font-bold title text-primary mb-2">
+          {client?.isPreRegister && `Atualizar `}Dados Pessoais
         </h1>
         {client?.isPreRegister && (
-          <p className="text-gray-600">
+          <p className="text-white">
             Mantenha suas informações sempre atualizadas para garantir o
             recebimento dos prêmios
           </p>
-        )}
+        ) }
       </div>
 
       <div className="max-w-2xl mx-auto">
         {/* Form */}
-        <form onSubmit={handleSubmit(onSubmit)} className="card p-8">
+        <form onSubmit={handleSubmit(onSubmit)} className="card p-4">
           <div className="space-y-6">
             {/* Nome Completo */}
             <div>
@@ -269,20 +269,22 @@ const UpdateProfilePage = () => {
             {client?.isPreRegister && (
               <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
                 <div className="flex items-start space-x-3">
-                  <svg
-                    className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                  
                   <div className="flex-1">
-                    <h4 className="font-bold text-amber-900 mb-2">
-                      ⚠️ Confirmação de Responsabilidade
+                    <h4 className="font-bold text-base text-amber-900 mb-2 flex items-starrt">
+                      <svg
+                        className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0 mr-2"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      Confirmação de Responsabilidade
                     </h4>
                     <div className="flex items-start space-x-3">
                       <input
@@ -397,7 +399,10 @@ const UpdateProfilePage = () => {
         {/* Info Section */}
         <div className="mt-8 card p-6">
           <div className="flex items-start space-x-4">
-            <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center flex-shrink-0">
+            
+            <div>
+              <h3 className="text-base font-bold text-gray-900 mb-2 flex items-center">
+                <div className="w-10 h-10 bg-primary/10 text-primary rounded-xl flex items-center justify-center flex-shrink-0 mr-2">
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                 <path
                   fillRule="evenodd"
@@ -406,8 +411,7 @@ const UpdateProfilePage = () => {
                 />
               </svg>
             </div>
-            <div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
+
                 Informações Importantes
               </h3>
               <div className="space-y-2 text-sm text-gray-600">
