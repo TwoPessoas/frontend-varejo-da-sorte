@@ -115,7 +115,7 @@ const InvoiceForm = () => {
       <h2 className="text-2xl font-bold text-gray-900 mb-6">
         Cadastrar Nota Fiscal
       </h2>
-      <div className="card p-6">
+      <div className="card p-6 overflow-visible">
         {invoiceFormState === "success" && submissionResultMessage ? (
           // --- Card de Sucesso ---
           <div className="flex flex-col items-center justify-center text-center py-4">
