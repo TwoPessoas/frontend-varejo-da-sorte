@@ -1,3 +1,5 @@
+import type { InvoiceRequest, InvoiceResponse } from "./Invoice";
+
 export interface Client {
   isPreRegister: boolean;
   name: string;
@@ -32,4 +34,7 @@ export interface ClientContextType {
   updateSummary: () => Promise<Summary | null>;
   getSummary: () => Summary | null;
   updateClient: (clientData: Partial<Client>) => Promise<Client | null>;
+  addInvoice: (
+    invoiceData: Partial<InvoiceRequest>
+  ) => Promise<InvoiceResponse | null>;
 }

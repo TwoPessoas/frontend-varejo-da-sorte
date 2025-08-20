@@ -1,25 +1,9 @@
 import { useClient } from "../../../contexts/ClientContext";
-import { DATA_FINAL_CAMPANHA } from "../../home/HomePage";
+import InvoiceForm from "./components/InvoiceForm";
+import TimeRemaining from "./components/TimeRemaining";
 
 const ClientAreaPage = () => {
-  const { isLoading, updateSummary, getSummary } = useClient();
-  
-  // Calcular tempo restante da campanha
-  const getTimeRemaining = () => {
-    const now = new Date();
-    const endDate = new Date(DATA_FINAL_CAMPANHA);
-    const diff = endDate.getTime() - now.getTime();
-
-    if (diff <= 0) return { expired: true };
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-
-    return { days, hours, minutes, expired: false };
-  };
-
-  const timeRemaining = getTimeRemaining();
+  const { isLoading, getSummary } = useClient();
 
   if (isLoading) {
     return (
@@ -96,19 +80,12 @@ const ClientAreaPage = () => {
               Acompanhe seu progresso no sorteio de brindes
             </p>
           </div>
-
-          {timeRemaining && !timeRemaining.expired && (
-            <div className="mt-4 lg:mt-0">
-              <div className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
-                ⏰ {timeRemaining.days}d {timeRemaining.hours}h{" "}
-                {timeRemaining.minutes}m restantes
-              </div>
-            </div>
-          )}
+          <TimeRemaining />
         </div>
       </div>
 
-      
+      <InvoiceForm />
+
       {/* Quick Actions */}
       <div className="mb-8">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Ações Rápidas</h2>

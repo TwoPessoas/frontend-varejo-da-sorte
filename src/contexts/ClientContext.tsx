@@ -4,6 +4,7 @@ import api from "../services/api";
 import { useAuth } from "./AuthContext";
 import toast from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
+import type { InvoiceRequest, InvoiceResponse } from "../types/Invoice";
 
 const ClientContext = createContext<ClientContextType | undefined>(undefined);
 export const CLIENT_STORAGE_NAME = "authClientWebVarejoDaSorte";
@@ -160,6 +161,19 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
     logout();
   };
 
+  const addInvoice = async (
+    invoiceData: Partial<InvoiceRequest>
+  ) => {
+    try {
+      const response = await api.post<InvoiceResponse>(`/invoices/add`, invoiceData);
+      await updateSummary();
+      return response.data;
+    } catch (err: any) {
+      toast.error("Não foi possível inserir a nota fiscal");
+      return null;
+    }
+  };
+
   const value = {
     client,
     me,
@@ -168,6 +182,7 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
     updateSummary,
     getSummary,
     updateClient,
+    addInvoice,
   };
 
   return (
