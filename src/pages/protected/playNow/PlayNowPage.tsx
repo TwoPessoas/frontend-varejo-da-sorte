@@ -1,89 +1,49 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useClient } from "../../../contexts/ClientContext";
+import { useNavigate } from "react-router-dom";
+import type { VoucherResponse } from "../../../types/Voucher";
 
 const PlayNowPage = () => {
+  const { updateSummary, getSummary, tryMyLuck } = useClient();
+  const [voucherData, setVoucherData] = useState<VoucherResponse | null>(null);
   const [gameState, setGameState] = useState("ready"); // ready, playing, result
-  const [result, setResult] = useState(null); // win, lose
-  const [isLoading, setIsLoading] = useState(false);
-  const [userData, setUserData] = useState(null);
-  const [generatedNumber, setGeneratedNumber] = useState(null);
   const [showConfetti, setShowConfetti] = useState(false);
-  const videoRef = useRef(null);
+  const navigate = useNavigate();
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const isInited = useRef(false);
 
-  // Simular dados do usuário
   useEffect(() => {
-    const fetchUserData = async () => {
-      // Simular chamada da API
-      await new Promise((resolve) => setTimeout(resolve, 500));
-
-      setUserData({
-        name: "João Silva",
-        chances: {
-          available: 8,
-          total: 15,
-        },
-      });
-    };
-
-    fetchUserData();
+    if (isInited.current) return;
+    isInited.current = true;
+    updateSummary();
   }, []);
-
-  // Função para gerar número da sorte aleatório
-  const generateLuckyNumber = () => {
-    return String(Math.floor(Math.random() * 99999)).padStart(5, "0");
-  };
 
   // Função para simular o jogo
   const playGame = async () => {
-    if (userData.chances.available <= 0) {
+    if ((getSummary()?.opportunitiesNotUsed || 0) <= 0) {
       alert("Você não tem chances disponíveis!");
       return;
     }
 
-    setIsLoading(true);
     setGameState("playing");
 
     // Simular processamento do jogo (3-5 segundos)
     const processingTime = Math.random() * 2000 + 3000; // 3-5 segundos
-
     await new Promise((resolve) => setTimeout(resolve, processingTime));
 
-    // Gerar resultado (20% chance de vitória)
-    const isWin = Math.random() < 0.2;
-    const luckyNumber = generateLuckyNumber();
-
-    setResult(isWin ? "win" : "lose");
-    setGeneratedNumber(luckyNumber);
+    const response = await tryMyLuck();
     setGameState("result");
-    setIsLoading(false);
-
-    // Atualizar chances do usuário
-    setUserData((prev) => ({
-      ...prev,
-      chances: {
-        ...prev.chances,
-        available: prev.chances.available - 1,
-      },
-    }));
+    setVoucherData(response);
 
     // Se ganhou, mostrar confetti
-    if (isWin) {
+    if ((response?.win || false) == true) {
       setShowConfetti(true);
       setTimeout(() => setShowConfetti(false), 5000);
     }
-
-    // Aqui você faria a chamada real para a API
-    console.log(
-      "Resultado:",
-      isWin ? "Vitória!" : "Não foi dessa vez",
-      "Número:",
-      luckyNumber
-    );
   };
 
   const resetGame = () => {
     setGameState("ready");
-    setResult(null);
-    setGeneratedNumber(null);
     setShowConfetti(false);
     if (videoRef.current) {
       videoRef.current.currentTime = 0;
@@ -92,22 +52,10 @@ const PlayNowPage = () => {
   };
 
   const goToHome = () => {
-    window.location.href = "/dashboard";
+    navigate("/area-cliente");
   };
 
-  if (!userData) {
-    return (
-      <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] p-8">
-        <div className="text-center">
-          <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <h2 className="text-xl font-bold text-gray-900 mb-2">
-            Carregando jogo...
-          </h2>
-          <p className="text-gray-600">Preparando sua experiência</p>
-        </div>
-      </div>
-    );
-  }
+  console.log("[GameState]", gameState);
 
   return (
     <>
@@ -128,7 +76,6 @@ const PlayNowPage = () => {
           ))}
         </div>
       )}
-
       <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center p-6">
         <div className="max-w-4xl w-full">
           {/* Header Info */}
@@ -153,7 +100,7 @@ const PlayNowPage = () => {
                   Chances restantes:
                 </span>
                 <span className="text-primary font-bold text-lg">
-                  {userData.chances.available}
+                  {getSummary()?.opportunitiesNotUsed || 0}
                 </span>
               </div>
             </div>
@@ -189,17 +136,17 @@ const PlayNowPage = () => {
                 <div className="space-y-4">
                   <button
                     onClick={playGame}
-                    disabled={userData.chances.available <= 0}
+                    disabled={(getSummary()?.opportunitiesNotUsed || 0) <= 0}
                     className="btn-primary text-xl px-8 py-4 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 transition-transform duration-200"
                   >
-                    {userData.chances.available > 0 ? (
+                    {(getSummary()?.opportunitiesNotUsed || 0) > 0 ? (
                       <>🎲 Jogar Agora</>
                     ) : (
                       "Sem chances disponíveis"
                     )}
                   </button>
 
-                  {userData.chances.available <= 0 && (
+                  {(getSummary()?.opportunitiesNotUsed || 0) <= 0 && (
                     <p className="text-red-600 text-sm">
                       Você precisa de mais chances para jogar. Cadastre notas
                       fiscais para ganhar mais chances!
@@ -215,7 +162,7 @@ const PlayNowPage = () => {
                 <div className="w-32 h-32 border-8 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-8"></div>
 
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  Gerando seu número da sorte...
+                  Abrindo a Caixa da Sorte...
                 </h2>
                 <p className="text-gray-600 text-lg">
                   Aguarde enquanto processamos sua jogada
@@ -238,17 +185,15 @@ const PlayNowPage = () => {
               <div className="relative">
                 {/* Video Area */}
                 <div className="relative bg-gray-900 aspect-video">
-                  {result === "win" ? (
+                  {(voucherData?.win || false) === true ? (
                     // Vídeo de Vitória (placeholder)
                     <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-green-500 to-green-600">
                       <div className="text-center text-white">
                         <div className="text-8xl mb-4">🎉</div>
                         <h3 className="text-4xl font-bold mb-2">PARABÉNS!</h3>
-                        <p className="text-xl">
-                          Você pode ter ganhado um prêmio!
-                        </p>
+                        <p className="text-xl">{voucherData?.gift || ""}</p>
                         <div className="mt-4 text-2xl font-mono font-bold">
-                          Número: {generatedNumber}
+                          Número: {voucherData?.voucher}
                         </div>
                       </div>
                     </div>
@@ -261,51 +206,45 @@ const PlayNowPage = () => {
                           Não foi dessa vez!
                         </h3>
                         <p className="text-xl">
-                          Mas você ganhou um número da sorte!
+                          Tente novamente. A sorte pode estar ao seu lado!
                         </p>
-                        <div className="mt-4 text-2xl font-mono font-bold">
-                          Número: {generatedNumber}
-                        </div>
                       </div>
                     </div>
                   )}
 
                   {/* Aqui você colocaria o vídeo real */}
-                  {/* 
                   <video
                     ref={videoRef}
                     className="w-full h-full object-cover"
                     autoPlay
                     muted
-                    onEnded={() => console.log('Vídeo terminou')}
+                    onEnded={() => console.log("Vídeo terminou")}
                   >
-                    <source 
-                      src={result === 'win' ? '/videos/victory.mp4' : '/videos/try-again.mp4'} 
-                      type="video/mp4" 
+                    <source
+                      src={
+                        (voucherData?.win || false) === true
+                          ? "/videos/victory.mp4"
+                          : "/videos/try-again.mp4"
+                      }
+                      type="video/mp4"
                     />
                   </video>
-                  */}
                 </div>
 
                 {/* Result Info */}
                 <div className="p-8">
                   <div className="text-center mb-8">
-                    {result === "win" ? (
+                    {(voucherData?.win || false) === true ? (
                       <div>
                         <h2 className="text-3xl font-bold text-green-600 mb-4">
-                          🏆 Você pode ter ganhado!
+                          🏆 Você ganhou um voucher!
                         </h2>
-                        <p className="text-gray-600 text-lg mb-4">
-                          Seu número da sorte foi gerado com sucesso! Aguarde o
-                          sorteio para saber se você ganhou um dos prêmios
-                          incríveis.
-                        </p>
                         <div className="bg-green-50 border border-green-200 rounded-lg p-4 inline-block">
                           <div className="text-green-800 font-bold text-sm mb-1">
-                            SEU NÚMERO DA SORTE
+                            SEU VOUCHER
                           </div>
                           <div className="text-3xl font-mono font-bold text-green-600">
-                            {generatedNumber}
+                            {voucherData?.voucher}
                           </div>
                         </div>
                       </div>
@@ -315,17 +254,8 @@ const PlayNowPage = () => {
                           🎯 Continue tentando!
                         </h2>
                         <p className="text-gray-600 text-lg mb-4">
-                          Não desanime! Você ganhou um número da sorte e ainda
-                          tem chances de ganhar no sorteio final.
+                          Não desanime!
                         </p>
-                        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 inline-block">
-                          <div className="text-blue-800 font-bold text-sm mb-1">
-                            SEU NÚMERO DA SORTE
-                          </div>
-                          <div className="text-3xl font-mono font-bold text-blue-600">
-                            {generatedNumber}
-                          </div>
-                        </div>
                       </div>
                     )}
                   </div>
@@ -334,7 +264,7 @@ const PlayNowPage = () => {
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <button
                       onClick={resetGame}
-                      disabled={userData.chances.available <= 0}
+                      disabled={(getSummary()?.opportunitiesNotUsed || 0) <= 0}
                       className="btn-primary flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <svg
@@ -349,7 +279,7 @@ const PlayNowPage = () => {
                         />
                       </svg>
                       <span>
-                        {userData.chances.available > 0
+                        {(getSummary()?.opportunitiesNotUsed || 0) > 0
                           ? "Jogar Novamente"
                           : "Sem chances restantes"}
                       </span>
@@ -406,27 +336,26 @@ const PlayNowPage = () => {
               </div>
             )}
           </div>
-
           {/* Quick Stats */}
           {gameState === "ready" && (
-            <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
               <div className="bg-white rounded-lg p-4 text-center shadow-soft">
                 <div className="text-2xl font-bold text-primary">
-                  {userData.chances.available}
+                  {getSummary()?.opportunitiesNotUsed || 0}
                 </div>
                 <div className="text-sm text-gray-600">Chances Restantes</div>
               </div>
               <div className="bg-white rounded-lg p-4 text-center shadow-soft">
-                <div className="text-2xl font-bold text-secondary">25</div>
-                <div className="text-sm text-gray-600">Números Gerados</div>
+                <div className="text-2xl font-bold text-secondary">
+                  {getSummary()?.drawNumbersTotal || 0}
+                </div>
+                <div className="text-sm text-gray-600">Números da Sorte</div>
               </div>
               <div className="bg-white rounded-lg p-4 text-center shadow-soft">
-                <div className="text-2xl font-bold text-green-600">12</div>
+                <div className="text-2xl font-bold text-green-600">
+                  {getSummary()?.invoicesTotal || 0}
+                </div>
                 <div className="text-sm text-gray-600">Notas Cadastradas</div>
-              </div>
-              <div className="bg-white rounded-lg p-4 text-center shadow-soft">
-                <div className="text-2xl font-bold text-purple-600">50+</div>
-                <div className="text-sm text-gray-600">Prêmios Disponíveis</div>
               </div>
             </div>
           )}
