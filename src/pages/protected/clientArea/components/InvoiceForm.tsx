@@ -69,6 +69,7 @@ const InvoiceForm = () => {
     try {
       const result = await addInvoice(data);
       if (!result || result.status !== "success") {
+        console.log('[leo] Erro ao cadastrar nota fiscal:', result);
         setInvoiceFormState("error");
         setSubmissionResultMessage({
           status: "error",

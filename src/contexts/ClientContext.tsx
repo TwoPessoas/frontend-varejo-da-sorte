@@ -5,6 +5,7 @@ import { useAuth } from "./AuthContext";
 import toast from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
 import type { InvoiceRequest, InvoiceResponse } from "../types/Invoice";
+import type { VoucherResponse } from "../types/Voucher";
 
 const ClientContext = createContext<ClientContextType | undefined>(undefined);
 export const CLIENT_STORAGE_NAME = "authClientWebVarejoDaSorte";
@@ -139,8 +140,12 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
     try {
       if (!isAuthenticated) return false;
       await api.get(`/clients/me`);
-      const clientStored =  await getStorageClient();
-      if (clientStored && clientStored?.isPreRegister && location.pathname !== "/atualizar-dados-cadastrais") {
+      const clientStored = await getStorageClient();
+      if (
+        clientStored &&
+        clientStored?.isPreRegister &&
+        location.pathname !== "/atualizar-dados-cadastrais"
+      ) {
         navigate("/atualizar-dados-cadastrais");
       }
 
@@ -163,14 +168,31 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
 
   const addInvoice = async (
     invoiceData: Partial<InvoiceRequest>
-  ) => {
+  ): Promise<InvoiceResponse | null> => {
+    setIsLoading(true);
     try {
-      const response = await api.post<InvoiceResponse>(`/invoices/add`, invoiceData);
+      const response = await api.post<InvoiceResponse>(
+        `/invoices/add`,
+        invoiceData
+      );
       await updateSummary();
       return response.data;
     } catch (err: any) {
       toast.error("Não foi possível inserir a nota fiscal");
-      return null;
+      return err.response?.data || null;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const tryMyLuck = async (): Promise<VoucherResponse | null> => {
+    try {
+      const response = await api.get<VoucherResponse>(`/invoices/try-my-luck`);
+      await updateSummary();
+      return response.data;
+    } catch (err: any) {
+      toast.error("Não foi possível inserir a nota fiscal");
+      return err.response?.data || null;
     }
   };
 
@@ -183,6 +205,7 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
     getSummary,
     updateClient,
     addInvoice,
+    tryMyLuck,
   };
 
   return (
