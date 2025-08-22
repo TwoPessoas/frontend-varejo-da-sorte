@@ -47,7 +47,7 @@ const ClientAreaPage = () => {
         </svg>
       ),
       href: "/numeros-da-sorte",
-      color: "default",
+      color: "secondary",
       available: true,
     },
     {
@@ -63,7 +63,7 @@ const ClientAreaPage = () => {
         </svg>
       ),
       href: "/lista-de-chances",
-      color: "gray",
+      color: "default",
       available: true,
     },
   ];
@@ -104,7 +104,7 @@ const ClientAreaPage = () => {
                       link.color === "primary"
                         ? "bg-primary text-white group-hover:text-white"
                         : link.color === "secondary"
-                        ? "group-hover:text-secondary"
+                        ? "bg-secondary-700 group-hover:text-secondary"
                         : link.color === "default"
                         ? "bg-gray-200 text-gray-900 group-hover:text-secondary"
                         : ""
@@ -151,7 +151,7 @@ const ClientAreaPage = () => {
 
                 <div className="flex-shrink-0">
                   <svg
-                    className="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors duration-300"
+                    className="w-5 h-5 text-gray-white/80 group-hover:text-white transition-colors duration-300"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -184,15 +184,6 @@ const ClientAreaPage = () => {
                 <p className="text-gray-600 text-sm">
                   Use para abrir a caixa da sorte
                 </p>
-              </div>
-              <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fillRule="evenodd"
-                    d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
-                    clipRule="evenodd"
-                  />
-                </svg>
               </div>
             </div>
 
@@ -244,11 +235,6 @@ const ClientAreaPage = () => {
                 </h3>
                 <p className="text-gray-600 text-sm">Gerados até agora</p>
               </div>
-              <div className="w-12 h-12 bg-green-600/10 text-green-600 rounded-xl flex items-center justify-center">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
             </div>
 
             <div className="space-y-3">
@@ -271,15 +257,6 @@ const ClientAreaPage = () => {
                   Notas Fiscais
                 </h3>
                 <p className="text-gray-600 text-sm">Cadastradas no sistema</p>
-              </div>
-              <div className="w-12 h-12 bg-secondary/10 text-secondary rounded-xl flex items-center justify-center">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fillRule="evenodd"
-                    d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z"
-                    clipRule="evenodd"
-                  />
-                </svg>
               </div>
             </div>
 

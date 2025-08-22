@@ -80,8 +80,8 @@ const PlayNowPage = () => {
         <div className="max-w-4xl w-full">
           {/* Header Info */}
           <div className="text-center mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              🎮 Jogar Agora
+            <h1 className="text-3xl md:text-4xl font-bold text-primary title mb-4">
+              Abra o seu Presente Atakarejo
             </h1>
             <div className="inline-flex items-center space-x-4 bg-white rounded-full px-6 py-3 shadow-soft">
               <div className="flex items-center space-x-2">
@@ -111,26 +111,15 @@ const PlayNowPage = () => {
             {/* Game State: Ready */}
             {gameState === "ready" && (
               <div className="p-8 md:p-12 text-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-8">
-                  <svg
-                    className="w-16 h-16 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                <div className="w-32 h-32 bg-secondary-700 border-primary border-2 rounded-full flex items-center justify-center mx-auto mb-8">
+                  <img src="./imgs/presente.png" alt="" />
                 </div>
 
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  Pronto para Jogar?
+                  Preparado?
                 </h2>
                 <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-                  Clique no botão abaixo para usar uma de suas chances e gerar
-                  um novo número da sorte. Boa sorte! 🍀
+                  Clique no botão abaixo para abrir os seus presentes desponíveis. E boa sorte!
                 </p>
 
                 <div className="space-y-4">
@@ -140,7 +129,7 @@ const PlayNowPage = () => {
                     className="btn-primary text-xl px-8 py-4 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 transition-transform duration-200"
                   >
                     {(getSummary()?.opportunitiesNotUsed || 0) > 0 ? (
-                      <>🎲 Jogar Agora</>
+                      <>Abrir meus presentes</>
                     ) : (
                       "Sem chances disponíveis"
                     )}
@@ -188,18 +177,25 @@ const PlayNowPage = () => {
                   {(voucherData?.win || false) === true ? (
                     // Vídeo de Vitória (placeholder)
                     <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-green-500 to-green-600">
-                      <div className="text-center text-white">
+                      <video src="./videos/victory.mp4" autoPlay muted></video>
+
+                      {/* <div className="text-center text-white">
                         <div className="text-8xl mb-4">🎉</div>
                         <h3 className="text-4xl font-bold mb-2">PARABÉNS!</h3>
                         <p className="text-xl">{voucherData?.gift || ""}</p>
+      
                         <div className="mt-4 text-2xl font-mono font-bold">
                           Número: {voucherData?.voucher}
-                        </div>
+                        </div> 
+
                       </div>
+                       */}
                     </div>
                   ) : (
                     // Vídeo de "Não foi dessa vez" (placeholder)
                     <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-500 to-blue-600">
+                      <video src="./videos/try-again.mp4" autoPlay muted></video>
+                      {/*                       
                       <div className="text-center text-white">
                         <div className="text-8xl mb-4">🎯</div>
                         <h3 className="text-4xl font-bold mb-2">
@@ -208,7 +204,9 @@ const PlayNowPage = () => {
                         <p className="text-xl">
                           Tente novamente. A sorte pode estar ao seu lado!
                         </p>
-                      </div>
+                      </div> 
+                      */}
+
                     </div>
                   )}
 
@@ -240,12 +238,15 @@ const PlayNowPage = () => {
                           🏆 Você ganhou um voucher!
                         </h2>
                         <div className="bg-green-50 border border-green-200 rounded-lg p-4 inline-block">
-                          <div className="text-green-800 font-bold text-sm mb-1">
+                          O seu voucher foi enviado para o seu e-mail cadastrado.
+                          {/* <div className="text-green-800 font-bold text-sm mb-1">
                             SEU VOUCHER
                           </div>
                           <div className="text-3xl font-mono font-bold text-green-600">
                             {voucherData?.voucher}
-                          </div>
+                          </div> */}
+
+
                         </div>
                       </div>
                     ) : (
@@ -320,7 +321,7 @@ const PlayNowPage = () => {
                         </h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           <li>• Seu número foi salvo automaticamente</li>
-                          <li>• O sorteio será realizado em 15/02/2025</li>
+                          <li>• O sorteio será realizado em 30/09/2025</li>
                           <li>
                             • Você pode ver todos os seus números na seção
                             "Números da Sorte"
@@ -337,6 +338,7 @@ const PlayNowPage = () => {
             )}
           </div>
           {/* Quick Stats */}
+            {/* 
           {gameState === "ready" && (
             <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
               <div className="bg-white rounded-lg p-4 text-center shadow-soft">
@@ -359,6 +361,8 @@ const PlayNowPage = () => {
               </div>
             </div>
           )}
+            */}
+
         </div>
       </div>
     </>

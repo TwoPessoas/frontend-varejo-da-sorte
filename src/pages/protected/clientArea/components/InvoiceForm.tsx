@@ -287,11 +287,11 @@ const InvoiceForm = () => {
                 {showHelpTooltip && (
                   <div
                     ref={tooltipRef}
-                    className="absolute z-10 w-64 p-3 mt-2 text-sm text-gray-700 bg-white rounded-lg shadow-lg border border-gray-200 right-0 transform translate-x-1/4 md:translate-x-0"
+                    className="absolute z-10 w-64 p-3 mt-2 text-sm text-gray-700 bg-blue-100 rounded-lg shadow-lg border border-blue-600 right-0 transform translate-x-1/4 md:translate-x-0"
                   >
-                    <h4 className="font-bold mb-2">Onde encontrar o código?</h4>
+                    <h4 className="font-bold mb-2 text-base">Onde encontrar o código?</h4>
                     <img
-                      src="https://via.placeholder.com/250x150?text=Exemplo+Nota+Fiscal" // Substitua pela sua imagem real
+                      src="./imgs/nota-fiscal.jpg" // Substitua pela sua imagem real
                       alt="Exemplo de localização do código da nota fiscal"
                       className="w-full h-auto rounded"
                     />

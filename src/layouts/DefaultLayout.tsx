@@ -154,20 +154,16 @@ const DefaultLayout = () => {
                 <span className="font-medium">Voltar para Home</span> */}
               </button>
 
-              <div className="hidden md:block w-px h-6 bg-gray-300"></div>
+              
 
-              <div className="hidden md:block">
-                <h1 className="text-xl font-bold text-gradient">
-                  Sorteio de Brindes
-                </h1>
-              </div>
+              
             </div>
 
             {/* User Info */}
             <div className="flex items-center space-x-4">
               {/* User Details - Hidden on mobile */}
               <div className="hidden lg:block text-right">
-                <div className="text-sm font-medium text-gray-900">
+                <div className="text-sm font-medium text-white">
                   {client?.name}
                 </div>
               </div>
@@ -176,7 +172,7 @@ const DefaultLayout = () => {
                 {/* Logout Button */}
                 <button
                   onClick={() => setShowLogoutModal(true)}
-                  className="hidden sm:flex items-center space-x-2 px-3 py-2 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors duration-200"
+                  className="hidden sm:flex items-center space-x-2 px-3 py-2 text-white hover:text-secondary hover:bg-white/20 rounded-lg transition-colors duration-200"
                 >
                   <svg
                     className="w-4 h-4"
