@@ -69,21 +69,18 @@ const InvoiceForm = () => {
     try {
       const result = await addInvoice(data);
       if (!result || result.status !== "success") {
-        console.log('[leo] Erro ao cadastrar nota fiscal:', result);
-        setInvoiceFormState("error");
-        setSubmissionResultMessage({
-          status: "error",
-          message: result?.message || "Erro ao cadastrar nota fiscal.",
-        });
-        return;
+        throw new Error(result?.message || "Erro ao cadastrar nota fiscal.");
       }
-
       setInvoiceFormState("success");
       setSubmissionResultMessage(result);
       reset();
     } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      setSubmissionResultMessage({
+        status: "error",
+        message: message || "Erro ao cadastrar nota fiscal.",
+      });
       setInvoiceFormState("error");
-      console.log("Erro ao adicionar nota fiscal:", error);
     }
   };
 

@@ -14,14 +14,10 @@ const DefaultLayout = () => {
 
   useEffect(() => {
     if (isInited.current) return;
-
     isInited.current = true;
+    
     const getMe = async () => {
       await me();
-      console.log("[inited]", {
-        client,
-        active: isActivePath("/atualizar-dados-cadastrais"),
-      });
       if (
         client?.isPreRegister &&
         !isActivePath("/atualizar-dados-cadastrais")
