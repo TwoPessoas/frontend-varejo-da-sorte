@@ -169,7 +169,6 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
   const addInvoice = async (
     invoiceData: Partial<InvoiceRequest>
   ): Promise<InvoiceResponse | null> => {
-    setIsLoading(true);
     try {
       const response = await api.post<InvoiceResponse>(
         `/invoices/add`,
@@ -178,10 +177,8 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
       await updateSummary();
       return response.data;
     } catch (err: any) {
-      toast.error("Não foi possível inserir a nota fiscal");
+      toast.error(err.response?.data?.message || "Não foi possível inserir a nota fiscal");
       return err.response?.data || null;
-    } finally {
-      setIsLoading(false);
     }
   };
 
