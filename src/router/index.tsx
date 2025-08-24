@@ -10,6 +10,8 @@ import DrawNumberPage from "../pages/protected/drawNumber/DrawNumberPage";
 import GameOpportunitiePage from "../pages/protected/gameOpportunitie/GameOpportunitiePage";
 import SecurityChangeConsentPage from "../pages/SecurityChangeConsent/SecurityChangeConsentPage";
 import UpdateProfilePage from "../pages/protected/updateProfile/UpdateProfilePage";
+import RulesPage from "../pages/rules/RulesPage";
+import WinnersPage from "../pages/winners/WinnersPage";
 
 const router = createBrowserRouter([
   {
@@ -55,9 +57,17 @@ const router = createBrowserRouter([
             element: <HomePage />,
           },
           {
+            path: "/regulamento",
+            element: <RulesPage />,
+          },
+          {
+            path: "/ganhadores",
+            element: <WinnersPage />,
+          },
+          {
             path: "/consentir-alteracao-seguranca",
-            element: <SecurityChangeConsentPage />
-          }
+            element: <SecurityChangeConsentPage />,
+          },
         ],
       },
     ],

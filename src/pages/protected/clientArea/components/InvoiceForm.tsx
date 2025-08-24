@@ -90,6 +90,7 @@ const InvoiceForm = () => {
       // Assumindo que o QR Code contém apenas o código da nota fiscal
       // Pode ser necessário parsear o QR Code se ele contiver mais dados
       const scannedCode = data[0].rawValue.replace(/\D/g, "").substring(0, 44); // Limita a 44 caracteres numéricos
+      alert("Código escaneado:" + JSON.stringify(data));
       setValue("fiscalCode", scannedCode, { shouldValidate: true });
       setShowQrReader(false);
     }

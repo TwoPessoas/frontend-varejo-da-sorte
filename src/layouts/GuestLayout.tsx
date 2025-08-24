@@ -11,9 +11,9 @@ const GuestLayout = () => {
           <ul className="flex space-x-4">
             <li><a href="#hero" className="text-white hover:text-gray-300">Início</a></li>
             <li><a href="#brands" className=" text-white hover:text-gray-300">Marcas</a></li>
-            <li><a href="/" className=" text-white hover:text-gray-300">Regulamento</a></li>
+            <li><a href="/regulamento" className=" text-white hover:text-gray-300">Regulamento</a></li>
             <li><a href="#faq" className=" text-white hover:text-gray-300">FAQ</a></li>
-            <li><a href="/" className=" text-white hover:text-gray-300">Ganhadores</a></li>
+            <li><a href="/ganhadores" className=" text-white hover:text-gray-300">Ganhadores</a></li>
           </ul>
         </nav>
       </header>
