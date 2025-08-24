@@ -69,14 +69,14 @@ const ClientAreaPage = () => {
   ];
 
   return (
-    <div className="p-6 lg:p-8">
+    <div className="p-6 lg:p-8 dashboard-area" >
       {/* Page Header */}
       <div className="mb-8">
-        <img src="./imgs/logo-campanha.png" className="mb-6 max-w-[380px] mx-auto" alt="" />
+        <img src="./imgs/logo-campanha.png" className="mb-6 max-w-[280px] mx-auto" alt="" />
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:flex">
             <div>
-              <h1 className="text-3xl font-bold text-primary mb-2">Área do Cliente</h1>
-              <p className="text-gray-600">
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">Área do Cliente</h1>
+              <p className="text-gray-200">
                 Acompanhe seu progresso no sorteio de brindes
               </p>
             </div>  

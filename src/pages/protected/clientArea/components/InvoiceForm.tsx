@@ -252,7 +252,7 @@ const InvoiceForm = () => {
             </label>
 
             <div className="flex flex-col sm:flex-row gap-3 items-start">
-              <div className="relative flex-grow">
+              <div className="relative flex-grow w-full sm:w-auto">
                 <input
                   type="text"
                   {...register("fiscalCode")}

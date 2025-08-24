@@ -790,6 +790,10 @@ html {
     DASHBOARD COMPONENT
    ==================*/
 @layer utilities {
+  .dashboard-area {
+    background: url('/imgs/hero-bg.jpg') no-repeat center top #db5e01;
+    background-size: 100% auto;
+  }
   /* Dashboard specific animations */
   .dashboard-card-enter {
     opacity: 0;

@@ -122,9 +122,9 @@ const FooterComponent = () => {
 
         {/* Main Footer Links */}
         <div className="container py-16">
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
             {/* Company Info */}
-            <div className="lg:col-span-1">
+            <div className="md:col-span-2 lg:col-span-1">
               <img src="./imgs/logo.svg" alt="Atakarejo" className="mx-auto w-1/2" />
 
             </div>

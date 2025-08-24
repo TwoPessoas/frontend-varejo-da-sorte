@@ -22,7 +22,7 @@ const TimeRemaining = () => {
     <div>
       {timeRemaining && !timeRemaining.expired && (
         <div className="mt-4 lg:mt-0">
-          <div className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
+          <div className="bg-white/20 text-primary px-4 py-2 rounded-lg text-sm font-medium">
             ⏰ {timeRemaining.days}d {timeRemaining.hours}h{" "}
             {timeRemaining.minutes}m restantes
           </div>

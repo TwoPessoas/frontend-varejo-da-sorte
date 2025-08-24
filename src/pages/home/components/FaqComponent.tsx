@@ -60,7 +60,7 @@ const FAQComponent = () => {
       category: "Sorteio",
       question: "Qual o prêmio e como eu posso utilizá-lo?",
       answer:(
-        <p>O prêmio é de 01 (um) Vale-compras Atakarejo no valor de R$ 750,00 (setecentos e cinquenta reais), sem função de saque, vinculado ao CPF do participante e 01 (um) prêmio de R$ 50 mil (cinquenta mil reais).
+        <p>O prêmio é de 01 (um) Vale-compras Atakarejo no valor de R$ 750,00 (setecentos e cinquenta reais), sem função de saque, vinculado ao CPF do participante e 01 (um) prêmio de R$ 30 mil (cinquenta mil reais).
         </p>
       ),
       popular: false,
@@ -195,6 +195,7 @@ const FAQComponent = () => {
             
 
             {/* Control Buttons */}
+            {/* 
             <div className="flex justify-center space-x-4">
               <button
                 onClick={openAll}
@@ -209,6 +210,8 @@ const FAQComponent = () => {
                 Recolher Todas
               </button>
             </div>
+             */}
+
           </div>
         </div>
 
