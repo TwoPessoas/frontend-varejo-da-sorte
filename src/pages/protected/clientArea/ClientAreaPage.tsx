@@ -75,7 +75,7 @@ const ClientAreaPage = () => {
         <img src="./imgs/logo-campanha.png" className="mb-6 max-w-[280px] mx-auto" alt="" />
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:flex">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">Área do Cliente</h1>
+              <h1 className="text-3xl font-bold text-white mb-2">Área do Cliente</h1>
               <p className="text-gray-200">
                 Acompanhe seu progresso no sorteio de brindes
               </p>
@@ -91,7 +91,7 @@ const ClientAreaPage = () => {
 
       {/* Quick Actions */}
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Ações Rápidas</h2>
+        <h2 className="text-2xl font-bold text-white mb-6">Ações Rápidas</h2>
 
         <div className="grid md:grid-cols-3 gap-6">
           {quickLinks.map((link, index) => (

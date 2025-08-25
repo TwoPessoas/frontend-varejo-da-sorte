@@ -111,7 +111,7 @@ const InvoiceForm = () => {
 
   return (
     <div className="mb-8">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6">
+      <h2 className="text-2xl font-bold text-white mb-6">
         Cadastrar Nota Fiscal
       </h2>
       <div className="card p-6 overflow-visible">
@@ -145,6 +145,8 @@ const InvoiceForm = () => {
                 ) : (
                   <span className="text-red-600 font-medium">Não</span>
                 )}
+
+                {/* 
                 {submissionResultMessage?.data?.invoice.hasItem && (
                   <ul className="list-disc list-inside text-gray-700 text-sm">
                     {submissionResultMessage?.data?.products
@@ -153,7 +155,9 @@ const InvoiceForm = () => {
                         <li key={idx}>{product.description}</li>
                       ))}
                   </ul>
-                )}
+                )} 
+                 */}
+
               </div>
 
               {/* Cartão de Crédito da Promoção */}

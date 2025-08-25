@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import FooterComponent from "../home/components/FooterComponent";
 
 export default function RulesPage() {
   const isInited = useRef(false);
@@ -10,7 +11,12 @@ export default function RulesPage() {
 
   return (
     <>
-      <h1>Regras</h1>
+      <div className="rules-page">
+        <div className="container">
+          <h1>Regras</h1>
+        </div>
+      </div>
+      <FooterComponent />
     </>
   );
 }

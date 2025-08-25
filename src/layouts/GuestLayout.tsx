@@ -4,6 +4,7 @@ const GuestLayout = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="bg-primary text-white p-4">
+
         <nav className="container mx-auto flex justify-between items-center">
           <a href="/" className="text-xl font-bold">
             <img src="./imgs/logo.svg" alt="Atakarejo" className="w-[120px]" />
