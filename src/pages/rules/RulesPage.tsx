@@ -4,10 +4,10 @@ import RulesComponent from "./components/RulesComponent";
 export default function RulesPage() {
   return (
     <>
-      <div className="rules-page">
-        <div className="container">
+      <div className="  rules_page">
+        
           <RulesComponent />
-        </div>
+        
       </div>
       <FooterComponent />
     </>

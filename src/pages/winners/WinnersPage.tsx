@@ -12,7 +12,7 @@ export default function WinnersPage() {
   return (
     <>
     <div className="winner-page" >
-      <section className="sec-hero winner-hero hero pt-8 scroll-pb-60 relative">
+      <section className="sec-hero winner-hero hero pt-20 scroll-pb-60 relative">
         <div className="container relative">
           <header className="hero-header ">
             <div className="logo_campaign mb-8">

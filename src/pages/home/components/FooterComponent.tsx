@@ -221,7 +221,7 @@ const FooterComponent = () => {
                       Promoção autorizada pelo Ministério da Economia.
                     </h5>
                     <p className="text-xs text-primary">
-                      Certificado de Autorização SEAE Nº. 05.021865/2022. 
+                      Certificado de Autorização SPA/MF nº. 04.043818/2025.
                     </p>
                   </div>
                   

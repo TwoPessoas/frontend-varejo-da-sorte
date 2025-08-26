@@ -543,10 +543,16 @@ html {
     RULES COMPONENT
    ==================*/
 @layer utilities {
-  #rules { 
+  
+  .rules_section { 
     background: url('/imgs/regulamento-bg.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
+  }
+
+  .rules_page {
+    background: url('/imgs/hero-bg.jpg') no-repeat center top #db5e01;
+    background-size: 100% auto; 
   }
   /* Animações para tabs */
   .tab-content-enter {
@@ -584,7 +590,7 @@ html {
     border-radius: 1px;
   }
 
-  /* TETXO DE REGULAMENTO */
+  /* TEXTO DE REGULAMENTO */
   .regulamento-text {
     @apply font-body;
   }
@@ -595,7 +601,16 @@ html {
     list-style-type:decimal-leading-zero;
   }
 
-/* TABELAS */
+  /* TABELAS */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+    margin: 1.5rem 0;
+  }
+  .table-responsive table{
+    margin: 0;
+  }
   .table-fixed {
     table-layout: fixed;    
   }
