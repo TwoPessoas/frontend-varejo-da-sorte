@@ -11,7 +11,7 @@ const ClientAreaPage = () => {
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <h2 className="text-xl font-bold text-gray-900 mb-2">
-            Carregando dashboard...
+            Carregando área do clientge...
           </h2>
           <p className="text-gray-600">
             Buscando suas informações mais recentes
@@ -26,13 +26,7 @@ const ClientAreaPage = () => {
       title: "Abrir Caixa de presente",
       description: "Use suas chances disponíveis",
       icon: (
-        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-          <path
-            fillRule="evenodd"
-            d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
-            clipRule="evenodd"
-          />
-        </svg>
+        <svg enable-background="new 0 0 32 32" version="1.1" viewBox="0 0 32 32"  className="h-8 w-8"><g id="Layer_1"/><g id="Layer_2"><g><rect fill="none" height="16" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" width="24" x="4" y="14"/><rect fill="none" height="6" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" width="28" x="2" y="8"/><rect fill="none" height="16" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" width="6" x="13" y="14"/><rect fill="none" height="6" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" width="6" x="13" y="8"/><polygon fill="none" points="    16,7 19,4 18,2 16,2 14,2 13,4   " stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/><polyline fill="none" points="    19,4 23,3 25,5 25,8   " stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/><polyline fill="none" points="    13,4 9,3 7,5 7,8   " stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/></g></g></svg>
       ),
       href: "/jogar-agora",
       color: "primary",
@@ -42,9 +36,7 @@ const ClientAreaPage = () => {
       title: "Números da Sorte",
       description: "Veja todos os seus números",
       icon: (
-        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
+        <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8"><rect fill="none" height="256" width="256"/><line fill="none" stroke="#0057cc" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="96" x2="96" y1="56" y2="200"/><path d="M24,167.2a7.9,7.9,0,0,1,6.4-7.8,32.1,32.1,0,0,0,0-62.8A7.9,7.9,0,0,1,24,88.8V64a8,8,0,0,1,8-8H224a8,8,0,0,1,8,8V88.8a7.9,7.9,0,0,1-6.4,7.8,32.1,32.1,0,0,0,0,62.8,7.9,7.9,0,0,1,6.4,7.8V192a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8Z" fill="none" stroke="#0057cc" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
       ),
       href: "/numeros-da-sorte",
       color: "secondary",
@@ -54,13 +46,7 @@ const ClientAreaPage = () => {
       title: "Lista de Chances",
       description: "Histórico de participações",
       icon: (
-        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-          <path
-            fillRule="evenodd"
-            d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"
-            clipRule="evenodd"
-          />
-        </svg>
+        <svg  version="1.1" viewBox="0 0 20 20"  className="h-8 w-8"><title/><desc/><defs/><g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1"><g fill="#0057cc" id="Core" transform="translate(-128.000000, -86.000000)"><g id="check-circle-outline" transform="translate(128.000000, 86.000000)"><path d="M5.9,8.1 L4.5,9.5 L9,14 L19,4 L17.6,2.6 L9,11.2 L5.9,8.1 L5.9,8.1 Z M18,10 C18,14.4 14.4,18 10,18 C5.6,18 2,14.4 2,10 C2,5.6 5.6,2 10,2 C10.8,2 11.5,2.1 12.2,2.3 L13.8,0.7 C12.6,0.3 11.3,0 10,0 C4.5,0 0,4.5 0,10 C0,15.5 4.5,20 10,20 C15.5,20 20,15.5 20,10 L18,10 L18,10 Z" /></g></g></g></svg>
       ),
       href: "/lista-de-chances",
       color: "default",
@@ -69,7 +55,7 @@ const ClientAreaPage = () => {
   ];
 
   return (
-    <div className="p-6 lg:p-8 dashboard-area" >
+    <div className="p-4 lg:p-8 dashboard-area" >
       {/* Page Header */}
       <div className="mb-8">
         <img src="./imgs/logo-campanha.png" className="mb-6 max-w-[280px] mx-auto" alt="" />
@@ -77,12 +63,11 @@ const ClientAreaPage = () => {
             <div>
               <h1 className="text-3xl font-bold text-white mb-2">Área do Cliente</h1>
               <p className="text-gray-200">
-                Acompanhe seu progresso no sorteio de brindes
+                Cadestre suas compras e boa sorte
               </p>
             </div>  
             
             <TimeRemaining />
-            
             
         </div>
       </div>
@@ -98,7 +83,7 @@ const ClientAreaPage = () => {
             <a
               key={index}
               href={link.href}
-              className={` p-6 group  transition-all duration-300 hover:-translate-y-1 hover:shadow-medium ${
+              className={` p-6 group rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-medium ${
                 !link.available ? "opacity-100 cursor-not-allowed" : "hover-lift"
               }  ${
                       link.color === "primary"
@@ -106,25 +91,19 @@ const ClientAreaPage = () => {
                         : link.color === "secondary"
                         ? "bg-secondary-700 group-hover:text-secondary"
                         : link.color === "default"
-                        ? "bg-gray-200 text-gray-900 group-hover:text-secondary"
+                        ? "bg-gray-200 text-primary group-hover:text-primary-700"
                         : ""
                     }`}
               onClick={!link.available ? (e) => e.preventDefault() : undefined}
             >
               <div className="flex items-start space-x-4">
-{/*                 
+          
                 <div
-                  className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300 ${
-                    link.color === "primary"
-                      ? "bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white"
-                      : link.color === "secondary"
-                      ? "bg-secondary/10 text-secondary group-hover:bg-secondary group-hover:text-white"
-                      : "bg-gray-100 text-gray-600 group-hover:bg-gray-600 group-hover:text-white"
-                  }`}
+                  className={`flex items-center justify-center transition-colors duration-300 `}
                 >
                   {link.icon}
                 </div>
-*/}
+
 
                 <div className="flex-1">
                   <h3
@@ -132,15 +111,23 @@ const ClientAreaPage = () => {
                       link.color === "primary"
                         ? "text-white group-hover:text-white"
                         : link.color === "secondary"
-                        ? "text-gray-900 group-hover:text-secondary"
+                        ? "text-primary group-hover:text-secondary"
                         : link.color === "default"
-                        ? "text-gray-900  group-hover:text-secondary"
+                        ? "text-primary  group-hover:text-primary-700"
                         : ""
                     }`}
                   >
                     {link.title}
                   </h3>
-                  <p className={'text-white text-sm'}>{link.description}</p>
+                  <p className={` text-sm ${
+                      link.color === "primary"
+                        ? "text-white group-hover:text-white"
+                        : link.color === "secondary"
+                        ? "text-white group-hover:text-secondary"
+                        : link.color === "default"
+                        ? "text-gray-600  group-hover:text-primary-700"
+                        : ""
+                    }`}>{link.description}</p>
 
                   {!link.available && (
                     <span className="inline-block mt-2 text-xs text-red-600 bg-red-50 px-2 py-1 rounded-full">
@@ -170,32 +157,33 @@ const ClientAreaPage = () => {
 
       {/* Stats Cards */}
       <div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Informações gerais</h2>
+        <h2 className="text-2xl font-bold text-white mb-6">Informações gerais</h2>
       
         <div className="grid lg:grid-cols-3 gap-6 mb-8">
           
           {/* Chances Card */}
-          <div className="card p-6 hover-lift">
-            <div className="flex items-start justify-between mb-4">
+          <div className="card p-4 hover-lift">
+            <div className="flex items-center justify-between mb-4 flex-wrap">
               <div>
                 <h3 className="text-lg font-bold text-gray-900 mb-1">
                   Chances Disponíveis
                 </h3>
-                <p className="text-gray-600 text-sm">
-                  Use para abrir a caixa da sorte
-                </p>
+                
               </div>
-            </div>
-
-            <div className="space-y-3">
-              <div className="flex items-end space-x-2">
-                <span className="text-3xl font-bold text-gray-900">
+              <div className="flex items-start justify-end space-x-2 w-10">
+                <span className="text-sm sm:text-3xl font-bold text-gray-900">
                   {getSummary()?.opportunitiesNotUsed || 0}
                 </span>
-                <span className="text-lg text-gray-500 mb-1">
+                <span className="text-sm sm:text-lg text-gray-500 mb-1">
                   / {getSummary()?.opportunitiesTotal || 0}
                 </span>
               </div>
+              <p className="text-gray-600 text-sm">
+                  Use para abrir a caixa da sorte
+                </p>
+            </div>
+
+            <div className="space-y-3">
 
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div
@@ -227,7 +215,7 @@ const ClientAreaPage = () => {
           </div>
 
           {/* Lucky Numbers Card */}
-          <div className="card p-6 hover-lift">
+          <div className="card p-4 hover-lift">
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h3 className="text-lg font-bold text-gray-900 mb-1">
@@ -235,13 +223,12 @@ const ClientAreaPage = () => {
                 </h3>
                 <p className="text-gray-600 text-sm">Gerados até agora</p>
               </div>
+              <div className="text-xl font-bold text-gray-900">
+                {getSummary()?.drawNumbersTotal || 0}
+              </div>
             </div>
 
             <div className="space-y-3">
-              <div className="text-3xl font-bold text-gray-900">
-                {getSummary()?.drawNumbersTotal || 0}
-              </div>
-
               <div className="text-sm text-gray-600">
                 Cada número é uma chance de ganhar!
               </div>
@@ -250,7 +237,7 @@ const ClientAreaPage = () => {
 
           
           {/* Invoices Card */}
-          <div className="card p-6 hover-lift">
+          <div className="card p-4 hover-lift">
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h3 className="text-lg font-bold text-gray-900 mb-1">
@@ -258,13 +245,11 @@ const ClientAreaPage = () => {
                 </h3>
                 <p className="text-gray-600 text-sm">Cadastradas no sistema</p>
               </div>
-            </div>
-
-            <div className="space-y-3">
-              <div className="text-3xl font-bold text-gray-900">
+              <div className="text-xl font-bold text-gray-900">
                 {getSummary()?.invoicesTotal || 0}
               </div>
             </div>
+
           </div>
         </div>
       </div>

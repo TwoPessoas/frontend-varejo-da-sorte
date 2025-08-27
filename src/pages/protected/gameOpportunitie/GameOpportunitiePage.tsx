@@ -123,13 +123,13 @@ const GameOpportunitiePage = () => {
   }
 
   return (
-    <div className="p-6 lg:p-8">
+    <div className="pt-6 px-4 lg:p-8">
       {/* Page Header */}
       <div className="mb-8">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
           <div>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">
-              🎲 Lista de Chances
+              Histórico Geral
             </h1>
             <p className="text-gray-600">
               Histórico completo de suas oportunidades de jogo
@@ -163,7 +163,7 @@ const GameOpportunitiePage = () => {
       </div>
 
       {/* Filters and Search */}
-      <div className="card p-6 mb-6">
+      <div className="card p-4 mb-6 hidden">
         <div className="grid lg:grid-cols-5 gap-4">
           {/* Period Filter */}
           <div>
@@ -211,7 +211,7 @@ const GameOpportunitiePage = () => {
       </div>
 
       {/* Opportunities List */}
-      <div className="card overflow-hidden">
+      <div className="card w-full overflow-hidden">
         {paginatedOpportunities.length > 0 ? (
           <>
             {/* Desktop Table */}
@@ -356,15 +356,15 @@ const GameOpportunitiePage = () => {
                   </div>
 
                   <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
+                    <div className="flex ">
                       <span className="text-gray-600">Criada em:</span>
-                      <span className="font-medium">
+                      <span className="font-medium text-gray-500 ml-2">
                         {formatDateShort(item.createdAt)}
                       </span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex">
                       <span className="text-gray-600">Usada em:</span>
-                      <span className="font-medium">
+                      <span className="font-medium text-gray-500 ml-2">
                         {item.usedAt ? (
                           formatDateShort(item.usedAt)
                         ) : (
@@ -372,7 +372,7 @@ const GameOpportunitiePage = () => {
                         )}
                       </span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between text-ellipsis"  >
                       {item.fiscalCode}
                     </div>
                   </div>

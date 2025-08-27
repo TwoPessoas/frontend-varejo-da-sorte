@@ -55,7 +55,7 @@ const DefaultLayout = () => {
       ),
     },
     {
-      name: "Dashboard",
+      name: "Área do Cliente",
       path: "/area-cliente",
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -64,7 +64,7 @@ const DefaultLayout = () => {
       ),
     },
     {
-      name: "Jogar Agora",
+      name: "Abrir caixas",
       path: "/jogar-agora",
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -86,7 +86,7 @@ const DefaultLayout = () => {
       ),
     },
     {
-      name: "Lista de Chances",
+      name: "Histórico ",
       path: "/lista-de-chances",
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -191,7 +191,7 @@ const DefaultLayout = () => {
                 {/* Mobile Menu Button */}
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="md:hidden p-2 text-gray-600 hover:text-primary hover:bg-gray-100 rounded-lg transition-colors duration-200"
+                  className="md:hidden p-2 text-white hover:text-primary hover:bg-gray-100 rounded-lg transition-colors duration-200"
                 >
                   <svg
                     className="w-6 h-6"
@@ -242,7 +242,7 @@ const DefaultLayout = () => {
                     className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-left transition-colors duration-200 ${
                       isActivePath(item.path)
                         ? "bg-primary text-white"
-                        : "text-white hover:bg-gray-100"
+                        : "text-gray-800 hover:bg-gray-100"
                     }`}
                   >
                     {item.icon}

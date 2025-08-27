@@ -76,26 +76,18 @@ const PlayNowPage = () => {
           ))}
         </div>
       )}
-      <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center p-6">
-        <div className="max-w-4xl w-full">
+      <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center pt-6 dashboard-area">
+
+        <div className="container">
           {/* Header Info */}
           <div className="text-center mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-primary title mb-4">
+             <img src="./imgs/logo-campanha.png" className="mb-6 max-w-[280px] mx-auto" alt="" />
+            <h1 className="text-3xl md:text-4xl font-bold text-white  mb-4">
               Abra o seu Presente Atakarejo
             </h1>
             <div className="inline-flex items-center space-x-4 bg-white rounded-full px-6 py-3 shadow-soft">
               <div className="flex items-center space-x-2">
-                <svg
-                  className="w-5 h-5 text-primary"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                
                 <span className="font-bold text-gray-900">
                   Chances restantes:
                 </span>
@@ -252,7 +244,7 @@ const PlayNowPage = () => {
                     ) : (
                       <div>
                         <h2 className="text-3xl font-bold text-blue-600 mb-4">
-                          🎯 Continue tentando!
+                          Continue tentando!
                         </h2>
                         <p className="text-gray-600 text-lg mb-4">
                           Não desanime!
@@ -297,42 +289,11 @@ const PlayNowPage = () => {
                       >
                         <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                       </svg>
-                      <span>Voltar ao Dashboard</span>
+                      <span>Voltar a área do cliente</span>
                     </button>
                   </div>
 
-                  {/* Additional Info */}
-                  <div className="mt-8 p-4 bg-gray-50 rounded-lg">
-                    <div className="flex items-start space-x-3">
-                      <svg
-                        className="w-5 h-5 text-primary mt-1 flex-shrink-0"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-1">
-                          Lembre-se:
-                        </h4>
-                        <ul className="text-sm text-gray-600 space-y-1">
-                          <li>• Seu número foi salvo automaticamente</li>
-                          <li>• O sorteio será realizado em 30/09/2025</li>
-                          <li>
-                            • Você pode ver todos os seus números na seção
-                            "Números da Sorte"
-                          </li>
-                          <li>
-                            • Cadastre notas fiscais para ganhar mais chances
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+                  
                 </div>
               </div>
             )}

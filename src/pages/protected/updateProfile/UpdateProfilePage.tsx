@@ -126,7 +126,7 @@ const UpdateProfilePage = () => {
     <div className="p-6 lg:p-8">
       {/* Page Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold title text-primary mb-2">
+        <h1 className="text-3xl font-bold text-primary mb-2">
           {client?.isPreRegister && `Atualizar `}Dados Pessoais
         </h1>
         {client?.isPreRegister && (
