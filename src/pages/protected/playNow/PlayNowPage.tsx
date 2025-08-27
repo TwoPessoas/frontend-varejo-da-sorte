@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { useClient } from "../../../contexts/ClientContext";
 import { useNavigate } from "react-router-dom";
-import type { VoucherResponse } from "../../../types/Voucher";
+import type { Voucher } from "../../../types/Voucher";
 
 const PlayNowPage = () => {
   const { updateSummary, getSummary, tryMyLuck } = useClient();
-  const [voucherData, setVoucherData] = useState<VoucherResponse | null>(null);
+  const [voucherData, setVoucherData] = useState<Voucher | null>(null);
   const [gameState, setGameState] = useState("ready"); // ready, playing, result
   const [showConfetti, setShowConfetti] = useState(false);
   const navigate = useNavigate();

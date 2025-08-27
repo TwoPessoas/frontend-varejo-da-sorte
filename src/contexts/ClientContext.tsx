@@ -5,7 +5,7 @@ import { useAuth } from "./AuthContext";
 import toast from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
 import type { InvoiceRequest, InvoiceResponse } from "../types/Invoice";
-import type { VoucherResponse } from "../types/Voucher";
+import type { Voucher } from "../types/Voucher";
 
 const ClientContext = createContext<ClientContextType | undefined>(undefined);
 export const CLIENT_STORAGE_NAME = "authClientWebVarejoDaSorte";
@@ -182,9 +182,9 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  const tryMyLuck = async (): Promise<VoucherResponse | null> => {
+  const tryMyLuck = async (): Promise<Voucher | null> => {
     try {
-      const response = await api.get<VoucherResponse>(`/invoices/try-my-luck`);
+      const response = await api.get<Voucher>(`/invoices/try-my-luck`);
       await updateSummary();
       return response.data;
     } catch (err: any) {

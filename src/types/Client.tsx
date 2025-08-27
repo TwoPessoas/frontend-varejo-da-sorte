@@ -1,5 +1,5 @@
 import type { InvoiceRequest, InvoiceResponse } from "./Invoice";
-import type { VoucherResponse } from "./Voucher";
+import type { Voucher } from "./Voucher";
 
 export interface Client {
   isPreRegister: boolean;
@@ -38,5 +38,5 @@ export interface ClientContextType {
   addInvoice: (
     invoiceData: Partial<InvoiceRequest>
   ) => Promise<InvoiceResponse | null>;
-  tryMyLuck: () => Promise<VoucherResponse | null>;
+  tryMyLuck: () => Promise<Voucher | null>;
 }
