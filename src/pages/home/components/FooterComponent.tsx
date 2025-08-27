@@ -1,48 +1,4 @@
-import { Target } from "lucide-react";
-import { useState } from "react";
-
 const FooterComponent = () => {
-  const [email, setEmail] = useState("");
-  const [isSubscribing, setIsSubscribing] = useState(false);
-  const [subscriptionMessage, setSubscriptionMessage] = useState("");
-
-  const handleNewsletterSubmit = async (e: any) => {
-    e.preventDefault();
-
-    if (!email.trim()) {
-      setSubscriptionMessage("Por favor, digite um e-mail válido");
-      return;
-    }
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setSubscriptionMessage("Por favor, digite um e-mail válido");
-      return;
-    }
-
-    setIsSubscribing(true);
-    setSubscriptionMessage("");
-
-    try {
-      // Simular chamada da API
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-
-      // Aqui você faria a chamada real para sua API de newsletter
-      console.log("E-mail cadastrado:", email);
-
-      setSubscriptionMessage("✅ E-mail cadastrado com sucesso!");
-      setEmail("");
-    } catch (err) {
-      setSubscriptionMessage("❌ Erro ao cadastrar. Tente novamente.");
-    } finally {
-      setIsSubscribing(false);
-
-      // Limpar mensagem após 3 segundos
-      setTimeout(() => {
-        setSubscriptionMessage("");
-      }, 3000);
-    }
-  };
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -51,14 +7,6 @@ const FooterComponent = () => {
   };
 
   const currentYear = new Date().getFullYear();
-
-  const navigationLinks = [
-    { name: "Início", id: "hero" },
-    { name: "Sobre a Campanha", id: "about" },
-    { name: "Marcas Parceiras", id: "brands" },
-    { name: "Regras", id: "rules" },
-    { name: "FAQ", id: "faq" },
-  ];
 
   const legalLinks = [
     { name: "Política de Privacidade", href: "https://atakarejo.com.br/politica-de-privacidade/", target: "_blank" },

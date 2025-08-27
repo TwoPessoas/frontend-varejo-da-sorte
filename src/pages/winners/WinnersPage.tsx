@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import FooterComponent from "../home/components/FooterComponent";
 import useVoucher from "../../hooks/useVoucher";
 import type { VoucherDraw } from "../../types/Voucher";
-import { is } from "zod/locales";
 
 export default function WinnersPage() {
   const { isLoading, getVouchersDrawn } = useVoucher();
@@ -112,7 +111,7 @@ export default function WinnersPage() {
                       <h5 className="">LISTA DISPONÍVEL EM BREVE</h5>
                     ) : (
                       vouchers.map((voucher, index) => (
-                        <li key={"winner-item-${index}"} className="ganhador">
+                        <li key={`winner-item-${index}`} className="ganhador">
                           <div className="nome">{voucher.name}</div>
                           <div className="cpf">{`CPF: ${voucher.cpf}`}</div>
                           <div className="data">

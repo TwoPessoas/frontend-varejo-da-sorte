@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const FAQComponent = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [openItems, setOpenItems] = useState(new Set([0])); // Primeiro item aberto por padrão
-  const [searchTerm, setSearchTerm] = useState("");
   const sectionRef = useRef(null);
 
   // Intersection Observer para animações
@@ -86,28 +85,6 @@ const FAQComponent = () => {
   // Adicione mais FAQs conforme necessário
   ];
 
-  const categories = [
-    "Todas",
-    "Participação",
-    "Sorteio",
-    "Prêmios",
-    "Dados",
-    "Suporte",
-  ];
-  const [activeCategory, setActiveCategory] = useState("Todas");
-
-  // Filtrar FAQs
-  const filteredFAQs = faqData.filter((faq) => {
-    const matchesCategory =
-      activeCategory === "Todas" || faq.category === activeCategory;
-    const matchesSearch =
-      faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      faq.answer.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
-
-  const popularFAQs = faqData.filter((faq) => faq.popular);
-
   const toggleItem = (id: number) => {
     const newOpenItems = new Set(openItems);
     if (newOpenItems.has(id)) {
@@ -116,14 +93,6 @@ const FAQComponent = () => {
       newOpenItems.add(id);
     }
     setOpenItems(newOpenItems);
-  };
-
-  const openAll = () => {
-    setOpenItems(new Set(filteredFAQs.map((faq) => faq.id)));
-  };
-
-  const closeAll = () => {
-    setOpenItems(new Set());
   };
 
   return (
@@ -159,62 +128,6 @@ const FAQComponent = () => {
           </h1>
         </header>
 
-        
-
-        {/* Search and Filters */}
-        <div
-          className={`mb-6 transition-all duration-1000 delay-400 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <div className="max-w-2xl mx-auto">
-            {/* Search Bar */}
-            {/* <div className="relative mb-8">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <svg
-                  className="h-5 w-5 text-gray-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-              <input
-                type="text"
-                placeholder="Buscar por palavra-chave..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="input pl-10 text-center"
-              />
-            </div> */}
-
-            
-
-            {/* Control Buttons */}
-            {/* 
-            <div className="flex justify-center space-x-4">
-              <button
-                onClick={openAll}
-                className="btn-outline-default text-sm px-4 py-2"
-              >
-                Expandir Todas
-              </button>
-              <button
-                onClick={closeAll}
-                className="btn-outline-default text-sm px-4 py-2"
-              >
-                Recolher Todas
-              </button>
-            </div>
-             */}
-
-          </div>
-        </div>
-
         {/* FAQ List */}
         <div
           id="faq-list"
@@ -222,9 +135,9 @@ const FAQComponent = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          {filteredFAQs.length > 0 ? (
+          {faqData.length > 0 ? (
             <div className="space-y-4">
-              {filteredFAQs.map((faq, index) => (
+              {faqData.map((faq, index) => (
                 <div
                   key={faq.id}
                   className="card faq-card overflow-hidden"
@@ -236,16 +149,6 @@ const FAQComponent = () => {
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex-1">
-                        {/* <div className="flex items-center space-x-3 mb-2">
-                          <span className="text-xs text-primary font-medium bg-primary/10 px-2 py-1 rounded-full">
-                            {faq.category}
-                          </span>
-                          {faq.popular && (
-                            <span className="text-xs text-secondary font-medium bg-secondary/10 px-2 py-1 rounded-full">
-                              Popular
-                            </span>
-                          )}
-                        </div> */}
                         <h3 className="text-lg font-bold text-left text-[#901518]">
                           {faq.question}
                         </h3>
