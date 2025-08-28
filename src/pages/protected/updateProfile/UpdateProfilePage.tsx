@@ -5,6 +5,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { InputMask } from "@react-input/mask";
 import { useNavigate } from "react-router-dom";
+import FooterComponent from "../../home/components/FooterComponent";
 
 // Esquema de validação Zod para os dados do cliente
 const clientSchema = z
