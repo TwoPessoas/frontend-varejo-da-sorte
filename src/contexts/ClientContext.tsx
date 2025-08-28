@@ -37,8 +37,7 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
       setStorageClient(clientUpdated);
       return clientUpdated;
     } catch (err: any) {
-      console.error("Failed to update client:", err);
-      toast.error("Falha ao atualizar o cliente. Tente novamente mais tarde!");
+      toast.error(err.response?.data?.message || "Falha ao atualizar o cliente. Tente novamente mais tarde!");
       return null;
     } finally {
       setIsLoading(false);
@@ -55,8 +54,7 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
       setStorageClient(clientUpdated);
       return clientUpdated;
     } catch (err: any) {
-      console.error("Failed to fetch client:", err);
-      toast.error("Failed to fetch client data. Please try again.");
+      toast.error(err.response?.data?.message || "Failed to fetch client data. Please try again.");
       return null;
     } finally {
       setIsLoading(false);
@@ -90,10 +88,6 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
       setClient(dataToStore);
       return dataToStore;
     } catch (error) {
-      console.error(
-        "[AuthContext][client] Falha ao obter ou processar dados do cliente:",
-        error
-      );
       //Limpar localStorage se o dado estiver corrompido
       clear();
       return null; // ou throw error, dependendo de como você quer lidar com a falha
@@ -110,7 +104,7 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
       setSummary(dataSummary);
       return dataSummary;
     } catch (err: any) {
-      toast.error("Não foi possível recuperar o sumário do cliente");
+      toast.error(err.response?.data?.message || "Não foi possível recuperar o sumário do cliente");
       return null;
     }
   };
@@ -131,7 +125,6 @@ export const ClientProvider = ({ children }: { children: ReactNode }) => {
       setSummary(dataToStore);
       return dataToStore;
     } catch (error) {
-      console.error("Falha ao obter o sumário do cliente:", error);
       return null;
     }
   };
