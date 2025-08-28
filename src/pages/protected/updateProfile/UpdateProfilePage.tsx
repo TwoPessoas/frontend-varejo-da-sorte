@@ -139,8 +139,9 @@ const UpdateProfilePage = () => {
   };
 
   return (
+    <div>
     <div className="dashboard-area">
-      <div className="pt-6 px-4 lg:p-8">
+      <div className="py-6 px-4 lg:p-8">
         <header className="hero-header ">
           <div className="logo_campaign mb-8">
             <img
@@ -486,6 +487,8 @@ const UpdateProfilePage = () => {
           </div>
         </div>
       </div>
+    </div>
+    <FooterComponent />
     </div>
   );
 };

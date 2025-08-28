@@ -271,7 +271,7 @@ const FooterComponent = () => {
 
               <div className="flex items-center space-x-6">
                 <button
-                  onClick={() => scrollToSection("hero")}
+                  onClick={() => scrollToSection("root")}
                   className="flex items-center space-x-2 btn-outline transition-colors duration-200"
                 >
                   <svg
