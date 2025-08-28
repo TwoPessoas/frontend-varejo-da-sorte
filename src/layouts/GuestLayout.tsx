@@ -1,8 +1,13 @@
-import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { useState } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const GuestLayout = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleOnClick = (url: string) => {
+    navigate(url);
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -12,11 +17,27 @@ const GuestLayout = () => {
             <img src="./imgs/logo.svg" alt="Atakarejo" className="w-[120px]" />
           </a>
           <div className="hidden md:flex space-x-4">
-            <a href="/#hero" className="text-white hover:text-gray-300">Início</a>
-            <a href="/#brands" className="text-white hover:text-gray-300">Marcas</a>
-            <a href="/regulamento" className="text-white hover:text-gray-300">Regulamento</a>
-            <a href="/#faq" className="text-white hover:text-gray-300">FAQ</a>
-            <a href="/ganhadores" className="text-white hover:text-gray-300">Ganhadores</a>
+            <a href="/#hero" className="text-white hover:text-gray-300">
+              Início
+            </a>
+            <a href="/#brands" className="text-white hover:text-gray-300">
+              Marcas
+            </a>
+            <a
+              onClick={() => handleOnClick("/regulamento")}
+              className="text-white hover:text-gray-300"
+            >
+              Regulamento
+            </a>
+            <a href="/#faq" className="text-white hover:text-gray-300">
+              FAQ
+            </a>
+            <a
+              onClick={() => handleOnClick("/ganhadores")}
+              className="text-white hover:text-gray-300"
+            >
+              Ganhadores
+            </a>
           </div>
           <div className="md:hidden">
             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -40,11 +61,36 @@ const GuestLayout = () => {
         </nav>
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4">
-            <a href="/#hero" className="block py-2 px-4 text-white hover:bg-white/20">Início</a>
-            <a href="/#brands" className="block py-2 px-4 text-white hover:bg-white/20">Marcas</a>
-            <a href="/regulamento" className="block py-2 px-4 text-white hover:bg-white/20">Regulamento</a>
-            <a href="/#faq" className="block py-2 px-4 text-white hover:bg-white/20">FAQ</a>
-            <a href="/ganhadores" className="block py-2 px-4 text-white hover:bg-white/20">Ganhadores</a>
+            <a
+              href="/#hero"
+              className="block py-2 px-4 text-white hover:bg-white/20"
+            >
+              Início
+            </a>
+            <a
+              href="/#brands"
+              className="block py-2 px-4 text-white hover:bg-white/20"
+            >
+              Marcas
+            </a>
+            <a
+              onClick={() => handleOnClick("/regulamento")}
+              className="block py-2 px-4 text-white hover:bg-white/20"
+            >
+              Regulamento
+            </a>
+            <a
+              href="/#faq"
+              className="block py-2 px-4 text-white hover:bg-white/20"
+            >
+              FAQ
+            </a>
+            <a
+              onClick={() => handleOnClick("/ganhadores")}
+              className="block py-2 px-4 text-white hover:bg-white/20"
+            >
+              Ganhadores
+            </a>
           </div>
         )}
       </header>

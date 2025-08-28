@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import useGameOpportunity from "../../../hooks/useGameOpportunity";
+import { useNavigate } from "react-router-dom";
 
 export const GIFT_NAO_FOI_DESSA_VEZ = "Não foi dessa vez. Tente novamente!";
 
@@ -11,6 +12,11 @@ const GameOpportunitiePage = () => {
   const [itemsPerPage] = useState(10);
   const { isLoading, opportunities, getMyOpportunities, clearOpportunities } = useGameOpportunity();
   const isInited = useRef(false);
+  const navigate = useNavigate();
+
+  const handleOnClick = (url:string) => {
+    navigate(url);
+  }
 
   useEffect(() => {
     if (isInited.current) return;
@@ -402,7 +408,7 @@ const GameOpportunitiePage = () => {
                 : "Você ainda não possui chances cadastradas"}
             </p>
             {selectedPeriod === "all" && (
-              <a href="/dashboard" className="btn-primary">
+              <a onClick={() => handleOnClick("/area-cliente")} className="btn-primary">
                 Voltar ao Dashboard
               </a>
             )}

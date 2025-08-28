@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const RulesComponent = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState("participation");
   const sectionRef = useRef(null);
+  const navigate = useNavigate();
 
   // Intersection Observer para animações
   useEffect(() => {
@@ -22,6 +24,10 @@ const RulesComponent = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  const handleOnClick = (url: string) => {
+    navigate(url);
+  };
 
   const tabs = [
     {
@@ -56,25 +62,38 @@ const RulesComponent = () => {
         <div className="regulamento-text text-gray-800">
           <h3 className="">"ANIVERSÁRIO ATAKAREJO 2025"</h3>
           <ol>
-            <li>Empresa Mandatária
+            <li>
+              Empresa Mandatária
               <ol>
                 <li>Razão Social: Pax Marketing e Eventos Ltda </li>
-                <li>Endereço: Av. Tancredo Neves, 620 – Caminho das Árvores – Salvador/BA</li>
+                <li>
+                  Endereço: Av. Tancredo Neves, 620 – Caminho das Árvores –
+                  Salvador/BA
+                </li>
                 <li>CNPJ nº. 34.394.645/0001-78 </li>
               </ol>
             </li>
-            <li>Empresa Aderente
+            <li>
+              Empresa Aderente
               <ol>
-                <li>Razão Social: Atakarejo Distribuidor de Alimentos e Bebidas S.A</li>
-                <li>Endereço: Av. Santiago de Compostela, 425 – Brotas – Salvador/BA – CEP: 40.279-1500</li>
+                <li>
+                  Razão Social: Atakarejo Distribuidor de Alimentos e Bebidas
+                  S.A
+                </li>
+                <li>
+                  Endereço: Av. Santiago de Compostela, 425 – Brotas –
+                  Salvador/BA – CEP: 40.279-1500
+                </li>
                 <li>CNPJ nº. 73.849.952/0010-49</li>
               </ol>
             </li>
-            <p>A Empresa Mandatária e as Empresas Aderentes são referidas neste documento em conjunto como “Promotora”.  </p>
+            <p>
+              A Empresa Mandatária e as Empresas Aderentes são referidas neste
+              documento em conjunto como “Promotora”.{" "}
+            </p>
           </ol>
         </div>
       ),
-      
     },
     prizes: {
       title: "Vale-Compras",
@@ -83,26 +102,39 @@ const RulesComponent = () => {
         <div className="regulamento-text">
           <h3 className="">"ANIVERSÁRIO ATAKAREJO 2025"</h3>
           <ol>
-            <li>Empresa Mandatária
+            <li>
+              Empresa Mandatária
               <ol>
                 <li>Razão Social: Pax Marketing e Eventos Ltda </li>
-                <li>Endereço: Av. Tancredo Neves, 620 – Caminho das Árvores – Salvador/BA</li>
+                <li>
+                  Endereço: Av. Tancredo Neves, 620 – Caminho das Árvores –
+                  Salvador/BA
+                </li>
                 <li>CNPJ nº. 34.394.645/0001-78 </li>
               </ol>
             </li>
-            <li>Empresa Aderente
+            <li>
+              Empresa Aderente
               <ol>
-                <li>Razão Social: Atakarejo Distribuidor de Alimentos e Bebidas S.A</li>
-                <li>Endereço: Av. Santiago de Compostela, 425 – Brotas – Salvador/BA – CEP: 40.279-1500</li>
+                <li>
+                  Razão Social: Atakarejo Distribuidor de Alimentos e Bebidas
+                  S.A
+                </li>
+                <li>
+                  Endereço: Av. Santiago de Compostela, 425 – Brotas –
+                  Salvador/BA – CEP: 40.279-1500
+                </li>
                 <li>CNPJ nº. 73.849.952/0010-49</li>
               </ol>
             </li>
-            <p>A Empresa Mandatária e as Empresas Aderentes são referidas neste documento em conjunto como “Promotora”.  </p>
+            <p>
+              A Empresa Mandatária e as Empresas Aderentes são referidas neste
+              documento em conjunto como “Promotora”.{" "}
+            </p>
           </ol>
         </div>
       ),
     },
-   
   };
 
   const currentContent = rulesContent[activeTab];
@@ -110,32 +142,38 @@ const RulesComponent = () => {
   return (
     <section
       id="rules"
-      ref={sectionRef}      
+      ref={sectionRef}
       className={`section rules_section relative z-10 transition-all duration-1000 delay-400 
-          md:pb-36 ${
-            isVisible ? "opacity-100 " : "opacity-0"
-          }`}
+          md:pb-36 ${isVisible ? "opacity-100 " : "opacity-0"}`}
     >
-      
-      <div className="ballon-wrapper justify-start -top-32  right-0 w-[30vw] 
-                      md:w-[150px] md:-top-20" >
-          <img src="./imgs/balao-laranja.png" alt=" " className="ballon ballon-animated ml-[50%]" />
+      <div
+        className="ballon-wrapper justify-start -top-32  right-0 w-[30vw] 
+                      md:w-[150px] md:-top-20"
+      >
+        <img
+          src="./imgs/balao-laranja.png"
+          alt=" "
+          className="ballon ballon-animated ml-[50%]"
+        />
       </div>
-      
-      <div className="ballon-wrapper justify-end bottom-32  left-0 w-[30vw]
-                      md:w-[180px] md:bottom-20 md:left-[2vw]" >
-          <img src="./imgs/balao-azul.png" alt=" " className="ballon ballon-animated mr-[30%] md:mr-0" />
+
+      <div
+        className="ballon-wrapper justify-end bottom-32  left-0 w-[30vw]
+                      md:w-[180px] md:bottom-20 md:left-[2vw]"
+      >
+        <img
+          src="./imgs/balao-azul.png"
+          alt=" "
+          className="ballon ballon-animated mr-[30%] md:mr-0"
+        />
       </div>
-      
 
       <div className="container relative z-10">
-        
         <header className="sec_header">
           <h1 className="title text-primary text-center mb-8 uppercase">
             Regulamento
           </h1>
         </header>
-        
 
         {/* Tabs Navigation */}
         <div
@@ -176,15 +214,12 @@ const RulesComponent = () => {
               <p className="text-gray-600">{currentContent.subtitle}</p>
             </header>
 
-
             {/* Content  */}
             <div className="content text-gray-900">
               {currentContent.content}
             </div>
           </div>
         </div>
-
-        
 
         {/* Call to Action */}
         <div
@@ -193,13 +228,12 @@ const RulesComponent = () => {
           }`}
         >
           <div className="max-w-2xl mx-auto">
-            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/regulamento"
+                onClick={() => handleOnClick("/regulamento")}
                 className="btn-outline inline-flex items-center hover-lift"
               >
-                Conferir Regulamento completo 
+                Conferir Regulamento completo
                 <svg
                   className="w-5 h-5 mr-2"
                   fill="currentColor"
