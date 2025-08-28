@@ -39,7 +39,7 @@ const FAQComponent = () => {
       question: "Posso cadastrar uma nota de qualquer data de compra?",
       answer:(
         <p>
-          As compras feitas no período de 31 de agosto de 2025 até o dia 30 de setembro de 2025. Poderá ser contemplado com um dos brindes da promoção.
+          Só poderão ser cadastradas as notas cujas compras foram feitas no período de 31 de agosto de 2025 até o dia 30 de setembro de 2025. 
         </p>
       ),        
       popular: false,
@@ -49,7 +49,7 @@ const FAQComponent = () => {
       category: "Participação",
       question: "Posso me cadastrar mais de uma vez?",
       answer:(
-        <p>Não haverá limites de chances por participante, podendo cada participante concorrer com quantas chances tiver direito, desde que atenda as condições previstas no regulamento.
+        <p>Não há limite de chances por participante, podendo concorrer quantas vezes realizar as compras acima de R$ 200 (duzentos reais), desde que atenda as condições previstas no regulamento.
         </p>
       ),        
       popular: false,
@@ -59,7 +59,7 @@ const FAQComponent = () => {
       category: "Sorteio",
       question: "Qual o prêmio e como eu posso utilizá-lo?",
       answer:(
-        <p>O prêmio é de 01 (um) Vale-compras Atakarejo no valor de R$ 750,00 (setecentos e cinquenta reais), sem função de saque, vinculado ao CPF do participante e 01 (um) prêmio de R$ 30 mil (cinquenta mil reais).
+        <p>O prêmio é de 01 (um) vale-compras Atakarejo no valor de R$ 750,00 (setecentos e cinquenta reais), sem função de saque, somente para ser utilizado nas compras em loja, vinculado ao CPF do participante, e 01 (um) prêmio de R$ 30 mil (cinquenta mil reais) que será sorteado pela loteria federal.
         </p>
       ),
       popular: false,
@@ -69,7 +69,7 @@ const FAQComponent = () => {
       category: "Sorteio",
       question: "Pessoas de qualquer idade podem participar?",
       answer:(
-        <p>Qualquer pessoa física com idade igual ou superior a 18 (dezoito) anos.</p>
+        <p>Qualquer pessoa física com idade igual ou superior a 18 (dezoito) anos pode participar.</p>
       ),
       popular: false,
     },
@@ -78,7 +78,7 @@ const FAQComponent = () => {
       category: "Prêmios",
       question: "Ganhei o vale compras mais quero dar para outra pessoa, é possível?",
       answer:(
-        <p>Ficam os participantes cientes desde já, que a participação na promoção é individualizada, e não poderá, em hipótese alguma, transferir e/ou dividir com outro participante qualquer valor residual, independentemente do grau de parentesco e/ou amizade. Da mesma forma, não será admitida, por força de legislação fiscal, “divisão de valores de notas fiscais” entre participantes no ato da compra.</p>
+        <p>Ficam os participantes cientes desde já, que a participação na promoção é individualizada e não poderá, em hipótese alguma, transferir e/ou dividir com outro participante qualquer valor residual, independentemente do grau de parentesco e/ou amizade. Da mesma forma, não será admitida, por força de legislação fiscal, “divisão de valores de notas fiscais” entre participantes no ato da compra.</p>
       ),
       popular: true,
     },
