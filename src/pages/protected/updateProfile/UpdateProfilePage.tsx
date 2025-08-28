@@ -400,7 +400,7 @@ const UpdateProfilePage = () => {
                           <strong>
                             Li e aceito os{" "}
                             <a
-                              href="#terms"
+                              href="/regulamento"
                               className="text-primary hover:underline font-bold"
                               target="_blank"
                               rel="noopener noreferrer"
@@ -409,7 +409,7 @@ const UpdateProfilePage = () => {
                             </a>{" "}
                             e o{" "}
                             <a
-                              href="#privacy"
+                              href="/regulamento"
                               className="text-primary hover:underline font-bold"
                               target="_blank"
                               rel="noopener noreferrer"
@@ -487,12 +487,12 @@ const UpdateProfilePage = () => {
                     Informações Importantes
                   </h3>
                   <div className="space-y-2 text-sm text-gray-600">
-                    <p>• Todos os campos marcados com (*) são obrigatórios</p>
-                    <p>• Seus dados são protegidos conforme a LGPD</p>
-                    <p>
-                      • Mantenha seus dados sempre atualizados para receber os
-                      prêmios
-                    </p>
+                    <ul>
+                      <li>Todos os campos marcados com (*) são obrigatórios</li>
+                      <li>Seus dados são protegidos conforme a LGPD</li>
+                      <li>Mantenha seus dados sempre atualizados para receber os
+                      prêmios</li>
+                    </ul>
                   </div>
                 </div>
               </div>
