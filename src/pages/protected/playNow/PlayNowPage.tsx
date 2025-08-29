@@ -169,7 +169,7 @@ const PlayNowPage = () => {
                   {(voucherData?.win || false) === true ? (
                     // Vídeo de Vitória (placeholder)
                     <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-green-500 to-green-600">
-                      <video src="./videos/victory.mp4" autoPlay muted></video>
+                      <video src="./videos/victory.mp4" autoPlay muted poster="./videos/poster.png"></video>
 
                       {/* <div className="text-center text-white">
                         <div className="text-8xl mb-4">🎉</div>
@@ -186,7 +186,7 @@ const PlayNowPage = () => {
                   ) : (
                     // Vídeo de "Não foi dessa vez" (placeholder)
                     <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-500 to-blue-600">
-                      <video src="./videos/try-again.mp4" autoPlay muted></video>
+                      <video src="./videos/try-again.mp4" autoPlay muted poster="./videos/poster.png"></video>
                       {/*                       
                       <div className="text-center text-white">
                         <div className="text-8xl mb-4">🎯</div>
