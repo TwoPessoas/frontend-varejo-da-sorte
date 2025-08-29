@@ -165,12 +165,10 @@ const FooterComponent = () => {
                   </svg>
 
                   <div>
-                    <h5 className="text-white text-sm mb-1">
-                      Promoção autorizada pelo Ministério da Economia.
-                    </h5>
-                    <p className="text-xs text-primary">
-                      Certificado de Autorização SPA/MF nº. 04.043818/2025.
+                    <p className="text-white text-xs mb-1">
+                      Imagens meramente ilustrativas. <b className="text-primary">Promoções autorizadas pelo Ministério da Fazenda/SPA nº 04.043818/2025 e 05.044134/2025, válida de 31/08/2025 a 30/09/2025</b> ou enquanto durarem os estoques e brindes. Consulte descrição, valor dos prêmios, período e condições de participação, marcas participantes, regulamentos completos e outras informações no site <a href="https://www.aniversarioatakarejo.com.br">www.aniversarioatakarejo.com.br</a>
                     </p>
+                  
                   </div>
                   
                 </div>

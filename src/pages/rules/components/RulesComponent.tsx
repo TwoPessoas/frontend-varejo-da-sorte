@@ -106,7 +106,7 @@ const RulesComponent = () => {
                   lojas Atakarejo e que efetuarem o cadastro na promoção através
                   do Web App{" "}
                   <a
-                    href="http://www.aniversarioatakarejo.com.br"
+                    href="https://www.aniversarioatakarejo.com.br"
                     target="_blank"
                   >
                     www.aniversarioatakarejo.com.br
@@ -139,7 +139,7 @@ const RulesComponent = () => {
                   aos números da sorte é necessário que o cliente se cadastre no
                   Web App{" "}
                   <a
-                    href="http://www.aniversarioatakarejo.com.br"
+                    href="https://www.aniversarioatakarejo.com.br"
                     target="_blank"
                   >
                     www.aniversarioatakarejo.com.br
@@ -249,7 +249,7 @@ const RulesComponent = () => {
                       para consulta no Anexo I do regulamento, disponível no Web
                       App{" "}
                       <a
-                        href="http://www.aniversarioatakarejo.com.br"
+                        href="https://www.aniversarioatakarejo.com.br"
                         target="_blank"
                       >
                         www.aniversarioatakarejo.com.br
@@ -287,7 +287,7 @@ const RulesComponent = () => {
                 <li>
                   Para o cadastro na promoção, o participante acessar o Web App{" "}
                   <a
-                    href="http://www.aniversarioatakarejo.com.br"
+                    href="https://www.aniversarioatakarejo.com.br"
                     target="_blank"
                   >
                     www.aniversarioatakarejo.com.br
@@ -341,7 +341,7 @@ const RulesComponent = () => {
                   O participante poderá consultar os números da sorte gerados
                   através do hotsite da promoção{" "}
                   <a
-                    href="http://www.aniversarioatakarejo.com.br"
+                    href="https://www.aniversarioatakarejo.com.br"
                     target="_blank"
                   >
                     www.aniversarioatakarejo.com.br
@@ -710,7 +710,7 @@ const RulesComponent = () => {
                   contemplados) será divulgado em até 10 (dez) dias úteis após a
                   data de cada sorteio no site da promoção (
                   <a
-                    href="http://www.aniversarioatakarejo.com.br)"
+                    href="https://www.aniversarioatakarejo.com.br)"
                     target="_blank"
                   >
                     www.aniversarioatakarejo.com.br)
@@ -831,7 +831,7 @@ const RulesComponent = () => {
                 <li>
                   O Regulamento da promoção será disponibilizado no Web App{" "}
                   <a
-                    href="http://www.aniversarioatakarejo.com.br"
+                    href="https://www.aniversarioatakarejo.com.br"
                     target="_blank"
                   >
                     www.aniversarioatakarejo.com.br
@@ -853,10 +853,10 @@ const RulesComponent = () => {
                   momento mediante pedido escrito direcionado à Promovente,
                   através do Canal do DPO do Atakarejo:{" "}
                   <a
-                    href="https://atakarejo.com.br/fale-com-o-dpo/"
+                    href="httpss://atakarejo.com.br/fale-com-o-dpo/"
                     target="_blank"
                   >
-                    https://atakarejo.com.br/fale-com-o-dpo/
+                    httpss://atakarejo.com.br/fale-com-o-dpo/
                   </a>
                 </li>
                 <li>
@@ -901,10 +901,10 @@ const RulesComponent = () => {
                   concedida nos termos do regulamento, bastando que solicitem
                   através do Canal do DPO do Atakarejo:{" "}
                   <a
-                    href="https://atakarejo.com.br/fale-com-o-dpo/"
+                    href="httpss://atakarejo.com.br/fale-com-o-dpo/"
                     target="_blank"
                   >
-                    https://atakarejo.com.br/fale-com-o-dpo/
+                    httpss://atakarejo.com.br/fale-com-o-dpo/
                   </a>
                   .
                 </li>
@@ -1053,71 +1053,27 @@ const RulesComponent = () => {
               </ol>
             </li>
             <li>
-              <h4>ÁREA DE ABRANGÊNCIA:</h4>
-              <ol>
-                <li>Nos estados da Bahia e Sergipe</li>
-              </ol>
-            </li>
-            <li>
               <h4>CRITÉRIO DE PARTICIPAÇÃO:</h4>
               <ol>
                 <li>
-                  Qualquer pessoa física com idade igual ou superior a 18
-                  (dezoito) anos, residente e domiciliada nos estados da Bahia e
-                  Sergipe, poderá participar da presente promoção{" "}
-                  <b>"Mega Fim de Ano Atakarejo"</b>, no período de 00h00 do dia
-                  10 de novembro de 2024 até às 23h59 (horário de Brasília) do
-                  dia 01 de janeiro de 2025 ou até se esgotarem os brindes da
-                  promoção, o que ocorrer primeiro.
+                  Qualquer pessoa física com idade igual ou superior a 18 (dezoito) anos, residente e domiciliada no estado da Bahia e Sergipe, poderá participar da presente promoção <b>“Aniversário Atakarejo”</b>, no período de 00h00 do dia 31 de agosto de 2025 até às 23h59 (horário de Brasília) do dia 30 de setembro de 2025 ou até se esgotarem os brindes da promoção, o que ocorrer primeiro.
+                  <ol>
+                    <li>A presente promoção será realizada simultaneamente com outra promoção na modalidade de “Assemelhado Vale-Brinde”, cujo período, condições de participação, premiações e outras informações deverão ser verificadas no respectivo regulamento no site da promoção</li>
+                  </ol> 
                 </li>
                 <li>
-                  Para participar da promoção <b>"Mega Fim de Ano Atakarejo"</b>
-                  , os clientes que informarem seu CPF no PDV no início da
-                  compra, efetuarem compras a partir de R$ 200,00 (cem reais)
-                  nas lojas Atakarejo e que efetuarem o cadastro na promoção
-                  através do Web App{" "}
-                  <a
-                    href="http://www.aniversarioatakarejo.com.br"
-                    target="_blank"
-                  >
-                    www.aniversarioatakarejo.com.br
-                  </a>{" "}
-                  no período de 00h00 do dia 31 de agosto de 2025 até às 23h59
-                  (horário de Brasília) do dia 30 de setembro de 2025, poderá
-                  ser contemplado com um dos brindes da promoção.
+                  Para participar da promoção <b>“Aniversário Atakarejo”</b>, os clientes que informarem seu CPF no PDV no início da compra, efetuarem compras a partir de R$ 200,00 (duzentos reais) nas lojas Atakarejo e que efetuarem o cadastro na promoção através do Web App <a href="https://www.aniversarioatakarejo.com.br" target="_blank">www.aniversarioatakarejo.com.br</a> no período de 00h00 do dia 31 de agosto de 2025 até às 23h59 (horário de Brasília) do dia 30 de setembro de 2025, poderá ser contemplado com um dos brindes da promoção.
                   <ol>
                     <li>
-                      Somente terão validade para a promoção as compras
-                      identificadas no PDV com CPF do participante que tenha
-                      realizado compras a partir de R$ 100,00 (cem reais), desde
-                      que, observadas as condições deste Regulamento.
+                      Somente terão validade para a promoção as compras identificadas no PDV com CPF do participante que tenha realizado compras a partir de R$ 200,00 (duzentos reais), desde que, observadas as condições deste Regulamento.
                     </li>
                     <li>
-                      Não poderão participar comprovantes de compras de produtos
-                      vedados pelo Art. 10º do Decreto 70951/72 sendo estes:
-                      medicamentos, armas e munições, explosivos, fogos de
-                      artifício ou de estampido, bebidas alcoólicas com teor
-                      alcoólico acima de 13º Gay Lussac, fumo e seus derivados.
+                      Não poderão participar comprovantes de compras de produtos vedados pelo Art. 10º do Decreto 70951/72 sendo estes: medicamentos, armas e munições, explosivos, fogos de artifício ou de estampido, bebidas alcoólicas com teor alcoólico acima de 13º Gay Lussac, fumo e seus derivados.
                     </li>
                   </ol>
                 </li>
                 <li>
-                  Os clientes que informarem seu CPF no PDV no início da compra,
-                  que realizarem as compras a cada R$ 100,00 (cem reais), terão
-                  direito a 01 (uma) Caixa de Presente (eletrônica), para
-                  descobrir se foi ou não contemplado na promoção, caso a compra
-                  contenha produtos das marcas participantes, o cliente terá
-                  direito aos balões promocionais em dobro, sendo que para ter
-                  acesso aos balões é necessário que o cliente se cadastre no
-                  Web App{" "}
-                  <a
-                    href="http://www.aniversarioatakarejo.com.br"
-                    target="_blank"
-                  >
-                    www.aniversarioatakarejo.com.br
-                  </a>
-                  , conforme descrito na tabela abaixo, desde que, observadas as
-                  condições deste Regulamento.
+                  Os clientes que informarem seu CPF no PDV no início da compra, que realizarem as compras a cada R$ 200,00 (duzentos reais), terão direito a 01 (uma) Caixa de Presente (eletrônica), para descobrir se foi ou não contemplado na promoção, caso a compra contenha produtos das marcas participantes, o cliente terá direito aos balões promocionais em dobro, sendo que para ter acesso aos balões é necessário que o cliente se cadastre no Web App <a href="https://www.aniversarioatakarejo.com.br" target="_blank">www.aniversarioatakarejo.com.br</a>, conforme descrito na tabela abaixo, desde que, observadas as condições deste Regulamento.
                   <div className="table-responsive">
                     <table>
                       <thead>
@@ -1221,7 +1177,7 @@ const RulesComponent = () => {
                       para consulta no Anexo I do regulamento, disponível no Web
                       App{" "}
                       <a
-                        href="http://www.aniversarioatakarejo.com.br"
+                        href="https://www.aniversarioatakarejo.com.br"
                         target="_blank"
                       >
                         www.aniversarioatakarejo.com.br
@@ -1231,145 +1187,59 @@ const RulesComponent = () => {
                   </ol>
                 </li>
                 <li>
-                  Não haverá limites de chances por participante, podendo cada
-                  participante concorrer com quantas chances tiver direito,
-                  desde que atenda as condições previstas neste regulamento, no
-                  entanto cada participante poderá ser contemplado apenas uma
-                  única vez na promoção.
+                  Não haverá limites de chances por participante, podendo cada participante concorrer com quantas chances tiver direito, desde que atenda as condições previstas neste regulamento, no entanto cada participante poderá ser contemplado apenas uma única vez na promoção.
                 </li>
                 <li>
-                  Não poderão ser somados dois ou mais comprovantes de compra a
-                  fim de totalizar R$ 100,00 (cem reais) para obtenção a
-                  participação na promoção, da mesma forma que não serão
-                  cumulativos nem reaproveitados os valores residuais de
-                  determinado comprovante de compra para essa promoção.
+                  Não poderão ser somados dois ou mais comprovantes de compra a fim de totalizar R$ 200,00 (duzentos reais) para obtenção a participação na promoção, da mesma forma que não serão cumulativos nem reaproveitados os valores residuais de determinado comprovante de compra para essa promoção.
                   <ol>
                     <li>
-                      Ficam os participantes, cientes, desde já, que a
-                      participação na promoção é individualizada, e não poderá,
-                      em hipótese alguma, transferir e/ou dividir com outro
-                      participante qualquer valor residual, independentemente do
-                      grau de parentesco e/ou amizade. Da mesma forma, não será
-                      admitida, por força de legislação fiscal, “divisão de
-                      valores de notas fiscais” entre participantes no ato da
-                      compra.
+                      Ficam os participantes, cientes, desde já, que a participação na promoção é individualizada, e não poderá, em hipótese alguma, transferir e/ou dividir com outro participante qualquer valor residual, independentemente do grau de parentesco e/ou amizade. Da mesma forma, não será admitida, por força de legislação fiscal, “divisão de valores de notas fiscais” entre participantes no ato da compra.
                     </li>
                   </ol>
                 </li>
                 <li>
-                  Para o cadastro na promoção, o participante acessar o Web App{" "}
-                  <a
-                    href="http://www.aniversarioatakarejo.com.br"
-                    target="_blank"
-                  >
-                    www.aniversarioatakarejo.com.br
-                  </a>{" "}
-                  no período entre às 00h00 do dia 31 de agosto de 2025 até às
-                  23h59 (horário de Brasília) do dia 30 de setembro de 2025
-                  (horário oficial de Brasília) para efetuar o cadastro dos seus
-                  dados pessoais (Nome completo, CPF, Endereço completo, número
-                  de telefone, data de nascimento e e-mail).
+                  Para o cadastro na promoção, o participante acessar o Web App <a href="https://www.aniversarioatakarejo.com.br" target="_blank">www.aniversarioatakarejo.com.br</a> no período entre às 00h00 do dia 31 de agosto de 2025 até às 23h59 (horário de Brasília) do dia 30 de setembro de 2025 (horário oficial de Brasília) para efetuar o cadastro dos seus dados pessoais (Nome completo, CPF, Endereço completo, número de telefone, data de nascimento e e-mail). 
                   <ol>
                     <li>
-                      Após realizar o cadastro na promoção e realizado opt-in
-                      concordando com a participação na promoção, o participante
-                      deverá apenas informar o número do CPF no PDV no momento
-                      da compra, para que o cadastro do Cupom Fiscal/Nota Fiscal
-                      ocorra automaticamente na promoção em até 72h (setenta e
-                      duas horas).{" "}
+                      Após realizar o cadastro na promoção e realizado opt-in concordando com a participação na promoção, o participante deverá apenas informar o número do CPF no PDV no momento da compra, para que o cadastro do Cupom Fiscal/Nota Fiscal ocorra automaticamente na promoção em até 72h (setenta e duas horas). 
                     </li>
                     <li>
-                      Os dados pessoais serão cadastrados uma única vez durante
-                      toda a promoção, sendo imprescindível que os participantes
-                      forneçam dados corretos no ato do cadastro, uma vez que
-                      tais dados serão utilizados para contato e,
-                      consequentemente, entrega dos prêmios, caso venham a ser
-                      um dos ganhadores desta promoção. Desta forma, a empresa
-                      promotora não será responsável quando, em razão do
-                      fornecimento de dados incompletos ou incorretos, ficar
-                      impossibilitada de realizar a entrega do prêmio ao
-                      respectivo ganhador.
+                      Os dados pessoais serão cadastrados uma única vez durante toda a promoção, sendo imprescindível que os participantes forneçam dados corretos no ato do cadastro, uma vez que tais dados serão utilizados para contato e, consequentemente, entrega dos prêmios, caso venham a ser um dos ganhadores desta promoção. Desta forma, a empresa promotora não será responsável quando, em razão do fornecimento de dados incompletos ou incorretos, ficar impossibilitada de realizar a entrega do prêmio ao respectivo ganhador. 
                     </li>
                     <li>
-                      Em caso de cancelamento da compra (devolução dos produtos
-                      por desistência da compra) ou troca do produto, os balões
-                      promocionais serão automaticamente invalidados para
-                      participação na promoção. 
+                      Em caso de cancelamento da compra (devolução dos produtos por desistência da compra) ou troca do produto, os balões promocionais serão automaticamente invalidados para participação na promoção. 
                     </li>
                   </ol>
                 </li>
                 <li>
-                  Em caso de dúvidas sobre a participação na promoção, o cliente
-                  poderá entrar em contato com o SAC Atakarejo através do
-                  telefone (71) 3460.8700 e/ou e-mail{" "}
-                  <a
-                    href="http://www.aniversarioatakarejo.com.br"
-                    target="_blank"
-                  >
-                    www.aniversarioatakarejo.com.br
-                  </a>
-                  .
+                  Em caso de dúvidas sobre a participação na promoção, o cliente poderá entrar em contato com o SAC Atakarejo através do telefone (71) 3460.8700 e/ou e-mail <a href="mailto:contato@atakarejo.com.br" target="_blank">contato@atakarejo.com.br</a>.
                 </li>
                 <li>
-                  Os clientes da promoção concorrerão aos vales-compras
-                  instantâneos, indicados no item 4.1 deste regulamento, sendo
-                  que será contemplado o 1º cliente que “abrir” de forma
-                  eletrônica a “Caixa de Presente” no exato horário de
-                  contemplação pré-determinado pela empresa promotora conforme
-                  planilha sigilosa enviada ao Ministério da Fazenda e anexada
-                  ao Regulamento.
+                  Os clientes da promoção concorrerão aos vales-compras instantâneos, indicados no item 3.1 deste regulamento, sendo que será contemplado o 1º cliente que “abrir” de forma eletrônica a “Caixa de Presente” no exato horário de contemplação pré-determinado pela empresa promotora conforme planilha sigilosa enviada ao Ministério da Fazenda e anexada ao Regulamento.
                   <ol>
                     <li>
-                      Para efeito de participação na promoção será contabilizado
-                      o horário em que o cliente “abrir” de forma eletrônica a
-                      “Caixa de Presente”, ou seja, será considerada a data,
-                      hora, minutos, segundos e milésimos em que o cliente abrir
-                      a “Caixa de Presente”. Caso não haja nenhuma participação
-                      no horário exato definido em sigilo com junto à SPA/MF,
-                      será considerado contemplado o 1º cliente que estourar
-                      após o horário definido através de hora, minuto, segundo e
-                      milésimos.
+                      Para efeito de participação na promoção será contabilizado o horário em que o cliente “abrir” de forma eletrônica a “Caixa de Presente”, ou seja, será considerada a data, hora, minutos, segundos e milésimos em que o cliente abrir a “Caixa de Presente”. Caso não haja nenhuma participação no horário exato definido em sigilo com junto à SPA/MF, será considerado contemplado o 1º cliente que estourar após o horário definido através de hora, minuto, segundo e milésimos.
                     </li>
                   </ol>
                 </li>
                 <li>
-                  Durante o período da promoção estão previstos a participação
-                  de aproximadamente 100.000 (cem mil) de cadastros, sendo que
-                  serão distribuídos durante toda a promoção 2.001 (dois mil e
-                  um) brindes, sendo que a proporção será de 1/50.
+                  Durante o período da promoção estão previstos a participação de aproximadamente 100.000 (cem mil) de cadastros, sendo que serão distribuídos durante toda a promoção 600 (seiscentos) brindes, sendo que a proporção será de 1/111.
+
                 </li>
                 <li>
-                  Os participantes também não poderão utilizar-se de meios
-                  escusos para participar desta promoção e/ou de mecanismos que
-                  criem condições de cadastramento irregular, desleais ou que
-                  atentem contra os objetivos e condições de participação
-                  previstas neste regulamento. As situações descritas, quando
-                  identificadas, serão consideradas como infração aos termos do
-                  presente regulamento, ensejando o impedimento da participação
-                  e/ou o imediato cancelamento da inscrição do participante, sem
-                  prejuízo, ainda, das medidas cabíveis e/ou ação de regresso a
-                  ser promovida pela promotora em face do infrator.
+                  Considerando que o processo de validação de notas é realizado por inteligência artificial (IA) e/ou também por análises humanas, sendo que eventuais erros gerados a partir de processos de validação de notas fiscais, poderão ser corrigidos ou desclassificados a qualquer tempo.
                 </li>
                 <li>
-                  A empresa Promotora poderá ainda, por motivos de força maior
-                  e/ou problemas de TI, suspender por curto período a geração da
-                  “Caixa de Presente”, mediante a autorização da SPA/MF, sendo
-                  certo que, nessa hipótese, a empresa Promotora tomará as
-                  medidas necessárias para solucionar o problema e retomar o
-                  sistema informatizado, o mais rápido possível, permanecendo
-                  inalteradas as regras e condições de validade de participação
-                  desta promoção.
+                  Os participantes também não poderão utilizar-se de meios escusos para participar desta promoção e/ou de mecanismos que criem condições de cadastramento irregular, desleais ou que atentem contra os objetivos e condições de participação previstas neste regulamento. As situações descritas, quando identificadas, serão consideradas como infração aos termos do presente regulamento, ensejando o impedimento da participação e/ou o imediato cancelamento da inscrição do participante, sem prejuízo, ainda, das medidas cabíveis e/ou ação de regresso a ser promovida pela promotora em face do infrator.
                 </li>
+                <li>A empresa Promotora poderá ainda, por motivos de força maior e/ou problemas de TI, suspender por curto período a geração da “Caixa de Presente”, mediante a autorização da SPA/MF, sendo certo que, nessa hipótese, a empresa Promotora tomará as medidas necessárias para solucionar o problema e retomar o sistema informatizado, o mais rápido possível, permanecendo inalteradas as regras e condições de validade de participação desta promoção.</li>
               </ol>
             </li>
             <li>
               <h4>BRINDES</h4>
               <ol>
                 <li>
-                  Serão distribuídos 2.000 (dois mil) brindes na promoção{" "}
-                  <b>“Aniversário Atakarejo”</b> durante o período entre o dia
-                  10 de novembro de 2024 até dia 01 de janeiro de 2025 ou
-                  enquanto durar os estoques, o que ocorrer primeiro.
+                  Serão distribuídos 600 (seiscentos) brindes na promoção <b>“Aniversário Atakarejo”</b> durante o período entre o dia 31 de agosto de 2025 até dia 30 de setembro de 2025 ou enquanto durar os estoques, o que ocorrer primeiro.
                   <table>
                     <thead>
                       <tr>
@@ -1380,11 +1250,9 @@ const RulesComponent = () => {
                     </thead>
                     <tbody>
                       <tr>
-                        <td>XX</td>
+                        <td>600</td>
                         <td>
-                          01 (um) Vale-compras Atakarejo no valor de R$ 750,00
-                          (quinhentos reais), sem função de saque, vinculado ao
-                          CPF do participante.
+                          01 (um) Vale-compras Atakarejo no valor de R$ 750,00 (setecentos e cinquenta reais), sem função de saque, vinculado ao CPF do participante.
                         </td>
                         <td>R$ 750,00</td>
                       </tr>
@@ -1404,8 +1272,8 @@ const RulesComponent = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>XX</td>
-                    <td>R$ R$ XXX</td>
+                    <td>600</td>
+                    <td>R$ 450.000,00</td>
                   </tr>
                 </tbody>
               </table>
@@ -1414,53 +1282,15 @@ const RulesComponent = () => {
               <h4>CRITÉRIOS DE DESCLASSIFICAÇÃO: </h4>
               <ol>
                 <li>
-                  Os participantes poderão ser excluídos automaticamente da
-                  promoção em caso de comprovação de fraude, de não
-                  preenchimento dos requisitos previamente determinados e/ou
-                  cadastros que não apresentarem dados suficientes para a
-                  identificação e localização do participante e/ou em
-                  decorrência da prestação de informações incorretas ou
-                  equivocadas, de acordo com as regras do regulamento da
-                  promoção.
-                </li>
-                <li>
-                  Todo participante que venha a infringir as regras deste
-                  Regulamento, bem como utilizar de fraude ou ardil, será
-                  automaticamente excluído da promoção, sem prejuízo da sua
-                  responsabilidade civil e criminal.{" "}
-                </li>
-                <li>
-                  As tentativas de fraudes, tais como, mas não limitadas, ao uso
-                  de documentos falsos praticadas pelos participantes, se
-                  identificadas, implicarão no não recebimento e/ou cancelamento
-                  da compra, sem prejuízo da responsabilidade advinda de
-                  processo administrativo, cível ou penal cabível em razão dos
-                  atos praticados.
-                </li>
-                <li>
-                  Os indícios de fraude e/ou as fraudes comprovadamente
-                  identificadas pela empresa promotora que praticadas ou
-                  incentivadas pelos participantes ou terceiros interessados na
-                  Promoção, que mantenham ou não vínculo com os participantes,
-                  se identificadas pela empresa promotora, implicarão no
-                  imediato cancelamento do cadastro e perderão o direito a
-                  participação nesta Promoção em decorrência do prejuízo da
-                  regular execução desta promoção e aos participantes que
-                  cumpram todos os requisitos deste Regulamento, sem prejuízo de
-                  serem responsabilizados cível e penalmente pelos atos
-                  praticados.
-                </li>
-                <li>
-                  Ficará vedada a participação dos funcionários das Empresas
-                  Promotoras, bem como os funcionários das agências e outras
-                  empresas diretamente envolvidas nos processos de planejamento,
-                  elaboração e promoção desta campanha. O atendimento ao acima
-                  disposto será de inteira responsabilidade das Empresas
-                  Promotoras no momento da apuração, que automaticamente
-                  desclassificará os nomes de participantes impedidos mediante a
-                  verificação do CPF destes. Sendo que um novo contemplado será
-                  apurado em seu lugar, seguindo a regra de contemplação na
-                  promoção.
+                  Os participantes poderão ser excluídos automaticamente da promoção em caso de comprovação de fraude, de não preenchimento dos requisitos previamente determinados e/ou cadastros que não apresentarem dados suficientes para a identificação e localização do participante e/ou em decorrência da prestação de informações incorretas ou equivocadas, de acordo com as regras do regulamento da promoção. </li>
+
+                <li>Todo participante que venha a infringir as regras deste Regulamento, bem como utilizar de fraude ou ardil, será automaticamente excluído da promoção, sem prejuízo da sua responsabilidade civil e criminal. </li>
+
+                <li>As tentativas de fraudes, tais como, mas não limitadas, ao uso de documentos falsos praticadas pelos participantes, se identificadas, implicarão no não recebimento e/ou cancelamento da compra, sem prejuízo da responsabilidade advinda de processo administrativo, cível ou penal cabível em razão dos atos praticados.</li>
+
+                <li>Os indícios de fraude e/ou as fraudes comprovadamente identificadas pela empresa promotora que praticadas ou incentivadas pelos participantes ou terceiros interessados na Promoção, que mantenham ou não vínculo com os participantes, se identificadas pela empresa promotora, implicarão no imediato cancelamento do cadastro e perderão o direito a participação nesta Promoção em decorrência do prejuízo da regular execução desta promoção e aos participantes que cumpram todos os requisitos deste Regulamento, sem prejuízo de serem responsabilizados cível e penalmente pelos atos praticados.</li>
+
+                <li>Ficará vedada a participação dos funcionários das Empresas Promotoras, bem como os funcionários das agências e outras empresas diretamente envolvidas nos processos de planejamento, elaboração e promoção desta campanha. O atendimento ao acima disposto será de inteira responsabilidade das Empresas Promotoras no momento da apuração, que automaticamente desclassificará os nomes de participantes impedidos mediante a verificação do CPF destes. Sendo que um novo contemplado será apurado em seu lugar, seguindo a regra de contemplação na promoção.
                 </li>
               </ol>
             </li>
@@ -1468,29 +1298,12 @@ const RulesComponent = () => {
               <h4>ENTREGA DOS PRÊMIOS:</h4>
               <ol>
                 <li>
-                  O prêmio será vinculado automaticamente ao CPF do participante
-                  contemplado e estará disponível para usufruto em até 30
-                  (trinta) dias contados da apuração, de acordo com o Artigo 5º
-                  do Decreto 70.951/72 e terá validade de até 180 (cento e
-                  oitenta) dias.
-                </li>
-                <li>
-                  O respectivo prêmio será entregue livre e desembaraçado de
-                  qualquer ônus para o contemplado.
-                </li>
-                <li>
-                  Nos termos da legislação em vigor, não será permitida a
-                  conversão do prêmio em dinheiro ou, ainda, a sua substituição
-                  por outro, bem como a transferência do prêmio à terceiros, que
-                  não o contemplado, em data anterior à sua efetiva entrega e
-                  integralização ao patrimônio deste.
-                </li>
-                <li>
-                  As obrigações e responsabilidade, se houver, da Empresa
-                  Mandatária e Aderentes com os ganhadores encerram-se no
-                  momento da entrega do prêmio, não cabendo ao contemplado
-                  discutir ou redefinir as condições e/ou premissas da promoção
-                  ou do prêmio.
+                  O prêmio será vinculado automaticamente ao CPF do participante contemplado e estará disponível para usufruto em até 30 (trinta) dias contados da apuração, de acordo com o Artigo 5º do Decreto 70.951/72 e terá validade de até 180 (cento e oitenta) dias.</li>
+
+                <li>O respectivo prêmio será entregue livre e desembaraçado de qualquer ônus para o contemplado.
+                Nos termos da legislação em vigor, não será permitida a conversão do prêmio em dinheiro ou, ainda, a sua substituição por outro, bem como a transferência do prêmio à terceiros, que não o contemplado, em data anterior à sua efetiva entrega e integralização ao patrimônio deste.</li>
+
+                <li>As obrigações e responsabilidade, se houver, da Empresa Mandatária e Aderentes com os ganhadores encerram-se no momento da entrega do prêmio, não cabendo ao contemplado discutir ou redefinir as condições e/ou premissas da promoção ou do prêmio.
                 </li>
               </ol>
             </li>
@@ -1500,7 +1313,7 @@ const RulesComponent = () => {
                 <li>
                   O Regulamento da promoção será disponibilizado no Web App{" "}
                   <a
-                    href="http://www.aniversarioatakarejo.com.br"
+                    href="https://www.aniversarioatakarejo.com.br"
                     target="_blank"
                   >
                     www.aniversarioatakarejo.com.br
@@ -1538,10 +1351,10 @@ const RulesComponent = () => {
                   momento mediante pedido escrito direcionado à Promovente,
                   através do Canal do DPO do Atakarejo:{" "}
                   <a
-                    href="https://atakarejo.com.br/fale-com-o-dpo/"
+                    href="httpss://atakarejo.com.br/fale-com-o-dpo/"
                     target="_blank"
                   >
-                    https://atakarejo.com.br/fale-com-o-dpo/
+                    httpss://atakarejo.com.br/fale-com-o-dpo/
                   </a>{" "}
                 </li>
                 <li>
@@ -1586,10 +1399,10 @@ const RulesComponent = () => {
                   concedida nos termos do regulamento, bastando que solicitem
                   através do Canal do DPO do Atakarejo:{" "}
                   <a
-                    href="https://atakarejo.com.br/fale-com-o-dpo/"
+                    href="httpss://atakarejo.com.br/fale-com-o-dpo/"
                     target="_blank"
                   >
-                    https://atakarejo.com.br/fale-com-o-dpo/
+                    httpss://atakarejo.com.br/fale-com-o-dpo/
                   </a>
                   .{" "}
                 </li>
@@ -1657,12 +1470,9 @@ const RulesComponent = () => {
                   Regulamento da presente promoção.
                 </li>
                 <li>
-                  Esta promoção está de acordo com a legislação vigente (Lei n.º
-                  5.768/71, regulamentada pelo Decreto n.º 70.951/72 e Portaria
-                  MF 7.638/22) e obteve o{" "}
-                  <b>Certificado de Autorização SPA/MF nº. 05.037869/2024</b>{" "}
-                  expedido pelo Ministério da Fazenda.
+                  Esta promoção está de acordo com a legislação vigente (Lei n.º 5.768/71, regulamentada pelo Decreto n.º 70.951/72 e Portaria MF 7.638/22) e obteve o <b>Certificado de Autorização SPA/MF nº. 05.044134/2025</b> expedido pelo Ministério da Fazenda.
                 </li>
+                <li>A Promotora declara que a presente promoção observa os princípios da não discriminação, equidade e respeito aos direitos fundamentais dos participantes, em conformidade com a legislação vigente.</li>
               </ol>
             </li>
           </ol>

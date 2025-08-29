@@ -43,6 +43,7 @@ const BrandsComponent = () => {
         "./imgs/marcas/ouro/yoki.png",
         "./imgs/marcas/ouro/neve.png",
         "./imgs/marcas/ouro/sadia.png",
+        "./imgs/marcas/ouro/huggies.png",
         "./imgs/marcas/ouro/guarana.png",
         "./imgs/marcas/ouro/ekobom.png",
         "./imgs/marcas/ouro/coca.png",   
