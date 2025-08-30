@@ -1,68 +1,110 @@
 import PreRegistrationForm from "./PreRegistrationForm";
 
-const HeroComponent = () => {
+interface IProps {
+  showForm: boolean;
+}
+
+const HeroComponent = ({ showForm }: IProps) => {
   return (
     <section
       id="hero"
       className="relative  flex items-center justify-center  overflow-hidden"
     >
-
       <div className="container relative z-10 pt-16">
         <div className=" md:max-w-4xl mx-auto ">
           {/* Main Heading */}
           <div className="mb-8 md:mb-12 lg:mb-18 fade-in max-w-72 md:max-w-96  lg:max-w-xl mx-auto fade-in">
-            <h1><img src="./imgs/logo-campanha.png" alt="Aniversário Atakarejo" className=""/></h1>
-            
+            <h1>
+              <img
+                src="./imgs/logo-campanha.png"
+                alt="Aniversário Atakarejo"
+                className=""
+              />
+            </h1>
           </div>
           <div className="md:flex md:justify-center md:align-top md:gap-3">
-
-            {/* Form Card */}
-            <div className="fade-in">
-              <PreRegistrationForm />
-            </div>
+            {showForm ? (
+              <div className="fade-in">
+                <PreRegistrationForm />
+              </div>
+            ) : (
+              <div className="fade-in">
+                <p className="text-center text-white text-lg md:text-xl lg:text-2xl font-semibold">
+                  Em breve você poderá se cadastrar e concorrer a vales-compras!
+                </p>
+              </div>
+            )}
 
             {/* MOTE CAMPANHA */}
             <div className="mt-12 md:mt-0 fade-in max-w-96 mx-auto md:max-w-72 lg:max-w-96 -order-1">
-              <img src="./imgs/texto-campanha.png" alt="Aniversário Atakarejo" className=""/>            
+              <img
+                src="./imgs/texto-campanha.png"
+                alt="Aniversário Atakarejo"
+                className=""
+              />
             </div>
-
           </div>
 
           {/* Rules*/}
-          <div className="rules grid md:grid-cols-2 lg:grid-cols-4 gap-4 items-center mt-20  overflow-hidden fade-in" >
+          <div className="rules grid md:grid-cols-2 lg:grid-cols-4 gap-4 items-center mt-20  overflow-hidden fade-in">
             <div className="rule flex items-center">
-              <img src="./imgs/icon-market.png" alt=""  className="rule-icon me-2"/>
+              <img
+                src="./imgs/icon-market.png"
+                alt=""
+                className="rule-icon me-2"
+              />
               <div className="content">
-                <h3 className="text-lg font-semibold text-white"><span className="highlight">A cada <span className="text-2xl">R$200</span></span> em compras.</h3>
-                
+                <h3 className="text-lg font-semibold text-white">
+                  <span className="highlight">
+                    A cada <span className="text-2xl">R$200</span>
+                  </span>{" "}
+                  em compras.
+                </h3>
               </div>
             </div>
 
             <div className="rule flex items-center">
-              <img src="./imgs/icon-nota.png" alt=""  className="rule-icon me-2" />
+              <img
+                src="./imgs/icon-nota.png"
+                alt=""
+                className="rule-icon me-2"
+              />
               <div className="content">
-                <h3 className="text-lg font-semibold text-white"><span className="highlight">Cadastre</span> a sua nota no site.</h3>
-                
-              </div>
-            </div>
-            
-            <div className="rule flex items-center">
-              <img src="./imgs/icon-presente.png" alt="" className="rule-icon me-2" />
-              <div className="content">                
-                <h3 className="text-lg font-semibold text-white">Abra o presente e concorrra a <span className="highlight">vales-compras!</span></h3>                
+                <h3 className="text-lg font-semibold text-white">
+                  <span className="highlight">Cadastre</span> a sua nota no
+                  site.
+                </h3>
               </div>
             </div>
 
             <div className="rule flex items-center">
-              <img src="./imgs/icon-hand.png" alt=""  className="rule-icon me-2" />
-              <div className="content">                
-                <h3 className="text-lg font-semibold text-white">2x mais chances com produtos de  <span className="highlight">marcas participantes!</span></h3>                
+              <img
+                src="./imgs/icon-presente.png"
+                alt=""
+                className="rule-icon me-2"
+              />
+              <div className="content">
+                <h3 className="text-lg font-semibold text-white">
+                  Abra o presente e concorrra a{" "}
+                  <span className="highlight">vales-compras!</span>
+                </h3>
               </div>
             </div>
 
+            <div className="rule flex items-center">
+              <img
+                src="./imgs/icon-hand.png"
+                alt=""
+                className="rule-icon me-2"
+              />
+              <div className="content">
+                <h3 className="text-lg font-semibold text-white">
+                  2x mais chances com produtos de{" "}
+                  <span className="highlight">marcas participantes!</span>
+                </h3>
+              </div>
+            </div>
           </div>
-
-
         </div>
       </div>
 
@@ -72,7 +114,6 @@ const HeroComponent = () => {
           <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div> */}
-
     </section>
   );
 };

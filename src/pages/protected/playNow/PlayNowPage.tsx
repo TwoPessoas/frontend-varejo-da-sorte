@@ -28,7 +28,7 @@ const PlayNowPage = () => {
     setGameState("playing");
 
     // Simular processamento do jogo (3-5 segundos)
-    const processingTime = Math.random() * 2000 + 3000; // 3-5 segundos
+    const processingTime = Math.random() * 500 + 500; // 0.5-1 segundos
     await new Promise((resolve) => setTimeout(resolve, processingTime));
 
     const response = await tryMyLuck();
