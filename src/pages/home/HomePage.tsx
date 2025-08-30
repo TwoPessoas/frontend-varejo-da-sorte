@@ -8,7 +8,7 @@ import { SECURITY_STORE_NAME } from "../../contexts/AuthContext";
 import StringUtils from "../../utils/StringUtils";
 import { useClient } from "../../contexts/ClientContext";
 
-export const DATA_INICIAL_CAMPANHA = "2025-06-31";
+export const DATA_INICIAL_CAMPANHA = "2025-08-31";
 export const DATA_FINAL_CAMPANHA = "2025-09-30";
 
 export default function HomePage() {
